@@ -1,6 +1,53 @@
 # NepalAddressAPI
 
-NepalAddressAPI is a Laravel-based API for managing Nepal address data such as provinces, districts, municipalities, wards, and related location records.
+NepalAddressAPI is a Laravel-based REST API for accessing Nepal address data such as provinces, districts, and municipalities.
+
+## Live API
+
+**Base URL:** https://nepaladdress.notedinsights.com/
+
+## API Endpoints
+
+### GET /provinces
+Retrieve a list of all provinces.
+
+```bash
+https://nepaladdress.notedinsights.com/api/provinces
+```
+
+### GET /districts
+Retrieve a list of all districts.
+
+```bash
+https://nepaladdress.notedinsights.com/api/districts
+```
+
+### GET /districts/{provinceName}
+Retrieve districts filtered by a specific province name.
+
+```bash
+https://nepaladdress.notedinsights.com/api/districts/{provinceName}
+```
+
+### GET /municipals/{districtName}
+Retrieve municipalities filtered by a specific district name.
+
+```bash
+https://nepaladdress.notedinsights.com/api/municipals/{districtName}
+```
+
+## How to Use
+
+Send HTTP GET requests to the endpoints above to retrieve JSON data. Use the provided routes to access province, district, and municipal data efficiently. For example, to get districts for a specific province, replace `{provinceName}` with the desired province name in the URL.
+
+## Laravel Examples
+
+```php
+$response = Http::get('https://nepaladdress.notedinsights.com/api/provinces');
+$response = Http::get('https://nepaladdress.notedinsights.com/api/districts');
+$response = Http::get('https://nepaladdress.notedinsights.com/api/districts/bagmati');
+$response = Http::get('https://nepaladdress.notedinsights.com/api/municipals/chitwan');
+```
 
 ## Features
 
@@ -64,10 +111,6 @@ php artisan test
 - `database/migrations/` — database schema
 - `database/seeders/` — sample data seeders
 - `resources/` — views and frontend assets
-
-## API
-
-The project is intended to expose address/location endpoints for Nepal. Add your route, controller, and resource documentation here as the API evolves.
 
 ## Contributing
 
