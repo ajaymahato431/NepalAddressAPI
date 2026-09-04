@@ -5,8 +5,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Tests Passing](https://img.shields.io/badge/Tests-100%25%20Passed-brightgreen.svg)]()
 [![753 Local Levels](https://img.shields.io/badge/Municipalities-753%20Verified-emerald.svg)]()
+[![Part of Noted Insights](https://img.shields.io/badge/Part%20of-Noted%20Insights-6366f1.svg?style=flat)](https://notedinsights.com)
 
 **NepalAddressAPI** is a high-performance, developer-friendly REST API for accessing authentic address and administrative division data of Nepal — covering all **7 Provinces**, **77 Districts**, and **753 Local Level Municipalities** (Metropolitan, Sub-Metropolitan, Municipalities, and Rural Municipalities).
+
+> 💡 **Official Service of Noted Insights**: NepalAddressAPI is built, maintained, and publicly hosted as part of the [Noted Insights](https://notedinsights.com) ecosystem, dedicated to delivering reliable software utilities and study resources for Nepal.
 
 ---
 
@@ -26,6 +29,8 @@
 ## 🚀 Live Demo & Base URL
 
 - **Production Base URL:** `https://nepaladdress.notedinsights.com/api`
+- **Interactive Documentation & Playground:** [nepaladdress.notedinsights.com](https://nepaladdress.notedinsights.com)
+- **Official Portal:** [notedinsights.com](https://notedinsights.com)
 - **Local Base URL:** `http://localhost:8000/api`
 
 ---
@@ -414,6 +419,17 @@ composer test
 
 ---
 
+## 🏢 Part of Noted Insights
+
+NepalAddressAPI is proud to be part of the [**Noted Insights**](https://notedinsights.com) ecosystem, which builds free tools, educational study materials, and developer utilities for Nepal:
+
+- 🌐 **Official Portal:** [notedinsights.com](https://notedinsights.com)
+- 🇳🇵 **Nepali Unicode Typing & Converter:** [unicode.notedinsights.com](https://unicode.notedinsights.com)
+- 🎓 **Capstone Projects & Notes:** [notedinsights.com/capstone-projects](https://notedinsights.com/capstone-projects/)
+- 👨‍💻 **Lead Developer:** [Ajay Mahato](https://ajaymahato9988.com.np/)
+
+---
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to open a pull request or file an issue.
@@ -421,3 +437,4 @@ Contributions, issues, and feature requests are welcome! Feel free to open a pul
 ## 📄 License
 
 This project is open-source software licensed under the [MIT License](LICENSE).
+Crafted with care by Ajay Mahato for **Noted Insights** & the Nepal Developer Community.

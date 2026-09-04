@@ -4,9 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nepal Address API — High-Performance Nepal Address Data</title>
-    <meta name="description" content="A blazingly fast, reliable REST API for Nepal's administrative divisions: 7 provinces, 77 districts, and 753 local level municipalities.">
-    <link rel="icon" type="image/png" href="https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1-75x75.png">
+    <title>NepalAddressAPI — High-Performance Nepal Address Data | Noted Insights</title>
+    <meta name="description" content="A blazingly fast, reliable REST API for Nepal's administrative divisions: 7 provinces, 77 districts, and 753 local level municipalities. Official developer utility by Noted Insights.">
+    <meta name="author" content="Noted Insights, Ajay Mahato">
+    <meta name="publisher" content="Noted Insights">
+    <link rel="author" href="https://notedinsights.com">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Noted Insights">
+    <meta property="og:title" content="NepalAddressAPI — High-Performance Nepal Address Data | Noted Insights">
+    <meta property="og:description" content="Authentic, standardized REST API for Nepal's administrative divisions (7 provinces, 77 districts, 753 municipalities). Powered by Noted Insights.">
+    <meta property="og:url" content="https://nepaladdress.notedinsights.com">
+    <meta property="og:image" content="{{ asset('logo.png') }}">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="NepalAddressAPI — Noted Insights">
+    <meta name="twitter:description" content="Standardized address data API for Nepal: 7 provinces, 77 districts, 753 local level municipalities.">
+    <meta name="twitter:image" content="{{ asset('logo.png') }}">
+
+    <!-- Favicon & Icons -->
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -49,25 +71,38 @@
 <body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col">
 
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <span class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-tr from-indigo-500 to-emerald-400 text-white font-bold text-lg shadow-lg shadow-indigo-500/20">
-                    🇳🇵
-                </span>
-                <div>
-                    <span class="text-lg font-bold tracking-tight text-white">NepalAddress<span class="text-indigo-400">API</span></span>
-                    <span class="ml-2 text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">v1.2</span>
-                </div>
+                <a href="/" class="flex items-center space-x-3 group">
+                    <div class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-md shadow-indigo-500/10 group-hover:border-indigo-500/50 transition">
+                        <img src="{{ asset('logo.png') }}" alt="Noted Insights Logo" class="h-full w-full object-contain p-1" />
+                    </div>
+                    <div class="leading-tight">
+                        <div class="flex items-center space-x-1.5">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 group-hover:text-indigo-400 transition">Noted Insights</span>
+                            <span class="text-[10px] text-slate-600">/</span>
+                            <span class="text-[10px] font-semibold text-emerald-400">APIs</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-base sm:text-lg font-extrabold tracking-tight text-white">NepalAddress<span class="text-indigo-400">API</span></span>
+                            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">v1.2</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-300">
                 <a href="#endpoints" class="hover:text-white transition">Endpoints</a>
                 <a href="#demo" class="hover:text-white transition">Cascade Demo</a>
                 <a href="#playground" class="hover:text-white transition">Interactive Console</a>
                 <a href="#search" class="hover:text-white transition">Live Search</a>
                 <a href="#examples" class="hover:text-white transition">SDK Examples</a>
             </nav>
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-2.5">
+                <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="hidden sm:inline-flex items-center space-x-1.5 text-xs font-semibold px-3.5 py-1.5 rounded-full bg-slate-900/90 hover:bg-slate-800 text-slate-300 hover:text-white border border-slate-800 hover:border-indigo-500/40 transition shadow-sm">
+                    <span>Visit notedinsights.com</span>
+                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
                 <a href="https://github.com/ajaymahato431/NepalAddressAPI" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
                     <span>GitHub</span>
@@ -82,6 +117,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <!-- Badges -->
             <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
+                <a href="https://notedinsights.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 transition group shadow-sm">
+                    <img src="{{ asset('logo.png') }}" class="w-3.5 h-3.5 rounded-full object-contain" alt="Noted Insights">
+                    <span>Part of <strong class="text-white group-hover:text-indigo-200">Noted Insights</strong></span>
+                    <span class="text-indigo-400 text-[10px]">↗</span>
+                </a>
                 <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                     <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     Verified 753 Local Levels
@@ -101,7 +141,7 @@
                 The Standard Address API for <span class="bg-gradient-to-r from-indigo-400 via-sky-300 to-emerald-400 bg-clip-text text-transparent">Nepal</span>
             </h1>
             <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                Clean, reliable, and standardized address data for developers building forms, e-commerce checkout, logistics, and verification systems in Nepal.
+                Clean, reliable, and standardized address data for developers building forms, e-commerce checkout, logistics, and verification systems in Nepal — engineered and maintained by <a href="https://notedinsights.com" target="_blank" rel="noopener noreferrer" class="text-indigo-400 font-semibold hover:text-indigo-300 underline underline-offset-4">Noted Insights</a>.
             </p>
 
             <!-- Quick Base URL Box -->
@@ -364,55 +404,59 @@
 
                 <div class="p-6">
                     <!-- cURL Code -->
-                    <pre id="code-curl" class="text-xs font-mono text-slate-200 overflow-x-auto"><code># 1. Fetch provinces
-curl -X GET "http://localhost:8000/api/provinces"
+                    <pre id="code-curl" class="text-xs font-mono text-slate-200 overflow-x-auto"><code># 1. Fetch all 7 provinces
+curl -X GET "https://nepaladdress.notedinsights.com/api/provinces?case=title"
 
 # 2. Fetch districts of Bagmati
-curl -X GET "http://localhost:8000/api/districts/bagmati"
+curl -X GET "https://nepaladdress.notedinsights.com/api/districts/bagmati?case=title"
 
 # 3. Fetch municipalities in Title Case
-curl -X GET "http://localhost:8000/api/municipals/chitwan?case=title"
+curl -X GET "https://nepaladdress.notedinsights.com/api/municipals/chitwan?case=title"
 
-# 4. Search
-curl -X GET "http://localhost:8000/api/search?q=bharatpur"</code></pre>
+# 4. Instant Fuzzy Search
+curl -X GET "https://nepaladdress.notedinsights.com/api/search?q=bharatpur&case=title"</code></pre>
 
                     <!-- JS Code -->
-                    <pre id="code-js" class="text-xs font-mono text-slate-200 overflow-x-auto hidden"><code>// Fetch provinces
-const provincesRes = await fetch('http://localhost:8000/api/provinces');
+                    <pre id="code-js" class="text-xs font-mono text-slate-200 overflow-x-auto hidden"><code>const BASE_URL = 'https://nepaladdress.notedinsights.com/api';
+
+// Fetch provinces
+const provincesRes = await fetch(`${BASE_URL}/provinces?case=title`);
 const { provinces } = await provincesRes.json();
 
 // Fetch districts for selected province
-const districtsRes = await fetch(`http://localhost:8000/api/districts/${selectedProvince}`);
+const districtsRes = await fetch(`${BASE_URL}/districts/${selectedProvince}?case=title`);
 const { districts } = await districtsRes.json();
 
 // Fetch municipalities
-const municipalsRes = await fetch(`http://localhost:8000/api/municipals/${selectedDistrict}?case=title`);
+const municipalsRes = await fetch(`${BASE_URL}/municipals/${selectedDistrict}?case=title`);
 const { municipals } = await municipalsRes.json();</code></pre>
 
                     <!-- PHP Code -->
                     <pre id="code-php" class="text-xs font-mono text-slate-200 overflow-x-auto hidden"><code>use Illuminate\Support\Facades\Http;
 
+$baseUrl = 'https://nepaladdress.notedinsights.com/api';
+
 // Fetch provinces
-$provinces = Http::get('http://localhost:8000/api/provinces')->json('provinces');
+$provinces = Http::get("{$baseUrl}/provinces", ['case' => 'title'])->json('provinces');
 
 // Fetch districts
-$districts = Http::get('http://localhost:8000/api/districts/bagmati')->json('districts');
+$districts = Http::get("{$baseUrl}/districts/bagmati", ['case' => 'title'])->json('districts');
 
 // Fetch municipalities in Title Case
-$municipals = Http::get('http://localhost:8000/api/municipals/chitwan', [
+$municipals = Http::get("{$baseUrl}/municipals/chitwan", [
     'case' => 'title'
 ])->json('municipals');</code></pre>
 
                     <!-- Python Code -->
                     <pre id="code-python" class="text-xs font-mono text-slate-200 overflow-x-auto hidden"><code>import requests
 
-BASE_URL = "http://localhost:8000/api"
+BASE_URL = "https://nepaladdress.notedinsights.com/api"
 
 # Get all provinces
-provinces = requests.get(f"{BASE_URL}/provinces").json()['provinces']
+provinces = requests.get(f"{BASE_URL}/provinces", params={"case": "title"}).json()['provinces']
 
 # Get districts
-districts = requests.get(f"{BASE_URL}/districts/bagmati").json()['districts']
+districts = requests.get(f"{BASE_URL}/districts/bagmati", params={"case": "title"}).json()['districts']
 
 # Get municipalities
 municipals = requests.get(f"{BASE_URL}/municipals/chitwan", params={"case": "title"}).json()['municipals']</code></pre>
@@ -422,10 +466,67 @@ municipals = requests.get(f"{BASE_URL}/municipals/chitwan", params={"case": "tit
     </section>
 
     <!-- Footer -->
-    <footer class="mt-auto border-t border-slate-900 bg-slate-950 py-10 text-center text-xs text-slate-500">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>&copy; {{ date('Y') }} NepalAddressAPI. Open source under the <a href="https://opensource.org/licenses/MIT" class="text-slate-400 underline hover:text-white">MIT License</a>.</p>
-            <p class="mt-2">Crafted with ❤️ for the Nepal developer community.</p>
+    <footer class="mt-auto border-t border-slate-900 bg-slate-950 pt-16 pb-12 text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-900">
+                <!-- Brand & Mission Column -->
+                <div class="md:col-span-6 space-y-4">
+                    <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="flex items-center space-x-3 group">
+                        <div class="h-10 w-10 flex-shrink-0 rounded-xl overflow-hidden shadow-md shadow-indigo-500/20 border border-slate-800 bg-slate-900 p-0.5 group-hover:border-indigo-500 transition">
+                            <img src="{{ asset('logo.png') }}" alt="Noted Insights Logo" class="h-full w-full object-contain rounded-lg">
+                        </div>
+                        <div>
+                            <div class="text-base font-extrabold tracking-tight text-white group-hover:text-indigo-400 transition">Noted Insights</div>
+                            <div class="text-xs text-slate-400">Education, Technology & Developer Utilities</div>
+                        </div>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+                        NepalAddressAPI is a standardized, high-performance public service engineered by <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="text-indigo-400 hover:text-indigo-300 font-medium underline underline-offset-2">Noted Insights</a> to provide clean administrative division data for Nepal's growing developer and startup ecosystem.
+                    </p>
+                    <div class="flex items-center space-x-3 text-xs pt-1">
+                        <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="inline-flex items-center gap-1.5 text-indigo-400 hover:text-indigo-300 font-semibold transition">
+                            <span>Visit notedinsights.com</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- API Navigation -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">API Documentation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#endpoints" class="hover:text-white transition">All Endpoints</a></li>
+                        <li><a href="#demo" class="hover:text-white transition">Cascading Selector Demo</a></li>
+                        <li><a href="#search" class="hover:text-white transition">Fuzzy Search API</a></li>
+                        <li><a href="#playground" class="hover:text-white transition">Interactive Console</a></li>
+                        <li><a href="#examples" class="hover:text-white transition">SDK & Integration Code</a></li>
+                    </ul>
+                </div>
+
+                <!-- Noted Insights Ecosystem -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-200">Noted Insights Ecosystem</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="hover:text-white transition flex items-center gap-1.5"><span>Noted Insights Portal</span><span class="text-slate-600 text-xs">↗</span></a></li>
+                        <li><a href="https://unicode.notedinsights.com" target="_blank" rel="noreferrer" class="hover:text-white transition flex items-center gap-1.5"><span>Nepali Unicode Typing</span><span class="text-slate-600 text-xs">↗</span></a></li>
+                        <li><a href="https://notedinsights.com/capstone-projects/" target="_blank" rel="noreferrer" class="hover:text-white transition flex items-center gap-1.5"><span>Capstone Projects</span><span class="text-slate-600 text-xs">↗</span></a></li>
+                        <li><a href="https://notedinsights.com/study-materials/" target="_blank" rel="noreferrer" class="hover:text-white transition flex items-center gap-1.5"><span>Study Materials</span><span class="text-slate-600 text-xs">↗</span></a></li>
+                        <li><a href="https://notedinsights.com/contact/" target="_blank" rel="noreferrer" class="hover:text-white transition flex items-center gap-1.5"><span>Contact & Feedback</span><span class="text-slate-600 text-xs">↗</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright & Credits (matches unicode.notedinsights.com format) -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; 2024–{{ date('Y') }} <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-slate-200 underline">Noted Insights</a>. Open source under the <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-slate-200 underline">MIT License</a>.</p>
+                <p class="flex items-center gap-2">
+                    <span>Crafted with care</span>
+                    <span>•</span>
+                    <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-indigo-400 transition font-medium">Noted Insights</a>
+                    <span>•</span>
+                    <a href="https://ajaymahato9988.com.np/" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-indigo-400 transition">Ajay Mahato</a>
+                </p>
+            </div>
         </div>
     </footer>
 
