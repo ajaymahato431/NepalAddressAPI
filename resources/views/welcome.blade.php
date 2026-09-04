@@ -565,7 +565,7 @@ municipals = requests.get(f"{BASE_URL}/municipals/chitwan", params={"case": "tit
 
             <!-- Bottom Copyright & Credits (matches unicode.notedinsights.com format) -->
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; 2024–{{ date('Y') }} <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="text-slate-400 hover:text-slate-200 underline">Noted Insights</a>. Open source under the <a href="https://github.com/ajaymahato431/NepalAddressAPI/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white underline">MIT License</a>.</p>
+                <p>&copy; 2024–{{ date('Y') }} <a href="https://ajaymahato9988.com.np/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white font-medium">Ajay Mahato</a>. Open source under the <a href="https://github.com/ajaymahato431/NepalAddressAPI/blob/master/LICENSE" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white underline">MIT License</a>.</p>
                 <p class="flex items-center gap-2">
                     <span>Crafted with care</span>
                     <span>•</span>

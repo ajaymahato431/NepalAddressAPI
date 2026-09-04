@@ -437,4 +437,5 @@ Contributions, issues, and feature requests are welcome! Feel free to open a pul
 ## 📄 License
 
 This project is open-source software licensed under the [MIT License](LICENSE).
-Crafted with care by Ajay Mahato for **Noted Insights** & the Nepal Developer Community.
+Copyright (c) 2024–2026 Ajay Mahato. All rights reserved.
+Crafted with care by Ajay Mahato for the Nepal Developer Community.
