@@ -25,10 +25,11 @@
     <meta name="twitter:image" content="{{ asset('logo.png') }}">
 
     <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1-75x75.png">
     <link rel="shortcut icon" href="{{ asset('logo.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('logo.png') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="apple-touch-icon" href="https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -76,7 +77,7 @@
             <div class="flex items-center space-x-3">
                 <a href="/" class="flex items-center space-x-3 group">
                     <div class="relative flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-800 bg-slate-900 shadow-md shadow-indigo-500/10 group-hover:border-indigo-500/50 transition">
-                        <img src="{{ asset('logo.png') }}" alt="Noted Insights Logo" class="h-full w-full object-contain p-1" />
+                        <img src="{{ asset('logo.png') }}" onerror="this.onerror=null;this.src='https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1.png';" alt="Noted Insights Logo" class="h-full w-full object-contain p-1" />
                     </div>
                     <div class="leading-tight">
                         <div class="flex items-center space-x-1.5">
@@ -118,7 +119,7 @@
             <!-- Badges -->
             <div class="flex flex-wrap items-center justify-center gap-2 mb-6">
                 <a href="https://notedinsights.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 transition group shadow-sm">
-                    <img src="{{ asset('logo.png') }}" class="w-3.5 h-3.5 rounded-full object-contain" alt="Noted Insights">
+                    <img src="{{ asset('logo.png') }}" onerror="this.onerror=null;this.src='https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1-75x75.png';" class="w-3.5 h-3.5 rounded-full object-contain" alt="Noted Insights">
                     <span>Part of <strong class="text-white group-hover:text-indigo-200">Noted Insights</strong></span>
                     <span class="text-indigo-400 text-[10px]">↗</span>
                 </a>
@@ -473,7 +474,7 @@ municipals = requests.get(f"{BASE_URL}/municipals/chitwan", params={"case": "tit
                 <div class="md:col-span-6 space-y-4">
                     <a href="https://notedinsights.com" target="_blank" rel="noreferrer" class="flex items-center space-x-3 group">
                         <div class="h-10 w-10 flex-shrink-0 rounded-xl overflow-hidden shadow-md shadow-indigo-500/20 border border-slate-800 bg-slate-900 p-0.5 group-hover:border-indigo-500 transition">
-                            <img src="{{ asset('logo.png') }}" alt="Noted Insights Logo" class="h-full w-full object-contain rounded-lg">
+                            <img src="{{ asset('logo.png') }}" onerror="this.onerror=null;this.src='https://notedinsights.com/wp-content/uploads/2024/01/android-chrome-512x512-1.png';" alt="Noted Insights Logo" class="h-full w-full object-contain rounded-lg">
                         </div>
                         <div>
                             <div class="text-base font-extrabold tracking-tight text-white group-hover:text-indigo-400 transition">Noted Insights</div>
