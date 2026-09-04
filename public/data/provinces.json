@@ -1,11 +1,11 @@
 {
-    "provinces":[
-        "bagmati",
-        "sudurpaschim",
-        "lumbini",
-        "pradesh-1",
+    "provinces": [
+        "koshi",
         "madhesh",
+        "bagmati",
         "gandaki",
-        "karnali"
+        "lumbini",
+        "karnali",
+        "sudurpaschim"
     ]
 }
