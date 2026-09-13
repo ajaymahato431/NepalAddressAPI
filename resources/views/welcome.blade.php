@@ -239,7 +239,7 @@
             <div class="text-center max-w-2xl mx-auto mb-10">
                 <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Global Autocomplete</h2>
                 <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Instant Search Endpoint</p>
-                <p class="mt-3 text-slate-400 text-sm">Query any municipality, district, or province with real-time matching via <code>/api/search?q={term}</code>.</p>
+                <p class="mt-3 text-slate-400 text-sm">Query any municipality, district, or province with real-time matching via <code>/api/search?q={term}</code> — in English or Nepali (काठमाडौँ).</p>
             </div>
 
             <div class="max-w-3xl mx-auto">
@@ -273,6 +273,11 @@
                     <button onclick="setPlaygroundUrl('/api/municipals/kathmandu')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/municipals/kathmandu</button>
                     <button onclick="setPlaygroundUrl('/api/municipals/chitwan?case=title')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/municipals/chitwan?case=title</button>
                     <button onclick="setPlaygroundUrl('/api/stats')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/stats</button>
+                    <button onclick="setPlaygroundUrl('/api/wards/chitwan/bharatpur')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/wards/chitwan/bharatpur</button>
+                    <button onclick="setPlaygroundUrl('/api/municipality/chitwan/bharatpur')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/municipality/chitwan/bharatpur</button>
+                    <button onclick="setPlaygroundUrl('/api/categories')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/categories</button>
+                    <button onclick="setPlaygroundUrl('/api/districts?lang=np')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/districts?lang=np</button>
+                    <button onclick="setPlaygroundUrl('/api/districts?detailed=true')" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">/api/districts?detailed=true</button>
                 </div>
 
                 <!-- Input & Send -->
@@ -388,7 +393,34 @@
                         <span class="px-2 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-400">GET</span>
                         <code class="text-sm font-semibold text-white">/api/stats</code>
                     </div>
-                    <p class="mt-2 text-sm text-slate-400">Overview metrics: total provinces (7), total districts (77), total municipalities (753), and breakdowns per province.</p>
+                    <p class="mt-2 text-sm text-slate-400">Overview metrics: total provinces (7), total districts (77), total municipalities (753), total wards (6,743), plus per-province and per-category breakdowns.</p>
+                </div>
+
+                <!-- Endpoint 8 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-400">GET</span>
+                        <code class="text-sm font-semibold text-white">/api/wards/{district}/{municipality}</code>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-400">Every ward of a local level, numbered 1..N with Devanagari numerals. Nepal has 6,743 wards in total.</p>
+                </div>
+
+                <!-- Endpoint 9 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-400">GET</span>
+                        <code class="text-sm font-semibold text-white">/api/municipality/{district}/{name}</code>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-400">One local level in full: ward count, category, area, website, and its parent district and province.</p>
+                </div>
+
+                <!-- Endpoint 10 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-slate-700 transition md:col-span-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="px-2 py-0.5 text-xs font-bold rounded bg-emerald-500/20 text-emerald-400">GET</span>
+                        <code class="text-sm font-semibold text-white">/api/categories</code>
+                    </div>
+                    <p class="mt-2 text-sm text-slate-400">The four local-level types — Metropolitan City, Sub-Metropolitan City, Municipality and Rural Municipality — in English and Nepali.</p>
                 </div>
             </div>
         </div>

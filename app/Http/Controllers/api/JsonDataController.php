@@ -32,16 +32,21 @@ class JsonDataController extends Controller
      * mode exists to expose. Detailed mode is opt-in, so no existing consumer
      * observes the difference.
      *
+     * `case` follows the same reasoning: flat mode stays 'lower' because that
+     * is what existing responses return, while detailed mode defaults to
+     * 'title' so proper nouns read as proper nouns ("Achham", not "achham").
+     * An explicit ?case= always wins in either mode.
+     *
      * The ward, municipality-detail and category endpoints are new and carry
-     * no legacy contract, so they pass $defaultLang = 'both': their whole
-     * purpose is the bilingual and ward data, and nothing depends on them
-     * returning English-only.
+     * no legacy contract, so they pass their own defaults: their whole purpose
+     * is the bilingual and ward data, and nothing depends on them returning
+     * English-only or lower-cased.
      */
-    protected function params(Request $request, ?string $defaultLang = null, string $defaultCase = 'lower'): array
+    protected function params(Request $request, ?string $defaultLang = null, ?string $defaultCase = null): array
     {
-        $case = (string) $request->query('case', $defaultCase);
         $detailed = filter_var($request->query('detailed', false), FILTER_VALIDATE_BOOLEAN);
         $lang = (string) $request->query('lang', $defaultLang ?? ($detailed ? 'both' : 'en'));
+        $case = (string) $request->query('case', $defaultCase ?? ($detailed ? 'title' : 'lower'));
 
         if (! in_array($case, AddressPresenter::CASES, true)) {
             $this->reject('case', $case, AddressPresenter::CASES);
