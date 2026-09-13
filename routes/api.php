@@ -14,3 +14,8 @@ Route::get('/search', [JsonDataController::class, 'search']);
 Route::get('/all', [JsonDataController::class, 'getAllHierarchy']);
 Route::get('/hierarchy', [JsonDataController::class, 'getAllHierarchy']);
 Route::get('/stats', [JsonDataController::class, 'getStats']);
+
+// Ward & Detail Endpoints
+Route::get('/wards/{districtName}/{municipalityName}', [JsonDataController::class, 'getWards']);
+Route::get('/municipality/{districtName}/{municipalityName}', [JsonDataController::class, 'getMunicipality']);
+Route::get('/categories', [JsonDataController::class, 'getCategories']);

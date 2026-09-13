@@ -4,6 +4,8 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use App\Services\AddressService;
+use App\Services\Nepal\AddressPresenter;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -13,9 +15,6 @@ class JsonDataController extends Controller
         protected AddressService $addressService
     ) {}
 
-    /**
-     * Set cache control headers for static response.
-     */
     protected function cachedResponse(array $data, int $status = 200): JsonResponse
     {
         return response()->json($data, $status, [
@@ -25,34 +24,66 @@ class JsonDataController extends Controller
     }
 
     /**
-     * GET /api/provinces
+     * Resolve case/lang/detailed.
+     *
+     * `lang` defaults to 'en' in flat mode and 'both' in detailed mode: a flat
+     * default of 'both' would change the shape of existing responses, while a
+     * detailed default of 'en' would withhold the Nepali names that detailed
+     * mode exists to expose. Detailed mode is opt-in, so no existing consumer
+     * observes the difference.
+     *
+     * The ward, municipality-detail and category endpoints are new and carry
+     * no legacy contract, so they pass $defaultLang = 'both': their whole
+     * purpose is the bilingual and ward data, and nothing depends on them
+     * returning English-only.
      */
+    protected function params(Request $request, ?string $defaultLang = null, string $defaultCase = 'lower'): array
+    {
+        $case = (string) $request->query('case', $defaultCase);
+        $detailed = filter_var($request->query('detailed', false), FILTER_VALIDATE_BOOLEAN);
+        $lang = (string) $request->query('lang', $defaultLang ?? ($detailed ? 'both' : 'en'));
+
+        if (! in_array($case, AddressPresenter::CASES, true)) {
+            $this->reject('case', $case, AddressPresenter::CASES);
+        }
+
+        if (! in_array($lang, AddressPresenter::LANGS, true)) {
+            $this->reject('lang', $lang, AddressPresenter::LANGS);
+        }
+
+        return ['case' => $case, 'lang' => $lang, 'detailed' => $detailed];
+    }
+
+    private function reject(string $name, string $value, array $accepted): never
+    {
+        throw new HttpResponseException(response()->json([
+            'error' => "Invalid value \"{$value}\" for parameter \"{$name}\".",
+            'accepted' => $accepted,
+        ], 422));
+    }
+
     public function getProvinces(Request $request): JsonResponse
     {
-        $case = $request->query('case', 'lower');
-        $data = $this->addressService->getProvinces($case);
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
 
-        return $this->cachedResponse($data);
+        return $this->cachedResponse(
+            $this->addressService->getProvinces($case, $lang, $detailed)
+        );
     }
 
-    /**
-     * GET /api/districts
-     */
     public function getDistricts(Request $request): JsonResponse
     {
-        $case = $request->query('case', 'lower');
-        $data = $this->addressService->getDistricts($case);
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
 
-        return $this->cachedResponse($data);
+        return $this->cachedResponse(
+            $this->addressService->getDistricts($case, $lang, $detailed)
+        );
     }
 
-    /**
-     * GET /api/districts/{provinceName}
-     */
     public function getDistrictsByProvince(Request $request, string $provinceName): JsonResponse
     {
-        $case = $request->query('case', 'lower');
-        $data = $this->addressService->getDistrictsByProvince($provinceName, $case);
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
+        $data = $this->addressService->getDistrictsByProvince($provinceName, $case, $lang, $detailed);
 
         if ($data === null) {
             return response()->json(['error' => 'Province not found'], 404);
@@ -61,13 +92,10 @@ class JsonDataController extends Controller
         return $this->cachedResponse($data);
     }
 
-    /**
-     * GET /api/municipals/{districtName}
-     */
     public function getMunicipalsByDistrict(Request $request, string $districtName): JsonResponse
     {
-        $case = $request->query('case', 'lower');
-        $data = $this->addressService->getMunicipalsByDistrict($districtName, $case);
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
+        $data = $this->addressService->getMunicipalsByDistrict($districtName, $case, $lang, $detailed);
 
         if ($data === null) {
             return response()->json(['error' => 'District not found'], 404);
@@ -76,44 +104,65 @@ class JsonDataController extends Controller
         return $this->cachedResponse($data);
     }
 
-    /**
-     * GET /api/search?q={term}
-     */
     public function search(Request $request): JsonResponse
     {
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
         $query = (string) $request->query('q', '');
-        $case = $request->query('case', 'lower');
         $limit = min(50, max(1, (int) $request->query('limit', 20)));
 
         if (trim($query) === '') {
-            return response()->json([
-                'error' => 'Query parameter "q" is required.',
-            ], 422);
+            return response()->json(['error' => 'Query parameter "q" is required.'], 422);
         }
 
-        $results = $this->addressService->search($query, $case, $limit);
-
-        return $this->cachedResponse($results);
+        return $this->cachedResponse(
+            $this->addressService->search($query, $case, $limit, $lang, $detailed)
+        );
     }
 
-    /**
-     * GET /api/all or /api/hierarchy
-     */
     public function getAllHierarchy(Request $request): JsonResponse
     {
-        $case = $request->query('case', 'lower');
-        $data = $this->addressService->getAllHierarchy($case);
+        ['case' => $case, 'lang' => $lang, 'detailed' => $detailed] = $this->params($request);
+
+        return $this->cachedResponse(
+            $this->addressService->getAllHierarchy($case, $lang, $detailed)
+        );
+    }
+
+    public function getStats(Request $request): JsonResponse
+    {
+        ['lang' => $lang] = $this->params($request);
+
+        return $this->cachedResponse($this->addressService->getStats($lang));
+    }
+
+    public function getWards(Request $request, string $districtName, string $municipalityName): JsonResponse
+    {
+        ['case' => $case, 'lang' => $lang] = $this->params($request, 'both', 'title');
+        $data = $this->addressService->getWards($districtName, $municipalityName, $lang, $case);
+
+        if ($data === null) {
+            return response()->json(['error' => 'Municipality not found'], 404);
+        }
 
         return $this->cachedResponse($data);
     }
 
-    /**
-     * GET /api/stats
-     */
-    public function getStats(): JsonResponse
+    public function getMunicipality(Request $request, string $districtName, string $municipalityName): JsonResponse
     {
-        $data = $this->addressService->getStats();
+        ['case' => $case, 'lang' => $lang] = $this->params($request, 'both', 'title');
+        $data = $this->addressService->getMunicipality($districtName, $municipalityName, $lang, $case);
+
+        if ($data === null) {
+            return response()->json(['error' => 'Municipality not found'], 404);
+        }
 
         return $this->cachedResponse($data);
+    }
+
+    public function getCategories(Request $request): JsonResponse
+    {
+        ['lang' => $lang] = $this->params($request, 'both');
+
+        return $this->cachedResponse($this->addressService->getCategories($lang));
     }
 }
