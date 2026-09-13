@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Cache;
 
 class DatasetRepository
 {
+    public const DATASETS = ['provinces', 'districts', 'municipalities', 'categories'];
+
     /** @var array<string, array> in-process memo, on top of the cache store */
     private array $loaded = [];
 
@@ -70,6 +72,13 @@ class DatasetRepository
     public function totalWards(): int
     {
         return array_sum(array_column($this->municipalities(), 'wards'));
+    }
+
+    public static function flushCache(): void
+    {
+        foreach (self::DATASETS as $name) {
+            Cache::forget("nepal_dataset_{$name}");
+        }
     }
 
     /** @return array<int, array> municipalities keyed by district_id */

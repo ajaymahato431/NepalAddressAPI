@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Services\Nepal\DatasetRepository;
+use Illuminate\Support\Facades\Cache;
 use Tests\TestCase;
 
 class DatasetRepositoryTest extends TestCase
@@ -53,13 +54,9 @@ class DatasetRepositoryTest extends TestCase
     public function test_sums_wards_for_a_district(): void
     {
         $kathmandu = collect($this->repo->districts())->firstWhere('slug', 'kathmandu');
-        $expected = array_sum(array_column(
-            $this->repo->municipalitiesOfDistrict($kathmandu['id']),
-            'wards'
-        ));
-
-        $this->assertSame($expected, $this->repo->wardTotalForDistrict($kathmandu['id']));
-        $this->assertGreaterThan(0, $this->repo->wardTotalForDistrict($kathmandu['id']));
+        // Kathmandu district (id 27) has exactly 11 municipalities totalling 138 wards
+        $this->assertSame(138, $this->repo->wardTotalForDistrict($kathmandu['id']));
+        $this->assertSame(6743, $this->repo->totalWards());
     }
 
     public function test_looks_up_records_by_id(): void
@@ -72,5 +69,24 @@ class DatasetRepositoryTest extends TestCase
     public function test_sums_wards_across_the_country(): void
     {
         $this->assertSame(6743, $this->repo->totalWards());
+    }
+
+    public function test_cache_invalidation(): void
+    {
+        // Prime the cache by calling provinces()
+        $this->assertCount(7, $this->repo->provinces());
+
+        // Inject a bogus value into the cache key
+        Cache::put('nepal_dataset_provinces', [['id' => 999, 'name' => 'Fake']]);
+
+        // Flush the cache
+        DatasetRepository::flushCache();
+
+        // Create a new instance and verify it loads real provinces, not the bogus cached value
+        $newRepo = new DatasetRepository();
+        $provinces = $newRepo->provinces();
+
+        $this->assertCount(7, $provinces);
+        $this->assertNull($newRepo->province(999));
     }
 }

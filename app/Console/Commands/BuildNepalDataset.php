@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\Nepal\DatasetRepository;
 use Illuminate\Console\Command;
 
 class BuildNepalDataset extends Command
@@ -46,6 +47,8 @@ class BuildNepalDataset extends Command
         $this->write('provinces', $provinces);
         $this->write('districts', $districts);
         $this->write('municipalities', $municipalities);
+
+        DatasetRepository::flushCache();
 
         $this->info(sprintf(
             'Built %d provinces, %d districts, %d municipalities, %d wards.',
