@@ -127,10 +127,35 @@ class LegacyContractTest extends TestCase
         );
 
         $this->assertEquals(
-            $snapshot[$uri],
-            $response->json(),
+            $this->canonicalize($snapshot[$uri]),
+            $this->canonicalize($response->json()),
             "Response for {$uri} changed. The legacy contract is broken."
         );
+    }
+
+    /**
+     * Sort list-shaped arrays recursively before comparing.
+     *
+     * Array ORDER is not part of the contract: legacy arrays were alphabetical,
+     * the canonical dataset follows upstream ids. Membership, spelling and
+     * counts are still compared exactly, which is where a romanization change
+     * would surface.
+     */
+    private function canonicalize(mixed $value): mixed
+    {
+        if (! is_array($value)) {
+            return $value;
+        }
+
+        $mapped = array_map(fn ($v) => $this->canonicalize($v), $value);
+
+        if (array_is_list($mapped)) {
+            usort($mapped, fn ($a, $b) => json_encode($a) <=> json_encode($b));
+        } else {
+            ksort($mapped);
+        }
+
+        return $mapped;
     }
 }
 ```
@@ -336,10 +361,10 @@ This task produces the four bilingual files everything else reads. The pairing a
 
 **Files:**
 - Create: `database/data/upstream/{provinces,districts,municipalities,categories}.{en,np}.json` (vendored from upstream)
+- Generated: `public/data/canonical/{provinces,districts,municipalities,categories}.json`
 - Create: `app/Console/Commands/BuildNepalDataset.php`
 - Create: `public/data/ATTRIBUTION.md`
 - Test: `tests/Feature/DatasetIntegrityTest.php`
-- Generated: `public/data/{provinces,districts,municipalities,categories}.json`
 
 **Interfaces:**
 - Consumes: nothing from earlier tasks.
@@ -386,7 +411,7 @@ class DatasetIntegrityTest extends TestCase
 {
     private function load(string $name): array
     {
-        $path = public_path("data/{$name}.json");
+        $path = public_path("data/canonical/{$name}.json");
         $this->assertFileExists($path, "Canonical dataset {$name}.json is missing");
 
         return json_decode(file_get_contents($path), true);
@@ -478,7 +503,7 @@ class DatasetIntegrityTest extends TestCase
 - [ ] **Step 3: Run test to verify it fails**
 
 Run: `php artisan test --filter=DatasetIntegrityTest`
-Expected: FAIL with "Canonical dataset provinces.json is missing" (the current `provinces.json` has a `{"provinces": [...]}` wrapper, not a list of records, so `assertCount(7, ...)` fails too).
+Expected: FAIL with "Canonical dataset provinces.json is missing" — `public/data/canonical/` does not exist yet.
 
 - [ ] **Step 4: Write the build command**
 
@@ -794,8 +819,12 @@ class BuildNepalDataset extends Command
 
     private function write(string $name, array $records): void
     {
+        if (! is_dir(public_path('data/canonical'))) {
+            mkdir(public_path('data/canonical'), 0755, true);
+        }
+
         file_put_contents(
-            public_path("data/{$name}.json"),
+            public_path("data/canonical/{$name}.json"),
             json_encode($records, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
         );
     }
@@ -843,7 +872,7 @@ preserved as `legacy_name` so published API responses stay stable.
 - [ ] **Step 8: Commit**
 
 ```bash
-git add database/data/upstream public/data/ATTRIBUTION.md public/data/provinces.json public/data/districts.json public/data/municipalities.json public/data/categories.json app/Console/Commands/BuildNepalDataset.php tests/Feature/DatasetIntegrityTest.php
+git add database/data/upstream public/data/ATTRIBUTION.md public/data/canonical app/Console/Commands/BuildNepalDataset.php tests/Feature/DatasetIntegrityTest.php
 git commit -m "feat: build canonical bilingual dataset with ward counts"
 ```
 
@@ -1068,7 +1097,7 @@ class DatasetRepository
         }
 
         $records = Cache::rememberForever("nepal_dataset_{$name}", function () use ($name) {
-            $path = public_path("data/{$name}.json");
+            $path = public_path("data/canonical/{$name}.json");
 
             if (! file_exists($path)) {
                 throw new \RuntimeException(
@@ -2685,6 +2714,7 @@ git commit -m "test: cover Nepali search and ward statistics"
 **Files:**
 - Modify: `app/Console/Commands/BuildNepalDataset.php`
 - Test: `tests/Feature/LegacyStaticFilesTest.php`
+- Modify (regenerated): `public/data/provinces.json`, `public/data/districts.json` (legacy wrapper shape kept)
 - Delete: `public/data/municipalsByDistrict/illam.json`, `public/data/municipalsByDistrict/eastern rukum.json`, `public/data/districtsByProvince/pradesh-1.json`
 
 **Interfaces:**
@@ -2740,13 +2770,30 @@ class LegacyStaticFilesTest extends TestCase
         }
     }
 
-    public function test_top_level_lists_match_the_api(): void
+    public function test_legacy_top_level_files_are_refreshed_from_canonical(): void
     {
         $provinces = json_decode(file_get_contents(public_path('data/provinces.json')), true);
-        $this->assertSame(
+        $districts = json_decode(file_get_contents(public_path('data/districts.json')), true);
+
+        // Legacy wrapper shape is preserved: {"provinces": [...]}, {"districts": [...]}.
+        $this->assertArrayHasKey('provinces', $provinces);
+        $this->assertArrayHasKey('districts', $districts);
+
+        $this->assertEqualsCanonicalizing(
             $this->getJson('/api/provinces')->json('provinces'),
-            array_column($provinces, 'legacy_name')
+            $provinces['provinces']
         );
+        $this->assertEqualsCanonicalizing(
+            $this->getJson('/api/districts')->json('districts'),
+            $districts['districts']
+        );
+    }
+
+    public function test_canonical_files_are_present(): void
+    {
+        foreach (['provinces', 'districts', 'municipalities', 'categories'] as $name) {
+            $this->assertFileExists(public_path("data/canonical/{$name}.json"));
+        }
     }
 }
 ```
@@ -2803,6 +2850,16 @@ Then add these methods to the class:
             );
         }
 
+        // Refresh the legacy top-level lists, keeping their wrapper shape.
+        $this->writeJson(
+            public_path('data/provinces.json'),
+            ['provinces' => array_column($provinces, 'legacy_name')]
+        );
+        $this->writeJson(
+            public_path('data/districts.json'),
+            ['districts' => array_column($districts, 'legacy_name')]
+        );
+
         foreach ($this->staleFiles() as $path) {
             if (file_exists($path)) {
                 unlink($path);
@@ -2839,7 +2896,7 @@ php artisan nepal:build-dataset
 php artisan test --filter=LegacyStaticFilesTest
 ```
 
-Expected: PASS, 4 tests.
+Expected: PASS, 5 tests.
 
 Then confirm nothing regressed: `php artisan test`
 Expected: full suite PASS, including `AddressApiTest` and `LegacyContractTest`.
