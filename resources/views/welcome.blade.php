@@ -185,7 +185,7 @@
                         <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                         Interactive Address Form
                     </h3>
-                    
+
                     <div class="space-y-5">
                         <!-- Province Dropdown -->
                         <div>
@@ -243,9 +243,11 @@
             </div>
 
             <div class="max-w-3xl mx-auto">
-                <div class="relative">
-                    <input type="text" id="liveSearchInput" oninput="debounceSearch()" placeholder="Try typing 'Bharatpur', 'Chitwan', 'Koshi', 'Pokhara'..." class="w-full bg-slate-900 border border-slate-700 text-slate-100 rounded-2xl px-6 py-4 text-base focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition shadow-xl pl-13">
-                    <span class="absolute left-4 top-4.5 text-slate-400 text-lg">🔍</span>
+                <div class="relative group">
+                    <span class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-5 text-slate-500 group-focus-within:text-indigo-400 transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z"/></svg>
+                    </span>
+                    <input type="text" id="liveSearchInput" oninput="debounceSearch()" autocomplete="off" aria-label="Search municipalities, districts or provinces" placeholder="Try typing 'Bharatpur', 'Chitwan', 'Koshi', 'Pokhara'..." class="w-full bg-slate-900 border border-slate-700 text-slate-100 placeholder-slate-500 rounded-2xl pl-14 pr-6 py-4 text-base outline-none focus:ring-2 focus:ring-indigo-500/60 focus:border-indigo-500 hover:border-slate-600 transition shadow-xl">
                 </div>
 
                 <!-- Search Results Container -->
@@ -710,8 +712,8 @@ municipals = requests.get(f"{BASE_URL}/municipals/chitwan", params={"case": "tit
             };
             document.getElementById('cascadeOutput').innerText = JSON.stringify(out, null, 2);
             document.getElementById('cascadeStatus').innerText = selectedMunicipal ? 'Address Complete' : 'In Progress';
-            document.getElementById('cascadeStatus').className = selectedMunicipal 
-                ? 'text-xs font-mono px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400' 
+            document.getElementById('cascadeStatus').className = selectedMunicipal
+                ? 'text-xs font-mono px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400'
                 : 'text-xs font-mono px-2.5 py-1 rounded bg-slate-800 text-slate-400';
         }
 
