@@ -273,7 +273,9 @@ class AddressService
     public function getAllHierarchy(?string $case = 'lower', string $lang = 'en', bool $detailed = false): array
     {
         $case ??= 'lower';
-        $cacheKey = "nepal_hierarchy_{$case}_{$lang}_".($detailed ? '1' : '0');
+        // The generation suffix makes a dataset rebuild invalidate this cache.
+        $generation = $this->repository->generation();
+        $cacheKey = "nepal_hierarchy_{$generation}_{$case}_{$lang}_".($detailed ? '1' : '0');
 
         return Cache::rememberForever($cacheKey, function () use ($case, $lang, $detailed) {
             $provinces = [];
@@ -312,7 +314,9 @@ class AddressService
 
     public function getStats(string $lang = 'en'): array
     {
-        return Cache::rememberForever("nepal_stats_{$lang}", function () use ($lang) {
+        $generation = $this->repository->generation();
+
+        return Cache::rememberForever("nepal_stats_{$generation}_{$lang}", function () use ($lang) {
             $breakdown = [];
 
             foreach ($this->repository->provinces() as $province) {

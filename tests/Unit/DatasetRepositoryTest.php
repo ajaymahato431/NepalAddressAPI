@@ -71,6 +71,36 @@ class DatasetRepositoryTest extends TestCase
         $this->assertSame(6743, $this->repo->totalWards());
     }
 
+    public function test_rebuilding_invalidates_derived_caches(): void
+    {
+        // /api/stats and /api/hierarchy cache their OUTPUT, not just the raw
+        // dataset. A rebuild must invalidate those too, or the API contradicts
+        // itself: /api/districts shows new data while /api/stats shows old.
+        $service = app(\App\Services\AddressService::class);
+
+        $before = $service->getStats();
+        $this->assertSame(6743, $before['total_wards']);
+
+        $generationBefore = $this->repo->generation();
+
+        DatasetRepository::flushCache();
+
+        $this->assertGreaterThan(
+            $generationBefore,
+            $this->repo->generation(),
+            'flushCache() must bump the generation so derived caches miss'
+        );
+
+        // The derived cache key must differ across a rebuild.
+        $this->assertNotSame(
+            "nepal_stats_{$generationBefore}_en",
+            "nepal_stats_{$this->repo->generation()}_en"
+        );
+
+        $after = app(\App\Services\AddressService::class)->getStats();
+        $this->assertSame($before['total_wards'], $after['total_wards']);
+    }
+
     public function test_cache_invalidation(): void
     {
         // Prime the cache by calling provinces()

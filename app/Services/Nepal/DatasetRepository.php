@@ -8,6 +8,8 @@ class DatasetRepository
 {
     public const DATASETS = ['provinces', 'districts', 'municipalities', 'categories'];
 
+    private const GENERATION_KEY = 'nepal_dataset_generation';
+
     /** @var array<string, array> in-process memo, on top of the cache store */
     private array $loaded = [];
 
@@ -74,11 +76,26 @@ class DatasetRepository
         return array_sum(array_column($this->municipalities(), 'wards'));
     }
 
+    /**
+     * Monotonic counter bumped whenever the dataset is rebuilt.
+     *
+     * Anything that caches a value DERIVED from the dataset must include this
+     * in its cache key. That way a rebuild invalidates derived caches without
+     * this class having to know they exist — enumerating their keys here would
+     * silently go stale the next time someone adds one.
+     */
+    public function generation(): int
+    {
+        return (int) Cache::get(self::GENERATION_KEY, 1);
+    }
+
     public static function flushCache(): void
     {
         foreach (self::DATASETS as $name) {
             Cache::forget("nepal_dataset_{$name}");
         }
+
+        Cache::forever(self::GENERATION_KEY, (int) Cache::get(self::GENERATION_KEY, 1) + 1);
     }
 
     /** @return array<int, array> municipalities keyed by district_id */
