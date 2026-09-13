@@ -199,13 +199,13 @@ class BuildNepalDataset extends Command
                 }
 
                 unset($pool[$index]);
-                $result[] = $this->municipalityRecord($pair, $legacy, $categoryNames);
+                $result[] = $this->municipalityRecord($pair, $legacy);
             }
 
             foreach ($remaining as $pair) {
                 $legacy = $this->bestLegacyMatch($pair[0], $pool, $categoryNames, $district['name']);
                 unset($pool[array_search($legacy, $pool, true)]);
-                $result[] = $this->municipalityRecord($pair, $legacy, $categoryNames);
+                $result[] = $this->municipalityRecord($pair, $legacy);
             }
 
             if ($pool !== []) {
@@ -221,7 +221,7 @@ class BuildNepalDataset extends Command
         return $result;
     }
 
-    private function municipalityRecord(array $pair, string $legacy, array $categoryNames): array
+    private function municipalityRecord(array $pair, string $legacy): array
     {
         [$en, $np] = $pair;
 
@@ -290,7 +290,7 @@ class BuildNepalDataset extends Command
             throw new \RuntimeException("No candidates left for {$upstream['name']} in {$districtName}");
         }
 
-        if ($bestDistance > 0 && $runnerUp - $bestDistance < 2) {
+        if ($runnerUp - $bestDistance < 2) {
             throw new \RuntimeException(sprintf(
                 'Ambiguous pairing in %s: "%s" -> "%s" (distance %d, runner-up %d). Add an override.',
                 $districtName, $upstream['name'], $best, $bestDistance, $runnerUp
