@@ -33,7 +33,7 @@ class AddressPresenter
         ], $record, $lang, $case) + $this->bilingual([
             'headquarter' => [$record['headquarter'], $record['headquarter_np']],
             'area_sq_km' => [$record['area_sq_km'], $record['area_sq_km_np']],
-        ], $lang) + [
+        ], $lang, $case) + [
             'website' => $record['website'],
             'total_districts' => count($districts),
             'total_municipalities' => $municipalities,
@@ -56,7 +56,7 @@ class AddressPresenter
         ], $record, $lang, $case) + $this->bilingual([
             'headquarter' => [$record['headquarter'], $record['headquarter_np']],
             'area_sq_km' => [$record['area_sq_km'], $record['area_sq_km_np']],
-        ], $lang) + [
+        ], $lang, $case) + [
             'website' => $record['website'],
             'province_slug' => $province['slug'] ?? null,
             'total_municipalities' => count($municipalities),
@@ -79,7 +79,7 @@ class AddressPresenter
         ], $record, $lang, $case) + $this->bilingual([
             'category' => [$category['name'], $category['name_np']],
             'area_sq_km' => [$record['area_sq_km'], $record['area_sq_km_np']],
-        ], $lang) + [
+        ], $lang, $case) + [
             'website' => $record['website'],
             'district_slug' => $district['slug'] ?? null,
         ] + $this->wards($record['wards'], $lang);
@@ -115,7 +115,7 @@ class AddressPresenter
      */
     private function withNames(array $carry, array $record, string $lang, string $case): array
     {
-        $english = $this->applyCase($record['name'], $case === 'lower' ? 'title' : $case);
+        $english = $this->applyCase($record['name'], $case);
 
         return $carry + match ($lang) {
             'np' => ['name' => $record['name_np']],
@@ -127,11 +127,13 @@ class AddressPresenter
     /**
      * @param array<string, array{0: string, 1: string}> $fields key => [en, np]
      */
-    private function bilingual(array $fields, string $lang): array
+    private function bilingual(array $fields, string $lang, string $case): array
     {
         $out = [];
 
         foreach ($fields as $key => [$en, $np]) {
+            $en = $this->applyCase($en, $case);
+
             match ($lang) {
                 'np' => $out[$key] = $np,
                 'both' => [$out[$key] = $en, $out[$key.'_np'] = $np],

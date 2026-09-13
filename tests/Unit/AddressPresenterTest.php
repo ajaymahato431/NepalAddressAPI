@@ -29,6 +29,12 @@ class AddressPresenterTest extends TestCase
         return collect($this->repo->districts())->firstWhere('slug', 'kathmandu');
     }
 
+    private function aamchok(): array
+    {
+        return collect($this->repo->municipalities())
+            ->firstWhere('legacy_name', 'aamchowk rural municipality');
+    }
+
     public function test_flat_english_returns_the_legacy_string(): void
     {
         $this->assertSame(
@@ -90,7 +96,7 @@ class AddressPresenterTest extends TestCase
 
         $this->assertArrayNotHasKey('name_np', $result);
         $this->assertArrayNotHasKey('category_np', $result);
-        $this->assertSame('Bharatpur', $result['name']);
+        $this->assertSame('bharatpur', $result['name']);
     }
 
     public function test_detailed_district_rolls_up_counts(): void
@@ -106,5 +112,19 @@ class AddressPresenterTest extends TestCase
     public function test_title_case_preserves_hyphenated_words(): void
     {
         $this->assertSame('Sub-Metropolitan City', $this->presenter->titleCase('sub-metropolitan city'));
+    }
+
+    public function test_flat_and_detailed_diverge_on_romanization_not_just_structure(): void
+    {
+        $record = $this->aamchok();
+
+        $this->assertSame(
+            'aamchowk rural municipality',
+            $this->presenter->municipality($record, 'en', false, 'lower')
+        );
+
+        $result = $this->presenter->municipality($record, 'en', true, 'title');
+
+        $this->assertSame('Aamchok', $result['name']);
     }
 }
