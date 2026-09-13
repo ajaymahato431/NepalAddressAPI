@@ -1,14 +1,14 @@
 {
     "municipals": [
-        "babai rural municipality",
-        "gadhawa rural municipality",
-        "rapti rural municipality",
-        "rajpur rural municipality",
-        "dangisharan rural municipality",
-        "shantinagar rural municipality",
-        "banglachuli rural municipality",
-        "tulsipur sub-metropolitan city",
         "ghorahi sub-metropolitan city",
-        "lamahi municipality"
+        "tulsipur sub-metropolitan city",
+        "lamahi municipality",
+        "gadhawa rural municipality",
+        "rajpur rural municipality",
+        "shantinagar rural municipality",
+        "rapti rural municipality",
+        "banglachuli rural municipality",
+        "dangisharan rural municipality",
+        "babai rural municipality"
     ]
 }

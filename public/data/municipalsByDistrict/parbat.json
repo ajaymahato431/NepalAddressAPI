@@ -1,11 +1,11 @@
 {
     "municipals": [
-        "modi rural municipality",
-        "painyu rural municipality",
-        "jaljala rural municipality",
-        "bihadi rural municipality",
-        "mahashila rural municipality",
         "kushma municipality",
-        "phalebas municipality"
+        "phalebas municipality",
+        "jaljala rural municipality",
+        "painyu rural municipality",
+        "mahashila rural municipality",
+        "modi rural municipality",
+        "bihadi rural municipality"
     ]
 }

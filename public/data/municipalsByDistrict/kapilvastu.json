@@ -1,14 +1,14 @@
 {
     "municipals": [
-        "yashodhara rural municipality",
-        "bijayanagar rural municipality",
-        "mayadevi rural municipality",
-        "suddhodhan rural municipality",
-        "shivaraj municipality",
         "kapilbastu municipality",
-        "buddhabhumi municipality",
-        "maharajgunj municipality",
         "banganga municipality",
-        "krishnanagar municipality"
+        "buddhabhumi municipality",
+        "shivaraj municipality",
+        "krishnanagar municipality",
+        "maharajgunj municipality",
+        "mayadevi rural municipality",
+        "yashodhara rural municipality",
+        "suddhodhan rural municipality",
+        "bijayanagar rural municipality"
     ]
 }

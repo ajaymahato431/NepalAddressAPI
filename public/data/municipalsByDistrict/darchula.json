@@ -1,13 +1,13 @@
 {
     "municipals": [
-        "lekam rural municipality",
-        "naugad rural municipality",
-        "byas rural municipality",
-        "dunhu rural municipality",
-        "marma rural municipality",
-        "apihimal rural municipality",
-        "malikaarjun rural municipality",
         "mahakali municipality",
-        "shailyashikhar municipality"
+        "shailyashikhar municipality",
+        "naugad rural municipality",
+        "malikaarjun rural municipality",
+        "marma rural municipality",
+        "lekam rural municipality",
+        "dunhu rural municipality",
+        "byas rural municipality",
+        "apihimal rural municipality"
     ]
 }

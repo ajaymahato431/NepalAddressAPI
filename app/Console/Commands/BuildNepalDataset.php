@@ -48,6 +48,8 @@ class BuildNepalDataset extends Command
         $this->write('districts', $districts);
         $this->write('municipalities', $municipalities);
 
+        $this->writeLegacyFiles($provinces, $districts, $municipalities);
+
         DatasetRepository::flushCache();
 
         $this->info(sprintf(
@@ -306,6 +308,93 @@ class BuildNepalDataset extends Command
     private function comparable(string $value): string
     {
         return preg_replace('/[^a-z0-9]/', '', strtolower($value));
+    }
+
+    /**
+     * Regenerate the pre-existing per-province and per-district files, plus the
+     * legacy top-level lists, from canonical data.
+     *
+     * These live under public/ and may be fetched directly as static assets, so
+     * they keep working and keep agreeing with the API. Their legacy wrapper
+     * shape ({"districts": [...]}) is preserved deliberately.
+     *
+     * Ordering note: the top-level lists are sorted by legacy name to match what
+     * /api/districts and /api/provinces return.
+     */
+    private function writeLegacyFiles(array $provinces, array $districts, array $municipalities): void
+    {
+        foreach (['districtsByProvince', 'municipalsByDistrict'] as $dir) {
+            if (! is_dir(public_path("data/{$dir}"))) {
+                mkdir(public_path("data/{$dir}"), 0755, true);
+            }
+        }
+
+        $districtsByProvince = [];
+        foreach ($districts as $district) {
+            $districtsByProvince[$district['province_id']][] = $district['legacy_name'];
+        }
+
+        foreach ($provinces as $province) {
+            $this->writeJson(
+                public_path("data/districtsByProvince/{$province['slug']}.json"),
+                ['districts' => $districtsByProvince[$province['id']] ?? []]
+            );
+        }
+
+        $municipalsByDistrict = [];
+        foreach ($municipalities as $municipality) {
+            $municipalsByDistrict[$municipality['district_id']][] = $municipality['legacy_name'];
+        }
+
+        foreach ($districts as $district) {
+            $this->writeJson(
+                public_path("data/municipalsByDistrict/{$district['slug']}.json"),
+                ['municipals' => $municipalsByDistrict[$district['id']] ?? []]
+            );
+        }
+
+        $provinceNames = array_column($provinces, 'legacy_name');
+        $districtNames = array_column($districts, 'legacy_name');
+        sort($districtNames);
+
+        $this->writeJson(public_path('data/provinces.json'), ['provinces' => $provinceNames]);
+        $this->writeJson(public_path('data/districts.json'), ['districts' => $districtNames]);
+
+        $this->pruneStaleFiles('districtsByProvince', array_column($provinces, 'slug'));
+        $this->pruneStaleFiles('municipalsByDistrict', array_column($districts, 'slug'));
+    }
+
+    /**
+     * Delete any file in a regenerated directory that canonical data did not
+     * just write.
+     *
+     * These directories are rebuilt in full from the canonical slugs, so any
+     * leftover is a stale duplicate from the pre-canonical data - historically
+     * "illam.json" beside "ilam.json", "eastern rukum.json" beside
+     * "eastern-rukum.json", "pradesh-1.json" beside "koshi.json". Deriving the
+     * list rather than hardcoding it means a duplicate cannot survive by being
+     * forgotten: an earlier hardcoded list missed "western rukum.json".
+     */
+    private function pruneStaleFiles(string $directory, array $canonicalSlugs): void
+    {
+        $expected = array_flip($canonicalSlugs);
+
+        foreach (glob(public_path("data/{$directory}/*.json")) as $path) {
+            $slug = basename($path, '.json');
+
+            if (! isset($expected[$slug])) {
+                unlink($path);
+                $this->line("Removed stale file: data/{$directory}/".basename($path));
+            }
+        }
+    }
+
+    private function writeJson(string $path, array $payload): void
+    {
+        file_put_contents(
+            $path,
+            json_encode($payload, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)
+        );
     }
 
     private function write(string $name, array $records): void

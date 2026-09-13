@@ -1,15 +1,15 @@
 {
     "municipals": [
+        "kathmandu metropolitan city",
+        "gokarneshwor municipality",
         "kirtipur municipality",
-                    "shankharapur municipality",
-                    "nagarjun municipality",
-                    "kageshwori manahora municipality",
-                    "dakshinkali municipality",
-                    "budhanilakantha municipality",
-                    "tarakeshwor municipality",
-                    "kathmandu metropolitan city",
-                    "tokha municipality",
-                    "chandragiri municipality",
-                    "gokarneshwor municipality"
+        "kageshwori manahora municipality",
+        "chandragiri municipality",
+        "tokha municipality",
+        "tarakeshwor municipality",
+        "dakshinkali municipality",
+        "nagarjun municipality",
+        "budhanilakantha municipality",
+        "shankharapur municipality"
     ]
 }

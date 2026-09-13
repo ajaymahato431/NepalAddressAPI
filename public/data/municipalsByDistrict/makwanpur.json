@@ -1,14 +1,14 @@
 {
     "municipals": [
-        "bakaiya rural municipality",
-        "kailash rural municipality",
-        "manahari rural municipality",
-        "bhimphedi rural municipality",
-        "bagmati rural municipality",
-        "raksirang rural municipality",
-        "makawanpurgadhi rural municipality",
-        "indrasarowar rural municipality",
         "hetauda sub-metropolitan city",
-        "thaha municipality"
+        "thaha municipality",
+        "bhimphedi rural municipality",
+        "makawanpurgadhi rural municipality",
+        "manahari rural municipality",
+        "raksirang rural municipality",
+        "bakaiya rural municipality",
+        "bagmati rural municipality",
+        "kailash rural municipality",
+        "indrasarowar rural municipality"
     ]
 }

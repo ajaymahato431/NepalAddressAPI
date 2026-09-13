@@ -1,14 +1,14 @@
 {
     "municipals": [
-        "bareng rural municipality",
-        "badigad rural municipality",
-        "nisikhola rural municipality",
-        "kanthekhola rural municipality",
-        "tara khola rural municipality",
-        "taman khola rural municipality",
-        "jaimuni municipality",
         "baglung municipality",
+        "dhorpatan municipality",
         "galkot municipality",
-        "dhorpatan municipality"
+        "jaimuni municipality",
+        "bareng rural municipality",
+        "kanthekhola rural municipality",
+        "taman khola rural municipality",
+        "tara khola rural municipality",
+        "nisikhola rural municipality",
+        "badigad rural municipality"
     ]
 }
