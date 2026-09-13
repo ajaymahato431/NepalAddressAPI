@@ -66,4 +66,29 @@ class SlugResolverTest extends TestCase
 
         $this->assertNull($this->resolver->resolveMunicipality($chitwan['id'], 'springfield'));
     }
+
+    public function test_resolves_districts_by_chandrabindu_nepali_spelling(): void
+    {
+        // U+0901 (chandrabindu)
+        $this->assertSame('kathmandu', $this->resolver->resolveDistrict('काठमाडौँ')['slug']);
+    }
+
+    public function test_resolves_districts_by_anusvara_nepali_spelling(): void
+    {
+        // U+0902 (anusvara) - alternate common spelling
+        $this->assertSame('kathmandu', $this->resolver->resolveDistrict('काठमाडौं')['slug']);
+    }
+
+    public function test_municipality_cross_district_scoping(): void
+    {
+        $chitwan = $this->resolver->resolveDistrict('chitwan');
+        $kathmandu = $this->resolver->resolveDistrict('kathmandu');
+
+        // Kirtipur is in Kathmandu, not Chitwan
+        $found = $this->resolver->resolveMunicipality($kathmandu['id'], 'kirtipur');
+        $this->assertSame('Kirtipur', $found['name']);
+
+        // Querying for Kirtipur in Chitwan should return null
+        $this->assertNull($this->resolver->resolveMunicipality($chitwan['id'], 'kirtipur'));
+    }
 }
