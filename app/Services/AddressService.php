@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Services\Nepal\AddressPresenter;
 use App\Services\Nepal\DatasetRepository;
 use App\Services\Nepal\NepaliNumeral;
+use App\Services\Nepal\NepaliText;
 use App\Services\Nepal\SlugResolver;
 use Illuminate\Support\Facades\Cache;
 
@@ -31,7 +32,7 @@ class AddressService
         return [
             'districts' => array_map(
                 fn ($d) => $this->presenter->district($d, $lang, $detailed, $case ?? 'lower'),
-                $this->repository->districts()
+                $this->districtsInLegacyOrder()
             ),
         ];
     }
@@ -234,10 +235,11 @@ class AddressService
     /**
      * Districts sorted the way the legacy districts.json file was: plain
      * alphabetical by legacy name, not the canonical dataset's province-then-id
-     * grouping. Search truncates to $limit, so which N results come out is
-     * sensitive to traversal order; this keeps that order byte-for-byte
-     * compatible with the recorded contract instead of just returning the
-     * same set in a different sequence.
+     * grouping. Used by getDistricts() (the old flat /api/districts list was
+     * alphabetical) and by search() (which truncates to $limit, so which N
+     * results come out is sensitive to traversal order). Deliberately not
+     * used for districtsOfProvince()/municipalitiesOfDistrict() traversal —
+     * that old order was arbitrary scrape order with no reproducible rule.
      */
     private function districtsInLegacyOrder(): array
     {
@@ -248,7 +250,12 @@ class AddressService
         return $districts;
     }
 
-    /** Match against the legacy name, the upstream name, and the Nepali name. */
+    /**
+     * Match against the legacy name, the upstream name, and the Nepali name.
+     * The Nepali comparison folds anusvara/chandrabindu on both sides, the
+     * same way SlugResolver does, so a query using either mark finds records
+     * stored with the other.
+     */
     private function matches(array $record, string $lowerNeedle): bool
     {
         foreach ([$record['legacy_name'], $record['name']] as $candidate) {
@@ -257,7 +264,10 @@ class AddressService
             }
         }
 
-        return str_contains($record['name_np'], $lowerNeedle);
+        return str_contains(
+            NepaliText::foldForComparison($record['name_np']),
+            NepaliText::foldForComparison($lowerNeedle)
+        );
     }
 
     public function getAllHierarchy(?string $case = 'lower', string $lang = 'en', bool $detailed = false): array

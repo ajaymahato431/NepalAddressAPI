@@ -127,24 +127,15 @@ class SlugResolver
             return null;
         }
 
-        $normalizedInput = $this->normalizeDevanagariForComparison($trimmed);
+        $normalizedInput = NepaliText::foldForComparison($trimmed);
 
         foreach ($pool as $record) {
-            $normalizedRecord = $this->normalizeDevanagariForComparison($record['name_np']);
+            $normalizedRecord = NepaliText::foldForComparison($record['name_np']);
             if ($normalizedRecord === $normalizedInput) {
                 return $record;
             }
         }
 
         return null;
-    }
-
-    /**
-     * Normalize Devanagari for comparison only: fold anusvara (U+0902) to chandrabindu (U+0901).
-     * Does not alter the returned value—only used for matching.
-     */
-    private function normalizeDevanagariForComparison(string $text): string
-    {
-        return str_replace("\u{0902}", "\u{0901}", $text);
     }
 }
