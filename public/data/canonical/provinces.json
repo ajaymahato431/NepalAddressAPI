@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "slug": "koshi",
+        "name": "Koshi",
+        "name_np": "काेशी प्रदेश",
+        "legacy_name": "koshi",
+        "area_sq_km": "25906",
+        "area_sq_km_np": "२५९०६",
+        "website": "https://koshi.gov.np/",
+        "headquarter": "Biratnagar",
+        "headquarter_np": "बिराटनगर"
+    },
+    {
+        "id": 2,
+        "slug": "madhesh",
+        "name": "Madhesh",
+        "name_np": "मधेश प्रदेश",
+        "legacy_name": "madhesh",
+        "area_sq_km": "9661",
+        "area_sq_km_np": "९६६१",
+        "website": "https://madhesh.gov.np/",
+        "headquarter": "Janakpur",
+        "headquarter_np": "जनकपुर"
+    },
+    {
+        "id": 3,
+        "slug": "bagmati",
+        "name": "Bagmati",
+        "name_np": "बाग्मती प्रदेश",
+        "legacy_name": "bagmati",
+        "area_sq_km": "20300",
+        "area_sq_km_np": "२०३००",
+        "website": "https://ocmcm.bagamati.gov.np/",
+        "headquarter": "Hetauda",
+        "headquarter_np": "हेटौडा"
+    },
+    {
+        "id": 4,
+        "slug": "gandaki",
+        "name": "Gandaki",
+        "name_np": "गण्डकी प्रदेश",
+        "legacy_name": "gandaki",
+        "area_sq_km": "21856",
+        "area_sq_km_np": "२१८५६",
+        "website": "https://gandaki.gov.np/",
+        "headquarter": "Pokhara",
+        "headquarter_np": "पोखरा"
+    },
+    {
+        "id": 5,
+        "slug": "lumbini",
+        "name": "Lumbini",
+        "name_np": "लुम्बिनी प्रदेश",
+        "legacy_name": "lumbini",
+        "area_sq_km": "19707",
+        "area_sq_km_np": "१९७०७",
+        "website": "https://ocmcm.lumbini.gov.np/",
+        "headquarter": "Deukhuri",
+        "headquarter_np": "देउखुरी"
+    },
+    {
+        "id": 6,
+        "slug": "karnali",
+        "name": "Karnali",
+        "name_np": "कर्णाली प्रदेश",
+        "legacy_name": "karnali",
+        "area_sq_km": "30213",
+        "area_sq_km_np": "३०२१३",
+        "website": "https://karnali.gov.np/",
+        "headquarter": "Birendranagar",
+        "headquarter_np": "बिरेन्द्रनगर"
+    },
+    {
+        "id": 7,
+        "slug": "sudurpaschim",
+        "name": "Sudurpaschim",
+        "name_np": "सुदुरपश्चिम प्रदेश",
+        "legacy_name": "sudurpaschim",
+        "area_sq_km": "19539",
+        "area_sq_km_np": "१९५३९",
+        "website": "https://sudurpashchim.gov.np/",
+        "headquarter": "Godawari",
+        "headquarter_np": "गोदावरी"
+    }
+]
