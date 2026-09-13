@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Metropolitan City",
+        "name_np": "महानगरपालिका",
+        "short_code": "MC"
+    },
+    {
+        "id": 2,
+        "name": "Sub-Metropolitan City",
+        "name_np": "उपमहानगरपालिका",
+        "short_code": "SMC"
+    },
+    {
+        "id": 3,
+        "name": "Municipality",
+        "name_np": "नगरपालिका",
+        "short_code": "M"
+    },
+    {
+        "id": 4,
+        "name": "Rural Municipality",
+        "name_np": "गाउँपालिका",
+        "short_code": "RM"
+    }
+]

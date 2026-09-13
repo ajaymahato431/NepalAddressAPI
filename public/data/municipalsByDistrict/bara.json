@@ -1,20 +1,20 @@
 {
     "municipals": [
-        "pheta rural municipality",
-        "devtal rural municipality",
-        "prasauni rural municipality",
-        "suwarna rural municipality",
-        "baragadhi rural municipality",
-        "karaiyamai rural municipality",
-        "parwanipur rural municipality",
-        "bishrampur rural municipality",
-        "adarshkotwal rural municipality",
-        "jitpur simara sub-metropolitan city",
         "kalaiya sub-metropolitan city",
-        "pacharauta municipality",
+        "jitpur simara sub-metropolitan city",
+        "kolhabi municipality",
         "nijgadh municipality",
-        "simraungadh municipality",
         "mahagadhimai municipality",
-        "kolhabi municipality"
+        "simraungadh municipality",
+        "pacharauta municipality",
+        "pheta rural municipality",
+        "bishrampur rural municipality",
+        "prasauni rural municipality",
+        "adarshkotwal rural municipality",
+        "karaiyamai rural municipality",
+        "devtal rural municipality",
+        "parwanipur rural municipality",
+        "baragadhi rural municipality",
+        "suwarna rural municipality"
     ]
 }

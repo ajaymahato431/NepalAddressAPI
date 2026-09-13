@@ -1,21 +1,21 @@
 {
     "municipals": [
-        "jahada rural municipality",
-        "katahari rural municipality",
-        "gramthan rural municipality",
-        "dhanpalthan rural municipality",
-        "kerabari rural municipality",
-        "budhiganga rural municipality",
-        "kanepokhari rural municipality",
-        "miklajung rural municipality",
-        "letang municipality",
-        "sunwarshi municipality",
-        "rangeli municipality",
-        "patahrishanishchare municipality",
-        "biratnagar metropolitan city",
-        "uralabari municipality",
-        "belbari municipality",
         "sundarharaicha municipality",
-        "ratuwamai municipality"
+        "belbari municipality",
+        "patahrishanishchare municipality",
+        "ratuwamai municipality",
+        "uralabari municipality",
+        "rangeli municipality",
+        "sunwarshi municipality",
+        "letang municipality",
+        "biratnagar metropolitan city",
+        "jahada rural municipality",
+        "budhiganga rural municipality",
+        "katahari rural municipality",
+        "dhanpalthan rural municipality",
+        "kanepokhari rural municipality",
+        "gramthan rural municipality",
+        "kerabari rural municipality",
+        "miklajung rural municipality"
     ]
 }

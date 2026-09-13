@@ -1,13 +1,13 @@
 {
     "municipals": [
-        "beldandi rural municipality",
-        "laljhadi rural municipality",
-        "punarbas municipality",
-        "krishnapur municipality",
-        "mahakali municipality",
-        "bedkot municipality",
-        "belauri municipality",
         "bhimdatta municipality",
-        "shuklaphanta municipality"
+        "punarbas municipality",
+        "bedkot municipality",
+        "mahakali municipality",
+        "shuklaphanta municipality",
+        "belauri municipality",
+        "krishnapur municipality",
+        "laljhadi rural municipality",
+        "beldandi rural municipality"
     ]
 }

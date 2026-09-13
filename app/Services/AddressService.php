@@ -2,315 +2,225 @@
 
 namespace App\Services;
 
+use App\Services\Nepal\AddressPresenter;
+use App\Services\Nepal\DatasetRepository;
+use App\Services\Nepal\NepaliNumeral;
+use App\Services\Nepal\NepaliText;
+use App\Services\Nepal\SlugResolver;
 use Illuminate\Support\Facades\Cache;
-use Illuminate\Support\Facades\File;
 
 class AddressService
 {
-    /**
-     * Map of known province aliases to canonical slugs.
-     */
-    protected array $provinceAliases = [
-        'pradesh-1' => 'koshi',
-        'province-1' => 'koshi',
-        'koshi-province' => 'koshi',
-        'pradesh1' => 'koshi',
-        'province1' => 'koshi',
-        'pradesh-2' => 'madhesh',
-        'province-2' => 'madhesh',
-        'madhesh-province' => 'madhesh',
-        'pradesh-3' => 'bagmati',
-        'province-3' => 'bagmati',
-        'bagmati-province' => 'bagmati',
-        'pradesh-4' => 'gandaki',
-        'province-4' => 'gandaki',
-        'gandaki-province' => 'gandaki',
-        'pradesh-5' => 'lumbini',
-        'province-5' => 'lumbini',
-        'lumbini-province' => 'lumbini',
-        'pradesh-6' => 'karnali',
-        'province-6' => 'karnali',
-        'karnali-province' => 'karnali',
-        'pradesh-7' => 'sudurpaschim',
-        'province-7' => 'sudurpaschim',
-        'sudurpashchim' => 'sudurpaschim',
-        'sudurpaschim-province' => 'sudurpaschim',
-    ];
+    public function __construct(
+        private DatasetRepository $repository,
+        private SlugResolver $resolver,
+        private AddressPresenter $presenter,
+    ) {}
 
-    /**
-     * Map of known district aliases to canonical slugs.
-     */
-    protected array $districtAliases = [
-        'illam' => 'ilam',
-        'tehrathum' => 'terhathum',
-        'tanahu' => 'tanahun',
-        'sunskari' => 'sunsari',
-        'nawalparasi' => 'parasi',
-        'nawalparasi-west' => 'parasi',
-        'nawalparasi-east' => 'nawalpur',
-        'chitawan' => 'chitwan',
-        'makawanpur' => 'makwanpur',
-        'kavre' => 'kavrepalanchok',
-        'kabhre' => 'kavrepalanchok',
-        'kavrepalanchowk' => 'kavrepalanchok',
-        'sindhupalchowk' => 'sindhupalchok',
-    ];
-
-    /**
-     * Normalize an input key to prevent path traversal and match slugs.
-     */
-    public function normalizeSlug(string $input): string
+    public function getProvinces(?string $case = 'lower', string $lang = 'en', bool $detailed = false): array
     {
-        $clean = trim($input);
-        $clean = strtolower($clean);
-        $clean = preg_replace('/[\s_]+/', '-', $clean);
-        $clean = preg_replace('/[^a-z0-9\-]/', '', $clean);
-        return trim($clean, '-');
-    }
-
-    /**
-     * Format a string or list of strings based on the requested casing.
-     *
-     * @param string|array $data
-     * @param string|null $case 'title' | 'lower'
-     * @return string|array
-     */
-    public function formatCase(string|array $data, ?string $case = 'lower'): string|array
-    {
-        if (is_array($data)) {
-            return array_map(fn($item) => $this->formatCase($item, $case), $data);
-        }
-
-        if (strtolower((string) $case) === 'title') {
-            // Convert to Title Case, preserving words like Sub-Metropolitan
-            $words = explode(' ', $data);
-            $capitalized = array_map(function ($w) {
-                if (str_contains($w, '-')) {
-                    $parts = explode('-', $w);
-                    return implode('-', array_map('ucfirst', $parts));
-                }
-                return ucfirst($w);
-            }, $words);
-            return implode(' ', $capitalized);
-        }
-
-        return strtolower($data);
-    }
-
-    /**
-     * Retrieve all provinces.
-     */
-    public function getProvinces(?string $case = 'lower'): array
-    {
-        $provinces = Cache::rememberForever('nepal_address_provinces', function () {
-            $path = public_path('data/provinces.json');
-            if (!File::exists($path)) {
-                return ['koshi', 'madhesh', 'bagmati', 'gandaki', 'lumbini', 'karnali', 'sudurpaschim'];
-            }
-            $data = json_decode(File::get($path), true);
-            return $data['provinces'] ?? [];
-        });
-
         return [
-            'provinces' => $this->formatCase($provinces, $case),
+            'provinces' => array_map(
+                fn ($p) => $this->presenter->province($p, $lang, $detailed, $case ?? 'lower'),
+                $this->repository->provinces()
+            ),
         ];
     }
 
-    /**
-     * Retrieve all districts.
-     */
-    public function getDistricts(?string $case = 'lower'): array
+    public function getDistricts(?string $case = 'lower', string $lang = 'en', bool $detailed = false): array
     {
-        $districts = Cache::rememberForever('nepal_address_districts', function () {
-            $path = public_path('data/districts.json');
-            if (!File::exists($path)) {
-                return [];
-            }
-            $data = json_decode(File::get($path), true);
-            return array_map('trim', $data['districts'] ?? []);
-        });
-
         return [
-            'districts' => $this->formatCase($districts, $case),
+            'districts' => array_map(
+                fn ($d) => $this->presenter->district($d, $lang, $detailed, $case ?? 'lower'),
+                $this->districtsInLegacyOrder()
+            ),
         ];
     }
 
-    /**
-     * Retrieve districts for a specific province.
-     */
-    public function getDistrictsByProvince(string $provinceName, ?string $case = 'lower'): ?array
-    {
-        $slug = $this->normalizeSlug($provinceName);
+    public function getDistrictsByProvince(
+        string $provinceName,
+        ?string $case = 'lower',
+        string $lang = 'en',
+        bool $detailed = false
+    ): ?array {
+        $province = $this->resolver->resolveProvince($provinceName);
 
-        if (empty($slug)) {
-            return null;
-        }
-
-        // Check aliases
-        if (isset($this->provinceAliases[$slug])) {
-            $slug = $this->provinceAliases[$slug];
-        }
-
-        $cacheKey = "nepal_address_districts_by_prov_{$slug}";
-
-        $districts = Cache::rememberForever($cacheKey, function () use ($slug) {
-            $possibleFiles = [
-                public_path("data/districtsByProvince/{$slug}.json"),
-            ];
-
-            if ($slug === 'koshi') {
-                $possibleFiles[] = public_path('data/districtsByProvince/pradesh-1.json');
-            } elseif ($slug === 'pradesh-1') {
-                $possibleFiles[] = public_path('data/districtsByProvince/koshi.json');
-            }
-
-            foreach ($possibleFiles as $file) {
-                if (File::exists($file)) {
-                    $data = json_decode(File::get($file), true);
-                    return array_map('trim', $data['districts'] ?? []);
-                }
-            }
-
-            return null;
-        });
-
-        if ($districts === null) {
+        if ($province === null) {
             return null;
         }
 
         return [
-            'districts' => $this->formatCase($districts, $case),
+            'districts' => array_map(
+                fn ($d) => $this->presenter->district($d, $lang, $detailed, $case ?? 'lower'),
+                $this->repository->districtsOfProvince($province['id'])
+            ),
         ];
     }
 
-    /**
-     * Retrieve municipalities for a specific district.
-     */
-    public function getMunicipalsByDistrict(string $districtName, ?string $case = 'lower'): ?array
-    {
-        $slug = $this->normalizeSlug($districtName);
+    public function getMunicipalsByDistrict(
+        string $districtName,
+        ?string $case = 'lower',
+        string $lang = 'en',
+        bool $detailed = false
+    ): ?array {
+        $district = $this->resolver->resolveDistrict($districtName);
 
-        if (empty($slug)) {
-            return null;
-        }
-
-        // Check aliases
-        if (isset($this->districtAliases[$slug])) {
-            $slug = $this->districtAliases[$slug];
-        }
-
-        $cacheKey = "nepal_address_municipals_by_dist_{$slug}";
-
-        $municipals = Cache::rememberForever($cacheKey, function () use ($slug) {
-            $candidates = [
-                $slug,
-                str_replace('-', ' ', $slug),
-                str_replace('-', '', $slug),
-            ];
-
-            foreach ($candidates as $cand) {
-                $file = public_path("data/municipalsByDistrict/{$cand}.json");
-                if (File::exists($file)) {
-                    $data = json_decode(File::get($file), true);
-                    return array_map('trim', $data['municipals'] ?? []);
-                }
-            }
-
-            return null;
-        });
-
-        if ($municipals === null) {
+        if ($district === null) {
             return null;
         }
 
         return [
-            'municipals' => $this->formatCase($municipals, $case),
+            'municipals' => array_map(
+                fn ($m) => $this->presenter->municipality($m, $lang, $detailed, $case ?? 'lower'),
+                $this->repository->municipalitiesOfDistrict($district['id'])
+            ),
         ];
     }
 
     /**
-     * Get the province to which a district belongs.
+     * Enumerate wards 1..N for one municipality. Ward names do not exist in
+     * any open dataset; wards are identified by number.
      */
-    public function getProvinceForDistrict(string $district): ?string
+    public function getWards(
+        string $districtName,
+        string $municipalityName,
+        string $lang = 'en',
+        ?string $case = 'lower'
+    ): ?array {
+        $district = $this->resolver->resolveDistrict($districtName);
+
+        if ($district === null) {
+            return null;
+        }
+
+        $municipality = $this->resolver->resolveMunicipality($district['id'], $municipalityName);
+
+        if ($municipality === null) {
+            return null;
+        }
+
+        $wards = [];
+
+        for ($number = 1; $number <= $municipality['wards']; $number++) {
+            $ward = match ($lang) {
+                'np' => ['ward' => NepaliNumeral::toNepali($number)],
+                'both' => ['ward' => $number, 'ward_np' => NepaliNumeral::toNepali($number)],
+                default => ['ward' => $number],
+            };
+
+            $wards[] = $ward;
+        }
+
+        return [
+            'municipality' => $this->presenter->municipality($municipality, $lang, true, $case ?? 'lower'),
+            'district' => $this->presenter->district($district, $lang, false, $case ?? 'lower'),
+            'total_wards' => $municipality['wards'],
+            'wards' => $wards,
+        ];
+    }
+
+    public function getMunicipality(
+        string $districtName,
+        string $municipalityName,
+        string $lang = 'both',
+        ?string $case = 'title'
+    ): ?array {
+        $district = $this->resolver->resolveDistrict($districtName);
+
+        if ($district === null) {
+            return null;
+        }
+
+        $municipality = $this->resolver->resolveMunicipality($district['id'], $municipalityName);
+
+        if ($municipality === null) {
+            return null;
+        }
+
+        $province = $this->repository->provinceOfDistrict($district);
+
+        return [
+            'municipality' => $this->presenter->municipality($municipality, $lang, true, $case ?? 'title'),
+            'district' => $this->presenter->district($district, $lang, false, $case ?? 'title'),
+            'province' => $this->presenter->province($province, $lang, false, $case ?? 'title'),
+        ];
+    }
+
+    public function getCategories(string $lang = 'both'): array
     {
-        $districtSlug = $this->normalizeSlug($district);
-        if (isset($this->districtAliases[$districtSlug])) {
-            $districtSlug = $this->districtAliases[$districtSlug];
-        }
-
-        $allProvinces = $this->getProvinces()['provinces'];
-        foreach ($allProvinces as $province) {
-            $provDistricts = $this->getDistrictsByProvince($province)['districts'] ?? [];
-            foreach ($provDistricts as $d) {
-                $dSlug = $this->normalizeSlug($d);
-                if ($dSlug === $districtSlug) {
-                    return $province;
-                }
-            }
-        }
-
-        return null;
+        return [
+            'categories' => array_map(fn ($c) => match ($lang) {
+                'np' => ['id' => $c['id'], 'name' => $c['name_np'], 'short_code' => $c['short_code']],
+                'both' => ['id' => $c['id'], 'name' => $c['name'], 'name_np' => $c['name_np'], 'short_code' => $c['short_code']],
+                default => ['id' => $c['id'], 'name' => $c['name'], 'short_code' => $c['short_code']],
+            }, $this->repository->categories()),
+        ];
     }
 
     /**
-     * Search across provinces, districts, and municipalities.
+     * One linear pass over 837 records. The previous implementation resolved
+     * each district's parent province inside the loop, which was O(n^2).
      */
-    public function search(string $query, ?string $case = 'lower', int $limit = 25): array
-    {
-        $q = strtolower(trim($query));
-        if (empty($q)) {
-            return [
-                'query' => $query,
-                'total' => 0,
-                'results' => [],
-            ];
+    public function search(
+        string $query,
+        ?string $case = 'lower',
+        int $limit = 25,
+        string $lang = 'en',
+        bool $detailed = false
+    ): array {
+        $needle = trim($query);
+
+        if ($needle === '') {
+            return ['query' => $query, 'total' => 0, 'results' => []];
         }
 
+        $lower = mb_strtolower($needle);
+        $case ??= 'lower';
         $results = [];
 
-        // 1. Search Provinces
-        $provinces = $this->getProvinces()['provinces'];
-        foreach ($provinces as $prov) {
-            if (str_contains(strtolower($prov), $q)) {
+        foreach ($this->repository->provinces() as $province) {
+            if ($this->matches($province, $lower)) {
                 $results[] = [
-                    'name' => $this->formatCase($prov, $case),
+                    'name' => $this->presenter->province($province, $lang, $detailed, $case),
                     'type' => 'province',
-                    'province' => $this->formatCase($prov, $case),
+                    'province' => $this->presenter->province($province, $lang, false, $case),
                 ];
             }
         }
 
-        // 2. Search Districts
-        $districts = $this->getDistricts()['districts'];
-        foreach ($districts as $dist) {
-            if (str_contains(strtolower($dist), $q)) {
-                $parentProv = $this->getProvinceForDistrict($dist) ?? 'unknown';
+        $districts = $this->districtsInLegacyOrder();
+
+        foreach ($districts as $district) {
+            if ($this->matches($district, $lower)) {
+                $province = $this->repository->provinceOfDistrict($district);
                 $results[] = [
-                    'name' => $this->formatCase($dist, $case),
+                    'name' => $this->presenter->district($district, $lang, $detailed, $case),
                     'type' => 'district',
-                    'district' => $this->formatCase($dist, $case),
-                    'province' => $this->formatCase($parentProv, $case),
+                    'district' => $this->presenter->district($district, $lang, false, $case),
+                    'province' => $this->presenter->province($province, $lang, false, $case),
                 ];
             }
         }
 
-        // 3. Search Municipalities
-        foreach ($districts as $dist) {
-            $municipals = $this->getMunicipalsByDistrict($dist)['municipals'] ?? [];
-            $parentProv = $this->getProvinceForDistrict($dist) ?? 'unknown';
+        foreach ($districts as $district) {
+            $province = null;
 
-            foreach ($municipals as $mun) {
-                if (str_contains(strtolower($mun), $q)) {
-                    $results[] = [
-                        'name' => $this->formatCase($mun, $case),
-                        'type' => 'municipality',
-                        'district' => $this->formatCase($dist, $case),
-                        'province' => $this->formatCase($parentProv, $case),
-                    ];
+            foreach ($this->repository->municipalitiesOfDistrict($district['id']) as $municipality) {
+                if (! $this->matches($municipality, $lower)) {
+                    continue;
+                }
 
-                    if (count($results) >= $limit) {
-                        break 2;
-                    }
+                $province ??= $this->repository->provinceOfDistrict($district);
+
+                $results[] = [
+                    'name' => $this->presenter->municipality($municipality, $lang, $detailed, $case),
+                    'type' => 'municipality',
+                    'district' => $this->presenter->district($district, $lang, false, $case),
+                    'province' => $this->presenter->province($province, $lang, false, $case),
+                ];
+
+                if (count($results) >= $limit) {
+                    break 2;
                 }
             }
         }
@@ -323,76 +233,134 @@ class AddressService
     }
 
     /**
-     * Retrieve complete address hierarchy (provinces -> districts -> municipalities).
+     * Districts sorted the way the legacy districts.json file was: plain
+     * alphabetical by legacy name, not the canonical dataset's province-then-id
+     * grouping. Used by getDistricts() (the old flat /api/districts list was
+     * alphabetical) and by search() (which truncates to $limit, so which N
+     * results come out is sensitive to traversal order). Deliberately not
+     * used for districtsOfProvince()/municipalitiesOfDistrict() traversal —
+     * that old order was arbitrary scrape order with no reproducible rule.
      */
-    public function getAllHierarchy(?string $case = 'lower'): array
+    private function districtsInLegacyOrder(): array
     {
-        $cacheKey = "nepal_address_full_hierarchy_{$case}";
+        $districts = $this->repository->districts();
 
-        return Cache::rememberForever($cacheKey, function () use ($case) {
-            $provinces = $this->getProvinces()['provinces'];
-            $hierarchy = [];
+        usort($districts, fn ($a, $b) => $a['legacy_name'] <=> $b['legacy_name']);
 
-            foreach ($provinces as $prov) {
-                $districtsList = $this->getDistrictsByProvince($prov)['districts'] ?? [];
-                $districtsData = [];
-
-                foreach ($districtsList as $dist) {
-                    $municipals = $this->getMunicipalsByDistrict($dist)['municipals'] ?? [];
-                    $districtsData[] = [
-                        'district' => $this->formatCase($dist, $case),
-                        'total_municipals' => count($municipals),
-                        'municipals' => $this->formatCase($municipals, $case),
-                    ];
-                }
-
-                $hierarchy[] = [
-                    'province' => $this->formatCase($prov, $case),
-                    'total_districts' => count($districtsData),
-                    'districts' => $districtsData,
-                ];
-            }
-
-            return [
-                'country' => 'Nepal',
-                'total_provinces' => count($hierarchy),
-                'provinces' => $hierarchy,
-            ];
-        });
+        return $districts;
     }
 
     /**
-     * Retrieve summary statistics.
+     * Match against the legacy name, the upstream name, and the Nepali name.
+     * The Nepali comparison folds anusvara/chandrabindu on both sides, the
+     * same way SlugResolver does, so a query using either mark finds records
+     * stored with the other.
      */
-    public function getStats(): array
+    private function matches(array $record, string $lowerNeedle): bool
     {
-        return Cache::rememberForever('nepal_address_stats', function () {
-            $provinces = $this->getProvinces()['provinces'];
-            $allDistricts = $this->getDistricts()['districts'];
+        foreach ([$record['legacy_name'], $record['name']] as $candidate) {
+            if (str_contains(mb_strtolower($candidate), $lowerNeedle)) {
+                return true;
+            }
+        }
 
-            $provinceStats = [];
-            $totalMunicipals = 0;
+        return str_contains(
+            NepaliText::foldForComparison($record['name_np']),
+            NepaliText::foldForComparison($lowerNeedle)
+        );
+    }
 
-            foreach ($provinces as $prov) {
-                $districts = $this->getDistrictsByProvince($prov)['districts'] ?? [];
-                $munCount = 0;
-                foreach ($districts as $d) {
-                    $munCount += count($this->getMunicipalsByDistrict($d)['municipals'] ?? []);
+    public function getAllHierarchy(?string $case = 'lower', string $lang = 'en', bool $detailed = false): array
+    {
+        $case ??= 'lower';
+        // The generation suffix makes a dataset rebuild invalidate this cache.
+        $generation = $this->repository->generation();
+        $cacheKey = "nepal_hierarchy_{$generation}_{$case}_{$lang}_".($detailed ? '1' : '0');
+
+        return Cache::rememberForever($cacheKey, function () use ($case, $lang, $detailed) {
+            $provinces = [];
+
+            foreach ($this->repository->provinces() as $province) {
+                $districts = [];
+
+                foreach ($this->repository->districtsOfProvince($province['id']) as $district) {
+                    $municipals = $this->repository->municipalitiesOfDistrict($district['id']);
+
+                    $districts[] = [
+                        'district' => $this->presenter->district($district, $lang, $detailed, $case),
+                        'total_municipals' => count($municipals),
+                        'total_wards' => $this->repository->wardTotalForDistrict($district['id']),
+                        'municipals' => array_map(
+                            fn ($m) => $this->presenter->municipality($m, $lang, $detailed, $case),
+                            $municipals
+                        ),
+                    ];
                 }
-                $totalMunicipals += $munCount;
-                $provinceStats[] = [
-                    'province' => $prov,
-                    'districts_count' => count($districts),
-                    'municipals_count' => $munCount,
+
+                $provinces[] = [
+                    'province' => $this->presenter->province($province, $lang, $detailed, $case),
+                    'total_districts' => count($districts),
+                    'districts' => $districts,
                 ];
             }
 
             return [
                 'country' => 'Nepal',
                 'total_provinces' => count($provinces),
-                'total_districts' => count($allDistricts),
-                'total_municipalities' => $totalMunicipals,
-                'provinces_breakdown' => $provinceStats,
+                'provinces' => $provinces,
+            ];
+        });
+    }
+
+    public function getStats(string $lang = 'en'): array
+    {
+        $generation = $this->repository->generation();
+
+        return Cache::rememberForever("nepal_stats_{$generation}_{$lang}", function () use ($lang) {
+            $breakdown = [];
+
+            foreach ($this->repository->provinces() as $province) {
+                $districts = $this->repository->districtsOfProvince($province['id']);
+                $municipals = 0;
+                $wards = 0;
+
+                foreach ($districts as $district) {
+                    $municipals += count($this->repository->municipalitiesOfDistrict($district['id']));
+                    $wards += $this->repository->wardTotalForDistrict($district['id']);
+                }
+
+                $breakdown[] = [
+                    'province' => $this->presenter->province($province, $lang, false, 'lower'),
+                    'districts_count' => count($districts),
+                    'municipals_count' => $municipals,
+                    'wards_count' => $wards,
+                ];
+            }
+
+            $byCategory = [];
+
+            foreach ($this->repository->categories() as $category) {
+                $members = array_filter(
+                    $this->repository->municipalities(),
+                    fn ($m) => $m['category_id'] === $category['id']
+                );
+
+                $byCategory[] = [
+                    'category' => $lang === 'np' ? $category['name_np'] : $category['name'],
+                    'short_code' => $category['short_code'],
+                    'count' => count($members),
+                    'wards' => array_sum(array_column($members, 'wards')),
+                ];
+            }
+
+            return [
+                'country' => 'Nepal',
+                'total_provinces' => count($this->repository->provinces()),
+                'total_districts' => count($this->repository->districts()),
+                'total_municipalities' => count($this->repository->municipalities()),
+                'total_wards' => $this->repository->totalWards(),
+                'provinces_breakdown' => $breakdown,
+                'municipalities_by_category' => $byCategory,
             ];
         });
     }

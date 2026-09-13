@@ -1,22 +1,22 @@
 {
     "municipals": [
-        "aaurahi rural municipality",
-        "dhanauji rural municipality",
-        "bateshwor rural municipality",
-        "janaknandani rural municipality",
-        "lakshminiya rural municipality",
-        "mukhiyapatti musarmiya rural municipality",
-        "mithila bihari municipality",
-        "kamala municipality",
-        "nagarain municipality",
-        "ganeshman charnath municipality",
-        "mithila municipality",
-        "dhanusadham municipality",
-        "bideha municipality",
-        "sabaila municipality",
-        "hansapur municipality",
         "janakpurdham sub-metropolitan city",
+        "chhireshwornath municipality",
+        "ganeshman charnath municipality",
+        "dhanusadham municipality",
+        "nagarain municipality",
+        "bideha municipality",
+        "mithila municipality",
         "sahidnagar municipality",
-        "chhireshwornath municipality"
+        "sabaila municipality",
+        "kamala municipality",
+        "mithila bihari municipality",
+        "hansapur municipality",
+        "janaknandani rural municipality",
+        "bateshwor rural municipality",
+        "mukhiyapatti musarmiya rural municipality",
+        "lakshminiya rural municipality",
+        "aaurahi rural municipality",
+        "dhanauji rural municipality"
     ]
 }

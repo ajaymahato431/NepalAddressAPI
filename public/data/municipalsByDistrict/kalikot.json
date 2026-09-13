@@ -1,13 +1,13 @@
 {
     "municipals": [
-        "mahawai rural municipality",
-        "palata rural municipality",
-        "naraharinath rural municipality",
-        "pachaljharana rural municipality",
-        "subha kalika rural municipality",
-        "sanni tribeni rural municipality",
         "khandachakra municipality",
         "raskot municipality",
-        "tilagufa municipality"
+        "tilagufa municipality",
+        "naraharinath rural municipality",
+        "palata rural municipality",
+        "subha kalika rural municipality",
+        "sanni tribeni rural municipality",
+        "pachaljharana rural municipality",
+        "mahawai rural municipality"
     ]
 }

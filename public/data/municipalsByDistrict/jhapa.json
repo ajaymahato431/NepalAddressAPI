@@ -1,19 +1,19 @@
 {
     "municipals": [
-        "kamal rural municipality",
-        "jhapa rural municipality",
-        "kachankawal rural municipality",
-        "gauriganj rural municipality",
-        "barhadashi rural municipality",
-        "haldibari rural municipality",
-        "buddhashanti rural municipality",
-        "shivasataxi municipality",
-        "bhadrapur municipality",
-        "kankai municipality",
-        "birtamod municipality",
         "mechinagar municipality",
+        "birtamod municipality",
         "damak municipality",
+        "bhadrapur municipality",
+        "shivasataxi municipality",
         "arjundhara municipality",
-        "gauradhaha municipality"
+        "gauradhaha municipality",
+        "kankai municipality",
+        "kamal rural municipality",
+        "buddhashanti rural municipality",
+        "kachankawal rural municipality",
+        "jhapa rural municipality",
+        "barhadashi rural municipality",
+        "gauriganj rural municipality",
+        "haldibari rural municipality"
     ]
 }

@@ -1,19 +1,19 @@
 {
     "municipals": [
-        "pipra rural municipality",
-        "sonama rural municipality",
-        "samsi rural municipality",
-        "ekdanra rural municipality",
-        "mahottari rural municipality",
-        "gaushala municipality",
-        "ramgopalpur municipality",
         "aurahi municipality",
+        "balwa municipality",
         "bardibas municipality",
         "bhangaha municipality",
+        "gaushala municipality",
         "jaleswor municipality",
-        "balwa municipality",
+        "loharpatti municipality",
         "manra siswa municipality",
         "matihani municipality",
-        "loharpatti municipality"
+        "ramgopalpur municipality",
+        "ekdanra rural municipality",
+        "mahottari rural municipality",
+        "pipra rural municipality",
+        "samsi rural municipality",
+        "sonama rural municipality"
     ]
 }

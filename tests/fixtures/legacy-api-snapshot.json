@@ -1,0 +1,4299 @@
+{
+    "/api/provinces": {
+        "provinces": [
+            "koshi",
+            "madhesh",
+            "bagmati",
+            "gandaki",
+            "lumbini",
+            "karnali",
+            "sudurpaschim"
+        ]
+    },
+    "/api/provinces?case=title": {
+        "provinces": [
+            "Koshi",
+            "Madhesh",
+            "Bagmati",
+            "Gandaki",
+            "Lumbini",
+            "Karnali",
+            "Sudurpaschim"
+        ]
+    },
+    "/api/districts": {
+        "districts": [
+            "bhojpur",
+            "dhankuta",
+            "ilam",
+            "jhapa",
+            "khotang",
+            "morang",
+            "okhaldhunga",
+            "panchthar",
+            "sankhuwasabha",
+            "solukhumbu",
+            "sunsari",
+            "taplejung",
+            "terhathum",
+            "udayapur",
+            "parsa",
+            "bara",
+            "rautahat",
+            "sarlahi",
+            "siraha",
+            "dhanusha",
+            "saptari",
+            "mahottari",
+            "bhaktapur",
+            "chitwan",
+            "dhading",
+            "dolakha",
+            "kathmandu",
+            "kavrepalanchok",
+            "lalitpur",
+            "makwanpur",
+            "nuwakot",
+            "ramechhap",
+            "rasuwa",
+            "sindhuli",
+            "sindhupalchok",
+            "baglung",
+            "gorkha",
+            "kaski",
+            "lamjung",
+            "manang",
+            "mustang",
+            "myagdi",
+            "nawalpur",
+            "parbat",
+            "syangja",
+            "tanahun",
+            "kapilvastu",
+            "parasi",
+            "rupandehi",
+            "arghakhanchi",
+            "gulmi",
+            "palpa",
+            "dang",
+            "pyuthan",
+            "rolpa",
+            "eastern rukum",
+            "banke",
+            "bardiya",
+            "western rukum",
+            "salyan",
+            "dolpa",
+            "humla",
+            "jumla",
+            "kalikot",
+            "mugu",
+            "surkhet",
+            "dailekh",
+            "jajarkot",
+            "darchula",
+            "bajhang",
+            "bajura",
+            "baitadi",
+            "doti",
+            "achham",
+            "dadeldhura",
+            "kanchanpur",
+            "kailali"
+        ]
+    },
+    "/api/districts?case=title": {
+        "districts": [
+            "Bhojpur",
+            "Dhankuta",
+            "Ilam",
+            "Jhapa",
+            "Khotang",
+            "Morang",
+            "Okhaldhunga",
+            "Panchthar",
+            "Sankhuwasabha",
+            "Solukhumbu",
+            "Sunsari",
+            "Taplejung",
+            "Terhathum",
+            "Udayapur",
+            "Parsa",
+            "Bara",
+            "Rautahat",
+            "Sarlahi",
+            "Siraha",
+            "Dhanusha",
+            "Saptari",
+            "Mahottari",
+            "Bhaktapur",
+            "Chitwan",
+            "Dhading",
+            "Dolakha",
+            "Kathmandu",
+            "Kavrepalanchok",
+            "Lalitpur",
+            "Makwanpur",
+            "Nuwakot",
+            "Ramechhap",
+            "Rasuwa",
+            "Sindhuli",
+            "Sindhupalchok",
+            "Baglung",
+            "Gorkha",
+            "Kaski",
+            "Lamjung",
+            "Manang",
+            "Mustang",
+            "Myagdi",
+            "Nawalpur",
+            "Parbat",
+            "Syangja",
+            "Tanahun",
+            "Kapilvastu",
+            "Parasi",
+            "Rupandehi",
+            "Arghakhanchi",
+            "Gulmi",
+            "Palpa",
+            "Dang",
+            "Pyuthan",
+            "Rolpa",
+            "Eastern Rukum",
+            "Banke",
+            "Bardiya",
+            "Western Rukum",
+            "Salyan",
+            "Dolpa",
+            "Humla",
+            "Jumla",
+            "Kalikot",
+            "Mugu",
+            "Surkhet",
+            "Dailekh",
+            "Jajarkot",
+            "Darchula",
+            "Bajhang",
+            "Bajura",
+            "Baitadi",
+            "Doti",
+            "Achham",
+            "Dadeldhura",
+            "Kanchanpur",
+            "Kailali"
+        ]
+    },
+    "/api/stats": {
+        "country": "Nepal",
+        "total_provinces": 7,
+        "total_districts": 77,
+        "total_municipalities": 753,
+        "total_wards": 6743,
+        "provinces_breakdown": [
+            {
+                "province": "koshi",
+                "districts_count": 14,
+                "municipals_count": 137,
+                "wards_count": 1157
+            },
+            {
+                "province": "madhesh",
+                "districts_count": 8,
+                "municipals_count": 136,
+                "wards_count": 1271
+            },
+            {
+                "province": "bagmati",
+                "districts_count": 13,
+                "municipals_count": 119,
+                "wards_count": 1121
+            },
+            {
+                "province": "gandaki",
+                "districts_count": 11,
+                "municipals_count": 85,
+                "wards_count": 759
+            },
+            {
+                "province": "lumbini",
+                "districts_count": 12,
+                "municipals_count": 109,
+                "wards_count": 983
+            },
+            {
+                "province": "karnali",
+                "districts_count": 10,
+                "municipals_count": 79,
+                "wards_count": 718
+            },
+            {
+                "province": "sudurpaschim",
+                "districts_count": 9,
+                "municipals_count": 88,
+                "wards_count": 734
+            }
+        ],
+        "municipalities_by_category": [
+            {
+                "category": "Metropolitan City",
+                "short_code": "MC",
+                "count": 6,
+                "wards": 174
+            },
+            {
+                "category": "Sub-Metropolitan City",
+                "short_code": "SMC",
+                "count": 11,
+                "wards": 234
+            },
+            {
+                "category": "Municipality",
+                "short_code": "M",
+                "count": 276,
+                "wards": 3120
+            },
+            {
+                "category": "Rural Municipality",
+                "short_code": "RM",
+                "count": 460,
+                "wards": 3215
+            }
+        ]
+    },
+    "/api/hierarchy": {
+        "country": "Nepal",
+        "total_provinces": 7,
+        "provinces": [
+            {
+                "province": "koshi",
+                "total_districts": 14,
+                "districts": [
+                    {
+                        "district": "bhojpur",
+                        "total_municipals": 9,
+                        "total_wards": 81,
+                        "municipals": [
+                            "shadananda municipality",
+                            "bhojpur municipality",
+                            "hatuwagadhi rural municipality",
+                            "ramprasad rai rural municipality",
+                            "aamchowk rural municipality",
+                            "temkemaiyung rural municipality",
+                            "arun rural municipality",
+                            "pauwadungma rural municipality",
+                            "salpasilichho rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhankuta",
+                        "total_municipals": 7,
+                        "total_wards": 60,
+                        "municipals": [
+                            "dhankuta municipality",
+                            "pakhribas municipality",
+                            "mahalaxmi municipality",
+                            "sangurigadhi rural municipality",
+                            "chaubise rural municipality",
+                            "shahidbhumi rural municipality",
+                            "chhathar jorpati rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "ilam",
+                        "total_municipals": 10,
+                        "total_wards": 81,
+                        "municipals": [
+                            "suryodaya municipality",
+                            "illam municipality",
+                            "deumai municipality",
+                            "maijogmai rural municipality",
+                            "fakphokthum rural municipality",
+                            "mai municipality",
+                            "chulachuli rural municipality",
+                            "rong rural municipality",
+                            "mangsebung rural municipality",
+                            "sandakpur rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "jhapa",
+                        "total_municipals": 15,
+                        "total_wards": 131,
+                        "municipals": [
+                            "mechinagar municipality",
+                            "birtamod municipality",
+                            "damak municipality",
+                            "bhadrapur municipality",
+                            "shivasataxi municipality",
+                            "arjundhara municipality",
+                            "gauradhaha municipality",
+                            "kankai municipality",
+                            "kamal rural municipality",
+                            "buddhashanti rural municipality",
+                            "kachankawal rural municipality",
+                            "jhapa rural municipality",
+                            "barhadashi rural municipality",
+                            "gauriganj rural municipality",
+                            "haldibari rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "khotang",
+                        "total_municipals": 10,
+                        "total_wards": 79,
+                        "municipals": [
+                            "diktel rupakot majhuwagadhi municipality",
+                            "halesi tuwachung municipality",
+                            "khotehang rural municipality",
+                            "diprung chuichumma rural municipality",
+                            "ainselukhark rural municipality",
+                            "jantedhunga rural municipality",
+                            "kepilasagadhi rural municipality",
+                            "barahapokhari rural municipality",
+                            "rawa besi rural municipality",
+                            "sakela rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "morang",
+                        "total_municipals": 17,
+                        "total_wards": 159,
+                        "municipals": [
+                            "sundarharaicha municipality",
+                            "belbari municipality",
+                            "patahrishanishchare municipality",
+                            "ratuwamai municipality",
+                            "uralabari municipality",
+                            "rangeli municipality",
+                            "sunwarshi municipality",
+                            "letang municipality",
+                            "biratnagar metropolitan city",
+                            "jahada rural municipality",
+                            "budhiganga rural municipality",
+                            "katahari rural municipality",
+                            "dhanpalthan rural municipality",
+                            "kanepokhari rural municipality",
+                            "gramthan rural municipality",
+                            "kerabari rural municipality",
+                            "miklajung rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "okhaldhunga",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "siddhicharan municipality",
+                            "khijidemba rural municipality",
+                            "chisankhugadhi rural municipality",
+                            "molung rural municipality",
+                            "sunkoshi rural municipality",
+                            "champadevi rural municipality",
+                            "manebhanjyang rural municipality",
+                            "likhu rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "panchthar",
+                        "total_municipals": 8,
+                        "total_wards": 60,
+                        "municipals": [
+                            "phidim municipality",
+                            "miklajung rural municipality",
+                            "falgunanda rural municipality",
+                            "hilihang rural municipality",
+                            "falelung rural municipality",
+                            "yangwarak rural municipality",
+                            "kummayak rural municipality",
+                            "tumbewa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sankhuwasabha",
+                        "total_municipals": 10,
+                        "total_wards": 76,
+                        "municipals": [
+                            "khandbari municipality",
+                            "chainpur municipality",
+                            "dharmadevi municipality",
+                            "panchakhapan municipality",
+                            "madi municipality",
+                            "makalu rural municipality",
+                            "silichong rural municipality",
+                            "sabhapokhari rural municipality",
+                            "chichila rural municipality",
+                            "bhotkhola rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "solukhumbu",
+                        "total_municipals": 8,
+                        "total_wards": 52,
+                        "municipals": [
+                            "solududhakunda municipality",
+                            "maapya dudhkoshi rural municipality",
+                            "nechasalyan rural municipality",
+                            "thulung dudhkoshi rural municipality",
+                            "mahakulung rural municipality",
+                            "sotang rural municipality",
+                            "khumbupasanglahmu rural municipality",
+                            "likhupike rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sunsari",
+                        "total_municipals": 12,
+                        "total_wards": 124,
+                        "municipals": [
+                            "barahchhetra municipality",
+                            "inaruwa municipality",
+                            "duhabi municipality",
+                            "ramdhuni municipality",
+                            "itahari sub-metropolitan city",
+                            "dharan sub-metropolitan city",
+                            "koshi rural municipality",
+                            "harinagar rural municipality",
+                            "bhokraha narsing rural municipality",
+                            "dewanganj rural municipality",
+                            "gadhi rural municipality",
+                            "barju rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "taplejung",
+                        "total_municipals": 9,
+                        "total_wards": 61,
+                        "municipals": [
+                            "phungling municipality",
+                            "sirijangha rural municipality",
+                            "aathrai tribeni rural municipality",
+                            "pathivara yangwarak rural municipality",
+                            "meringden rural municipality",
+                            "sidingba rural municipality",
+                            "phaktanglung rural municipality",
+                            "maiwakhola rural municipality",
+                            "mikwakhola rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "terhathum",
+                        "total_municipals": 6,
+                        "total_wards": 43,
+                        "municipals": [
+                            "myanglung municipality",
+                            "laligurans municipality",
+                            "aathrai rural municipality",
+                            "phedap rural municipality",
+                            "chhathar rural municipality",
+                            "menchayam rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "udayapur",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "triyuga municipality",
+                            "katari municipality",
+                            "chaudandigadhi municipality",
+                            "belaka municipality",
+                            "udayapurgadhi rural municipality",
+                            "rautamai rural municipality",
+                            "tapli rural municipality",
+                            "limchungbung rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "madhesh",
+                "total_districts": 8,
+                "districts": [
+                    {
+                        "district": "parsa",
+                        "total_municipals": 14,
+                        "total_wards": 112,
+                        "municipals": [
+                            "birgunj metropolitan city",
+                            "bahudaramai municipality",
+                            "parsagadhi municipality",
+                            "pokhariya municipality",
+                            "bindabasini rural municipality",
+                            "dhobini rural municipality",
+                            "chhipaharmai rural municipality",
+                            "jagarnathpur rural municipality",
+                            "jirabhawani rural municipality",
+                            "kalikamai rural municipality",
+                            "pakahamainpur rural municipality",
+                            "paterwasugauli rural municipality",
+                            "sakhuwaprasauni rural municipality",
+                            "thori rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bara",
+                        "total_municipals": 16,
+                        "total_wards": 167,
+                        "municipals": [
+                            "kalaiya sub-metropolitan city",
+                            "jitpur simara sub-metropolitan city",
+                            "kolhabi municipality",
+                            "nijgadh municipality",
+                            "mahagadhimai municipality",
+                            "simraungadh municipality",
+                            "pacharauta municipality",
+                            "pheta rural municipality",
+                            "bishrampur rural municipality",
+                            "prasauni rural municipality",
+                            "adarshkotwal rural municipality",
+                            "karaiyamai rural municipality",
+                            "devtal rural municipality",
+                            "parwanipur rural municipality",
+                            "baragadhi rural municipality",
+                            "suwarna rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rautahat",
+                        "total_municipals": 18,
+                        "total_wards": 157,
+                        "municipals": [
+                            "baudhimai municipality",
+                            "brindaban municipality",
+                            "chandrapur municipality",
+                            "dewahhi gonahi municipality",
+                            "gadhimai municipality",
+                            "garuda municipality",
+                            "gaur municipality",
+                            "gujara municipality",
+                            "ishanath municipality",
+                            "katahariya municipality",
+                            "madhav narayan municipality",
+                            "maulapur municipality",
+                            "paroha municipality",
+                            "phatuwa bijayapur municipality",
+                            "rajdevi municipality",
+                            "rajpur municipality",
+                            "durga bhagwati rural municipality",
+                            "yemunamai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sarlahi",
+                        "total_municipals": 20,
+                        "total_wards": 200,
+                        "municipals": [
+                            "bagmati municipality",
+                            "balara municipality",
+                            "barahathawa municipality",
+                            "godaita municipality",
+                            "hariwan municipality",
+                            "haripur municipality",
+                            "haripurwa municipality",
+                            "ishworpur municipality",
+                            "kabilasi municipality",
+                            "lalbandi municipality",
+                            "malangawa municipality",
+                            "basbariya rural municipality",
+                            "bishnu rural municipality",
+                            "bramhapuri rural municipality",
+                            "chakraghatta rural municipality",
+                            "chandranagar rural municipality",
+                            "dhankaul rural municipality",
+                            "kaudena rural municipality",
+                            "parsa rural municipality",
+                            "ramnagar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "siraha",
+                        "total_municipals": 17,
+                        "total_wards": 164,
+                        "municipals": [
+                            "lahan municipality",
+                            "dhangadhimai municipality",
+                            "siraha municipality",
+                            "golbazar municipality",
+                            "mirchaiya municipality",
+                            "kalyanpur municipality",
+                            "karjanha municipality",
+                            "sukhipur municipality",
+                            "bhagawanpur rural municipality",
+                            "aurahi rural municipality",
+                            "bishnupur rural municipality",
+                            "bariyarpatti rural municipality",
+                            "laxmipur patari rural municipality",
+                            "naraha rural municipality",
+                            "sakhuwanankarkatti rural municipality",
+                            "arnama rural municipality",
+                            "nawarajpur rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhanusha",
+                        "total_municipals": 18,
+                        "total_wards": 169,
+                        "municipals": [
+                            "janakpurdham sub-metropolitan city",
+                            "chhireshwornath municipality",
+                            "ganeshman charnath municipality",
+                            "dhanusadham municipality",
+                            "nagarain municipality",
+                            "bideha municipality",
+                            "mithila municipality",
+                            "sahidnagar municipality",
+                            "sabaila municipality",
+                            "kamala municipality",
+                            "mithila bihari municipality",
+                            "hansapur municipality",
+                            "janaknandani rural municipality",
+                            "bateshwor rural municipality",
+                            "mukhiyapatti musarmiya rural municipality",
+                            "lakshminiya rural municipality",
+                            "aaurahi rural municipality",
+                            "dhanauji rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "saptari",
+                        "total_municipals": 18,
+                        "total_wards": 164,
+                        "municipals": [
+                            "bode barsain municipality",
+                            "dakneshwori municipality",
+                            "hanumannagar kankalini municipality",
+                            "kanchanrup municipality",
+                            "khadak municipality",
+                            "shambhunath municipality",
+                            "saptakoshi rural municipality",
+                            "surunga municipality",
+                            "rajbiraj municipality",
+                            "agnisair krishna savaran rural municipality",
+                            "balan bihul rural municipality",
+                            "rajgadh rural municipality",
+                            "bishnupur rural municipality",
+                            "chhinnamasta rural municipality",
+                            "mahadeva rural municipality",
+                            "rupani rural municipality",
+                            "tilathi koiladi rural municipality",
+                            "tirahut rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mahottari",
+                        "total_municipals": 15,
+                        "total_wards": 138,
+                        "municipals": [
+                            "aurahi municipality",
+                            "balwa municipality",
+                            "bardibas municipality",
+                            "bhangaha municipality",
+                            "gaushala municipality",
+                            "jaleswor municipality",
+                            "loharpatti municipality",
+                            "manra siswa municipality",
+                            "matihani municipality",
+                            "ramgopalpur municipality",
+                            "ekdanra rural municipality",
+                            "mahottari rural municipality",
+                            "pipra rural municipality",
+                            "samsi rural municipality",
+                            "sonama rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "bagmati",
+                "total_districts": 13,
+                "districts": [
+                    {
+                        "district": "bhaktapur",
+                        "total_municipals": 4,
+                        "total_wards": 38,
+                        "municipals": [
+                            "bhaktapur municipality",
+                            "changunarayan municipality",
+                            "suryabinayak municipality",
+                            "madhyapur thimi municipality"
+                        ]
+                    },
+                    {
+                        "district": "chitwan",
+                        "total_municipals": 7,
+                        "total_wards": 98,
+                        "municipals": [
+                            "bharatpur metropolitan city",
+                            "kalika municipality",
+                            "khairahani municipality",
+                            "madi municipality",
+                            "ratnanagar municipality",
+                            "rapti municipality",
+                            "ichchhyakamana rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhading",
+                        "total_municipals": 13,
+                        "total_wards": 104,
+                        "municipals": [
+                            "dhunibesi municipality",
+                            "nilakantha municipality",
+                            "khaniyabash rural municipality",
+                            "gajuri rural municipality",
+                            "galchi rural municipality",
+                            "gangajamuna rural municipality",
+                            "jwalamukhi rural municipality",
+                            "thakre rural municipality",
+                            "netrawati dabjong rural municipality",
+                            "benighat rorang rural municipality",
+                            "rubi valley rural municipality",
+                            "siddhalek rural municipality",
+                            "tripura sundari rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dolakha",
+                        "total_municipals": 9,
+                        "total_wards": 74,
+                        "municipals": [
+                            "bhimeshwor municipality",
+                            "jiri municipality",
+                            "kalinchok rural municipality",
+                            "melung rural municipality",
+                            "bigu rural municipality",
+                            "gaurishankar rural municipality",
+                            "baiteshwor rural municipality",
+                            "sailung rural municipality",
+                            "tamakoshi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kathmandu",
+                        "total_municipals": 11,
+                        "total_wards": 138,
+                        "municipals": [
+                            "kathmandu metropolitan city",
+                            "gokarneshwor municipality",
+                            "kirtipur municipality",
+                            "kageshwori manahora municipality",
+                            "chandragiri municipality",
+                            "tokha municipality",
+                            "tarakeshwor municipality",
+                            "dakshinkali municipality",
+                            "nagarjun municipality",
+                            "budhanilakantha municipality",
+                            "shankharapur municipality"
+                        ]
+                    },
+                    {
+                        "district": "kavrepalanchok",
+                        "total_municipals": 13,
+                        "total_wards": 135,
+                        "municipals": [
+                            "dhulikhel municipality",
+                            "namobuddha municipality",
+                            "panauti municipality",
+                            "panchkhal municipality",
+                            "banepa municipality",
+                            "mandandeupur municipality",
+                            "khanikhola rural municipality",
+                            "chaurideurali rural municipality",
+                            "temal rural municipality",
+                            "bethanchowk rural municipality",
+                            "bhumlu rural municipality",
+                            "mahabharat rural municipality",
+                            "roshi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "lalitpur",
+                        "total_municipals": 6,
+                        "total_wards": 71,
+                        "municipals": [
+                            "lalitpur metropolitan city",
+                            "mahalaxmi municipality",
+                            "godawari municipality",
+                            "konjyosom rural municipality",
+                            "bagmati rural municipality",
+                            "mahankal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "makwanpur",
+                        "total_municipals": 10,
+                        "total_wards": 102,
+                        "municipals": [
+                            "hetauda sub-metropolitan city",
+                            "thaha municipality",
+                            "bhimphedi rural municipality",
+                            "makawanpurgadhi rural municipality",
+                            "manahari rural municipality",
+                            "raksirang rural municipality",
+                            "bakaiya rural municipality",
+                            "bagmati rural municipality",
+                            "kailash rural municipality",
+                            "indrasarowar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "nuwakot",
+                        "total_municipals": 12,
+                        "total_wards": 88,
+                        "municipals": [
+                            "bidur municipality",
+                            "belkotgadhi municipality",
+                            "kakani rural municipality",
+                            "panchakanya rural municipality",
+                            "likhu rural municipality",
+                            "dupcheshwar rural municipality",
+                            "shivapuri rural municipality",
+                            "tadi rural municipality",
+                            "suryagadhi rural municipality",
+                            "tarkeshwar rural municipality",
+                            "kispang rural municipality",
+                            "myagang rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "ramechhap",
+                        "total_municipals": 8,
+                        "total_wards": 64,
+                        "municipals": [
+                            "manthali municipality",
+                            "ramechhap municipality",
+                            "umakunda rural municipality",
+                            "khandadevi rural municipality",
+                            "doramba sailung rural municipality",
+                            "gokulganga rural municipality",
+                            "likhu tamakoshi rural municipality",
+                            "sunapati rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rasuwa",
+                        "total_municipals": 5,
+                        "total_wards": 27,
+                        "municipals": [
+                            "kalika rural municipality",
+                            "gosaikunda rural municipality",
+                            "naukunda rural municipality",
+                            "amachodingmo rural municipality",
+                            "uttargaya rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sindhuli",
+                        "total_municipals": 9,
+                        "total_wards": 79,
+                        "municipals": [
+                            "kamalamai municipality",
+                            "dudhouli municipality",
+                            "sunkoshi rural municipality",
+                            "hariharpurgadhi rural municipality",
+                            "tinpatan rural municipality",
+                            "marin rural municipality",
+                            "golanjor rural municipality",
+                            "phikkal rural municipality",
+                            "ghanglekh rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sindhupalchok",
+                        "total_municipals": 12,
+                        "total_wards": 103,
+                        "municipals": [
+                            "chautara sangachokgadhi municipality",
+                            "barhabise municipality",
+                            "melamchi municipality",
+                            "balefi rural municipality",
+                            "sunkoshi rural municipality",
+                            "indrawati rural municipality",
+                            "jugal rural municipality",
+                            "panchpokhari thangpal rural municipality",
+                            "bhotekoshi rural municipality",
+                            "lisangkhu pakhar rural municipality",
+                            "helambu rural municipality",
+                            "tripurasundari rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "gandaki",
+                "total_districts": 11,
+                "districts": [
+                    {
+                        "district": "baglung",
+                        "total_municipals": 10,
+                        "total_wards": 85,
+                        "municipals": [
+                            "baglung municipality",
+                            "dhorpatan municipality",
+                            "galkot municipality",
+                            "jaimuni municipality",
+                            "bareng rural municipality",
+                            "kanthekhola rural municipality",
+                            "taman khola rural municipality",
+                            "tara khola rural municipality",
+                            "nisikhola rural municipality",
+                            "badigad rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "gorkha",
+                        "total_municipals": 11,
+                        "total_wards": 94,
+                        "municipals": [
+                            "gorkha municipality",
+                            "palungtar municipality",
+                            "barpak sulikot rural municipality",
+                            "siranchok rural municipality",
+                            "ajirkot rural municipality",
+                            "chum nubri rural municipality",
+                            "dharche rural municipality",
+                            "bhimsenthapa rural municipality",
+                            "sahid lakhan rural municipality",
+                            "aarughat rural municipality",
+                            "gandaki rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kaski",
+                        "total_municipals": 5,
+                        "total_wards": 72,
+                        "municipals": [
+                            "pokhara metropolitan city",
+                            "annapurna rural municipality",
+                            "machhapuchchhre rural municipality",
+                            "madi rural municipality",
+                            "rupa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "lamjung",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "besishahar municipality",
+                            "madhyanepal municipality",
+                            "rainas municipality",
+                            "sundarbazar municipality",
+                            "dordi rural municipality",
+                            "dudhpokhari rural municipality",
+                            "kwholasothar rural municipality",
+                            "marsyangdi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "manang",
+                        "total_municipals": 4,
+                        "total_wards": 28,
+                        "municipals": [
+                            "chame rural municipality",
+                            "narshon rural municipality",
+                            "narpa bhumi rural municipality",
+                            "manang ingshyang rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mustang",
+                        "total_municipals": 5,
+                        "total_wards": 25,
+                        "municipals": [
+                            "gharapjhong rural municipality",
+                            "thasang rural municipality",
+                            "waragung muktikhsetra rural municipality",
+                            "lomanthang rural municipality",
+                            "lo-ghekar damodarkunda rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "myagdi",
+                        "total_municipals": 6,
+                        "total_wards": 45,
+                        "municipals": [
+                            "beni municipality",
+                            "annapurna rural municipality",
+                            "dhaulagiri rural municipality",
+                            "mangala rural municipality",
+                            "malika rural municipality",
+                            "raghuganga rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "nawalpur",
+                        "total_municipals": 8,
+                        "total_wards": 92,
+                        "municipals": [
+                            "kawasoti municipality",
+                            "gaidakot municipality",
+                            "devchuli municipality",
+                            "madhyabindu municipality",
+                            "baudeekali rural municipality",
+                            "bulingtar rural municipality",
+                            "binayee tribeni rural municipality",
+                            "hupsekot rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "parbat",
+                        "total_municipals": 7,
+                        "total_wards": 61,
+                        "municipals": [
+                            "kushma municipality",
+                            "phalebas municipality",
+                            "jaljala rural municipality",
+                            "painyu rural municipality",
+                            "mahashila rural municipality",
+                            "modi rural municipality",
+                            "bihadi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "syangja",
+                        "total_municipals": 11,
+                        "total_wards": 97,
+                        "municipals": [
+                            "galyang municipality",
+                            "chapakot municipality",
+                            "putalibazar municipality",
+                            "bhirkot municipality",
+                            "waling municipality",
+                            "arjunchaupari rural municipality",
+                            "aandhikhola rural municipality",
+                            "kaligandagi rural municipality",
+                            "phedikhola rural municipality",
+                            "harinas rural municipality",
+                            "biruwa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "tanahun",
+                        "total_municipals": 10,
+                        "total_wards": 85,
+                        "municipals": [
+                            "bhanu municipality",
+                            "bhimad municipality",
+                            "byas municipality",
+                            "shuklagandaki municipality",
+                            "anbukhaireni rural municipality",
+                            "devghat rural municipality",
+                            "bandipur rural municipality",
+                            "rhishing rural municipality",
+                            "ghiring rural municipality",
+                            "myagde rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "lumbini",
+                "total_districts": 12,
+                "districts": [
+                    {
+                        "district": "kapilvastu",
+                        "total_municipals": 10,
+                        "total_wards": 96,
+                        "municipals": [
+                            "kapilbastu municipality",
+                            "banganga municipality",
+                            "buddhabhumi municipality",
+                            "shivaraj municipality",
+                            "krishnanagar municipality",
+                            "maharajgunj municipality",
+                            "mayadevi rural municipality",
+                            "yashodhara rural municipality",
+                            "suddhodhan rural municipality",
+                            "bijayanagar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "parasi",
+                        "total_municipals": 7,
+                        "total_wards": 74,
+                        "municipals": [
+                            "bardaghat municipality",
+                            "ramgram municipality",
+                            "sunwal municipality",
+                            "susta rural municipality",
+                            "palhi nandan rural municipality",
+                            "pratappur rural municipality",
+                            "sarawal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rupandehi",
+                        "total_municipals": 16,
+                        "total_wards": 155,
+                        "municipals": [
+                            "butwal sub-metropolitan city",
+                            "devdaha municipality",
+                            "lumbini sanskritik municipality",
+                            "sainamaina municipality",
+                            "siddharthanagar municipality",
+                            "tillotama municipality",
+                            "gaidahawa rural municipality",
+                            "kanchan rural municipality",
+                            "kotahimai rural municipality",
+                            "marchawari rural municipality",
+                            "mayadevi rural municipality",
+                            "omsatiya rural municipality",
+                            "rohini rural municipality",
+                            "sammarimai rural municipality",
+                            "siyari rural municipality",
+                            "sudhdhodhan rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "arghakhanchi",
+                        "total_municipals": 6,
+                        "total_wards": 61,
+                        "municipals": [
+                            "sandhikharka municipality",
+                            "sitganga municipality",
+                            "bhumekasthan municipality",
+                            "chhatradev rural municipality",
+                            "panini rural municipality",
+                            "malarani rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "gulmi",
+                        "total_municipals": 12,
+                        "total_wards": 93,
+                        "municipals": [
+                            "resunga municipality",
+                            "musikot municipality",
+                            "ruru rural municipality",
+                            "chatrakot rural municipality",
+                            "gulmidarbar rural municipality",
+                            "chandrakot rural municipality",
+                            "satyawati rural municipality",
+                            "dhurkot rural municipality",
+                            "kaligandaki rural municipality",
+                            "isma rural municipality",
+                            "malika rural municipality",
+                            "madane rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "palpa",
+                        "total_municipals": 10,
+                        "total_wards": 81,
+                        "municipals": [
+                            "tansen municipality",
+                            "rampur municipality",
+                            "rainadevi chhahara rural municipality",
+                            "ribdikot rural municipality",
+                            "bagnaskali rural municipality",
+                            "rambha rural municipality",
+                            "purbakhola rural municipality",
+                            "nisdi rural municipality",
+                            "mathagadhi rural municipality",
+                            "tinau rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dang",
+                        "total_municipals": 10,
+                        "total_wards": 100,
+                        "municipals": [
+                            "ghorahi sub-metropolitan city",
+                            "tulsipur sub-metropolitan city",
+                            "lamahi municipality",
+                            "gadhawa rural municipality",
+                            "rajpur rural municipality",
+                            "shantinagar rural municipality",
+                            "rapti rural municipality",
+                            "banglachuli rural municipality",
+                            "dangisharan rural municipality",
+                            "babai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "pyuthan",
+                        "total_municipals": 9,
+                        "total_wards": 64,
+                        "municipals": [
+                            "sworgadwary municipality",
+                            "pyuthan municipality",
+                            "mandavi rural municipality",
+                            "sarumarani rural municipality",
+                            "ayirabati rural municipality",
+                            "mallarani rural municipality",
+                            "jhimruk rural municipality",
+                            "naubahini rural municipality",
+                            "gaumukhi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rolpa",
+                        "total_municipals": 10,
+                        "total_wards": 72,
+                        "municipals": [
+                            "rolpa municipality",
+                            "runtigadi rural municipality",
+                            "tribeni rural municipality",
+                            "sunil smriti rural municipality",
+                            "lungri rural municipality",
+                            "sunchhahari rural municipality",
+                            "thawang rural municipality",
+                            "madi rural municipality",
+                            "gangadev rural municipality",
+                            "pariwartan rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "eastern rukum",
+                        "total_municipals": 3,
+                        "total_wards": 31,
+                        "municipals": [
+                            "putha uttarganga rural municipality",
+                            "bhume rural municipality",
+                            "sisne rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "banke",
+                        "total_municipals": 8,
+                        "total_wards": 81,
+                        "municipals": [
+                            "nepalgunj sub-metropolitan city",
+                            "kohalpur municipality",
+                            "rapti sonari rural municipality",
+                            "narainapur rural municipality",
+                            "duduwa rural municipality",
+                            "janki rural municipality",
+                            "khajura rural municipality",
+                            "baijanath rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bardiya",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "gulariya municipality",
+                            "rajapur municipality",
+                            "madhuwan municipality",
+                            "thakurbaba municipality",
+                            "bansagadhi municipality",
+                            "barbardiya municipality",
+                            "badhaiyatal rural municipality",
+                            "geruwa rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "karnali",
+                "total_districts": 10,
+                "districts": [
+                    {
+                        "district": "western rukum",
+                        "total_municipals": 6,
+                        "total_wards": 73,
+                        "municipals": [
+                            "aathbiskot municipality",
+                            "musikot municipality",
+                            "chaurjahari municipality",
+                            "sani bheri rural municipality",
+                            "tribeni rural municipality",
+                            "banfikot rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "salyan",
+                        "total_municipals": 10,
+                        "total_wards": 83,
+                        "municipals": [
+                            "kumakh rural municipality",
+                            "kalimati rural municipality",
+                            "chhatreshwori rural municipality",
+                            "darma rural municipality",
+                            "kapurkot rural municipality",
+                            "tribeni rural municipality",
+                            "siddha kumakh rural municipality",
+                            "bagchaur municipality",
+                            "sharada municipality",
+                            "bangad kupinde municipality"
+                        ]
+                    },
+                    {
+                        "district": "dolpa",
+                        "total_municipals": 8,
+                        "total_wards": 65,
+                        "municipals": [
+                            "mudkechula rural municipality",
+                            "kaike rural municipality",
+                            "shey phoksundo rural municipality",
+                            "jagadulla rural municipality",
+                            "dolpo buddha rural municipality",
+                            "chharka tangsong rural municipality",
+                            "thuli bheri municipality",
+                            "tripurasundari municipality"
+                        ]
+                    },
+                    {
+                        "district": "humla",
+                        "total_municipals": 7,
+                        "total_wards": 44,
+                        "municipals": [
+                            "simkot rural municipality",
+                            "sarkegad rural municipality",
+                            "adanchuli rural municipality",
+                            "kharpunath rural municipality",
+                            "tanjakot rural municipality",
+                            "chankheli rural municipality",
+                            "namkha rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "jumla",
+                        "total_municipals": 8,
+                        "total_wards": 60,
+                        "municipals": [
+                            "tatopani rural municipality",
+                            "patrasi rural municipality",
+                            "tila rural municipality",
+                            "kanakasundari rural municipality",
+                            "sinja rural municipality",
+                            "hima rural municipality",
+                            "guthichaur rural municipality",
+                            "chandannath municipality"
+                        ]
+                    },
+                    {
+                        "district": "kalikot",
+                        "total_municipals": 9,
+                        "total_wards": 82,
+                        "municipals": [
+                            "khandachakra municipality",
+                            "raskot municipality",
+                            "tilagufa municipality",
+                            "naraharinath rural municipality",
+                            "palata rural municipality",
+                            "subha kalika rural municipality",
+                            "sanni tribeni rural municipality",
+                            "pachaljharana rural municipality",
+                            "mahawai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mugu",
+                        "total_municipals": 4,
+                        "total_wards": 45,
+                        "municipals": [
+                            "khatyad rural municipality",
+                            "soru rural municipality",
+                            "mugum karmarong rural municipality",
+                            "chhayanath rara municipality"
+                        ]
+                    },
+                    {
+                        "district": "surkhet",
+                        "total_municipals": 9,
+                        "total_wards": 99,
+                        "municipals": [
+                            "simta rural municipality",
+                            "barahtal rural municipality",
+                            "chaukune rural municipality",
+                            "chingad rural municipality",
+                            "gurbhakot municipality",
+                            "birendranagar municipality",
+                            "bheriganga municipality",
+                            "panchpuri municipality",
+                            "lekbeshi municipality"
+                        ]
+                    },
+                    {
+                        "district": "dailekh",
+                        "total_municipals": 11,
+                        "total_wards": 90,
+                        "municipals": [
+                            "dullu municipality",
+                            "gurans rural municipality",
+                            "bhairabi rural municipality",
+                            "naumule rural municipality",
+                            "mahabu rural municipality",
+                            "thantikandh rural municipality",
+                            "bhagawatimai rural municipality",
+                            "dungeshwor rural municipality",
+                            "aathabis municipality",
+                            "narayan municipality",
+                            "chamunda bindrasaini municipality"
+                        ]
+                    },
+                    {
+                        "district": "jajarkot",
+                        "total_municipals": 7,
+                        "total_wards": 77,
+                        "municipals": [
+                            "chhedagad municipality",
+                            "bheri municipality",
+                            "nalagad municipality",
+                            "junichande rural municipality",
+                            "kuse rural municipality",
+                            "barekot rural municipality",
+                            "shiwalaya rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "sudurpaschim",
+                "total_districts": 9,
+                "districts": [
+                    {
+                        "district": "darchula",
+                        "total_municipals": 9,
+                        "total_wards": 61,
+                        "municipals": [
+                            "mahakali municipality",
+                            "shailyashikhar municipality",
+                            "naugad rural municipality",
+                            "malikaarjun rural municipality",
+                            "marma rural municipality",
+                            "lekam rural municipality",
+                            "dunhu rural municipality",
+                            "byas rural municipality",
+                            "apihimal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bajhang",
+                        "total_municipals": 12,
+                        "total_wards": 94,
+                        "municipals": [
+                            "jayaprithivi municipality",
+                            "bungal municipality",
+                            "kedarseu rural municipality",
+                            "thalara rural municipality",
+                            "bithadchir rural municipality",
+                            "chabispathivera rural municipality",
+                            "khaptadchhanna rural municipality",
+                            "masta rural municipality",
+                            "durgathali rural municipality",
+                            "talkot rural municipality",
+                            "surma rural municipality",
+                            "saipaal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bajura",
+                        "total_municipals": 9,
+                        "total_wards": 69,
+                        "municipals": [
+                            "badimalika municipality",
+                            "tribeni municipality",
+                            "budhiganga municipality",
+                            "budhinanda municipality",
+                            "khaptad chhededaha rural municipality",
+                            "swami kartik khaapar rural municipality",
+                            "jagannath rural municipality",
+                            "himali rural municipality",
+                            "gaumul rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "baitadi",
+                        "total_municipals": 10,
+                        "total_wards": 84,
+                        "municipals": [
+                            "dasharathchanda municipality",
+                            "patan municipality",
+                            "melauli municipality",
+                            "purchaudi municipality",
+                            "dogadakedar rural municipality",
+                            "dilasaini rural municipality",
+                            "sigas rural municipality",
+                            "pancheshwar rural municipality",
+                            "surnaya rural municipality",
+                            "shivanath rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "doti",
+                        "total_municipals": 9,
+                        "total_wards": 65,
+                        "municipals": [
+                            "dipayal silgadi municipality",
+                            "shikhar municipality",
+                            "adharsha rural municipality",
+                            "purbichauki rural municipality",
+                            "k i singh rural municipality",
+                            "jorayal rural municipality",
+                            "sayal rural municipality",
+                            "bogtan foodsil rural municipality",
+                            "badikedar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "achham",
+                        "total_municipals": 10,
+                        "total_wards": 91,
+                        "municipals": [
+                            "ramaroshan rural municipality",
+                            "chaurpati rural municipality",
+                            "turmakhad rural municipality",
+                            "mellekh rural municipality",
+                            "dhakari rural municipality",
+                            "bannigadhi jayagadh rural municipality",
+                            "mangalsen municipality",
+                            "kamalbazar municipality",
+                            "sanphebagar municipality",
+                            "panchadewal binayak municipality"
+                        ]
+                    },
+                    {
+                        "district": "dadeldhura",
+                        "total_municipals": 7,
+                        "total_wards": 52,
+                        "municipals": [
+                            "nawadurga rural municipality",
+                            "alital rural municipality",
+                            "ganayapdhura rural municipality",
+                            "bhageshwar rural municipality",
+                            "ajaymeru rural municipality",
+                            "amargadhi municipality",
+                            "parashuram municipality"
+                        ]
+                    },
+                    {
+                        "district": "kanchanpur",
+                        "total_municipals": 9,
+                        "total_wards": 92,
+                        "municipals": [
+                            "bhimdatta municipality",
+                            "punarbas municipality",
+                            "bedkot municipality",
+                            "mahakali municipality",
+                            "shuklaphanta municipality",
+                            "belauri municipality",
+                            "krishnapur municipality",
+                            "laljhadi rural municipality",
+                            "beldandi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kailali",
+                        "total_municipals": 13,
+                        "total_wards": 126,
+                        "municipals": [
+                            "janaki rural municipality",
+                            "kailari rural municipality",
+                            "joshipur rural municipality",
+                            "bardagoriya rural municipality",
+                            "mohanyal rural municipality",
+                            "chure rural municipality",
+                            "tikapur municipality",
+                            "ghodaghodi municipality",
+                            "lamkichuha municipality",
+                            "bhajani municipality",
+                            "godawari municipality",
+                            "gauriganga municipality",
+                            "dhangadhi sub-metropolitan city"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "/api/all": {
+        "country": "Nepal",
+        "total_provinces": 7,
+        "provinces": [
+            {
+                "province": "koshi",
+                "total_districts": 14,
+                "districts": [
+                    {
+                        "district": "bhojpur",
+                        "total_municipals": 9,
+                        "total_wards": 81,
+                        "municipals": [
+                            "shadananda municipality",
+                            "bhojpur municipality",
+                            "hatuwagadhi rural municipality",
+                            "ramprasad rai rural municipality",
+                            "aamchowk rural municipality",
+                            "temkemaiyung rural municipality",
+                            "arun rural municipality",
+                            "pauwadungma rural municipality",
+                            "salpasilichho rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhankuta",
+                        "total_municipals": 7,
+                        "total_wards": 60,
+                        "municipals": [
+                            "dhankuta municipality",
+                            "pakhribas municipality",
+                            "mahalaxmi municipality",
+                            "sangurigadhi rural municipality",
+                            "chaubise rural municipality",
+                            "shahidbhumi rural municipality",
+                            "chhathar jorpati rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "ilam",
+                        "total_municipals": 10,
+                        "total_wards": 81,
+                        "municipals": [
+                            "suryodaya municipality",
+                            "illam municipality",
+                            "deumai municipality",
+                            "maijogmai rural municipality",
+                            "fakphokthum rural municipality",
+                            "mai municipality",
+                            "chulachuli rural municipality",
+                            "rong rural municipality",
+                            "mangsebung rural municipality",
+                            "sandakpur rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "jhapa",
+                        "total_municipals": 15,
+                        "total_wards": 131,
+                        "municipals": [
+                            "mechinagar municipality",
+                            "birtamod municipality",
+                            "damak municipality",
+                            "bhadrapur municipality",
+                            "shivasataxi municipality",
+                            "arjundhara municipality",
+                            "gauradhaha municipality",
+                            "kankai municipality",
+                            "kamal rural municipality",
+                            "buddhashanti rural municipality",
+                            "kachankawal rural municipality",
+                            "jhapa rural municipality",
+                            "barhadashi rural municipality",
+                            "gauriganj rural municipality",
+                            "haldibari rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "khotang",
+                        "total_municipals": 10,
+                        "total_wards": 79,
+                        "municipals": [
+                            "diktel rupakot majhuwagadhi municipality",
+                            "halesi tuwachung municipality",
+                            "khotehang rural municipality",
+                            "diprung chuichumma rural municipality",
+                            "ainselukhark rural municipality",
+                            "jantedhunga rural municipality",
+                            "kepilasagadhi rural municipality",
+                            "barahapokhari rural municipality",
+                            "rawa besi rural municipality",
+                            "sakela rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "morang",
+                        "total_municipals": 17,
+                        "total_wards": 159,
+                        "municipals": [
+                            "sundarharaicha municipality",
+                            "belbari municipality",
+                            "patahrishanishchare municipality",
+                            "ratuwamai municipality",
+                            "uralabari municipality",
+                            "rangeli municipality",
+                            "sunwarshi municipality",
+                            "letang municipality",
+                            "biratnagar metropolitan city",
+                            "jahada rural municipality",
+                            "budhiganga rural municipality",
+                            "katahari rural municipality",
+                            "dhanpalthan rural municipality",
+                            "kanepokhari rural municipality",
+                            "gramthan rural municipality",
+                            "kerabari rural municipality",
+                            "miklajung rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "okhaldhunga",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "siddhicharan municipality",
+                            "khijidemba rural municipality",
+                            "chisankhugadhi rural municipality",
+                            "molung rural municipality",
+                            "sunkoshi rural municipality",
+                            "champadevi rural municipality",
+                            "manebhanjyang rural municipality",
+                            "likhu rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "panchthar",
+                        "total_municipals": 8,
+                        "total_wards": 60,
+                        "municipals": [
+                            "phidim municipality",
+                            "miklajung rural municipality",
+                            "falgunanda rural municipality",
+                            "hilihang rural municipality",
+                            "falelung rural municipality",
+                            "yangwarak rural municipality",
+                            "kummayak rural municipality",
+                            "tumbewa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sankhuwasabha",
+                        "total_municipals": 10,
+                        "total_wards": 76,
+                        "municipals": [
+                            "khandbari municipality",
+                            "chainpur municipality",
+                            "dharmadevi municipality",
+                            "panchakhapan municipality",
+                            "madi municipality",
+                            "makalu rural municipality",
+                            "silichong rural municipality",
+                            "sabhapokhari rural municipality",
+                            "chichila rural municipality",
+                            "bhotkhola rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "solukhumbu",
+                        "total_municipals": 8,
+                        "total_wards": 52,
+                        "municipals": [
+                            "solududhakunda municipality",
+                            "maapya dudhkoshi rural municipality",
+                            "nechasalyan rural municipality",
+                            "thulung dudhkoshi rural municipality",
+                            "mahakulung rural municipality",
+                            "sotang rural municipality",
+                            "khumbupasanglahmu rural municipality",
+                            "likhupike rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sunsari",
+                        "total_municipals": 12,
+                        "total_wards": 124,
+                        "municipals": [
+                            "barahchhetra municipality",
+                            "inaruwa municipality",
+                            "duhabi municipality",
+                            "ramdhuni municipality",
+                            "itahari sub-metropolitan city",
+                            "dharan sub-metropolitan city",
+                            "koshi rural municipality",
+                            "harinagar rural municipality",
+                            "bhokraha narsing rural municipality",
+                            "dewanganj rural municipality",
+                            "gadhi rural municipality",
+                            "barju rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "taplejung",
+                        "total_municipals": 9,
+                        "total_wards": 61,
+                        "municipals": [
+                            "phungling municipality",
+                            "sirijangha rural municipality",
+                            "aathrai tribeni rural municipality",
+                            "pathivara yangwarak rural municipality",
+                            "meringden rural municipality",
+                            "sidingba rural municipality",
+                            "phaktanglung rural municipality",
+                            "maiwakhola rural municipality",
+                            "mikwakhola rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "terhathum",
+                        "total_municipals": 6,
+                        "total_wards": 43,
+                        "municipals": [
+                            "myanglung municipality",
+                            "laligurans municipality",
+                            "aathrai rural municipality",
+                            "phedap rural municipality",
+                            "chhathar rural municipality",
+                            "menchayam rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "udayapur",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "triyuga municipality",
+                            "katari municipality",
+                            "chaudandigadhi municipality",
+                            "belaka municipality",
+                            "udayapurgadhi rural municipality",
+                            "rautamai rural municipality",
+                            "tapli rural municipality",
+                            "limchungbung rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "madhesh",
+                "total_districts": 8,
+                "districts": [
+                    {
+                        "district": "parsa",
+                        "total_municipals": 14,
+                        "total_wards": 112,
+                        "municipals": [
+                            "birgunj metropolitan city",
+                            "bahudaramai municipality",
+                            "parsagadhi municipality",
+                            "pokhariya municipality",
+                            "bindabasini rural municipality",
+                            "dhobini rural municipality",
+                            "chhipaharmai rural municipality",
+                            "jagarnathpur rural municipality",
+                            "jirabhawani rural municipality",
+                            "kalikamai rural municipality",
+                            "pakahamainpur rural municipality",
+                            "paterwasugauli rural municipality",
+                            "sakhuwaprasauni rural municipality",
+                            "thori rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bara",
+                        "total_municipals": 16,
+                        "total_wards": 167,
+                        "municipals": [
+                            "kalaiya sub-metropolitan city",
+                            "jitpur simara sub-metropolitan city",
+                            "kolhabi municipality",
+                            "nijgadh municipality",
+                            "mahagadhimai municipality",
+                            "simraungadh municipality",
+                            "pacharauta municipality",
+                            "pheta rural municipality",
+                            "bishrampur rural municipality",
+                            "prasauni rural municipality",
+                            "adarshkotwal rural municipality",
+                            "karaiyamai rural municipality",
+                            "devtal rural municipality",
+                            "parwanipur rural municipality",
+                            "baragadhi rural municipality",
+                            "suwarna rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rautahat",
+                        "total_municipals": 18,
+                        "total_wards": 157,
+                        "municipals": [
+                            "baudhimai municipality",
+                            "brindaban municipality",
+                            "chandrapur municipality",
+                            "dewahhi gonahi municipality",
+                            "gadhimai municipality",
+                            "garuda municipality",
+                            "gaur municipality",
+                            "gujara municipality",
+                            "ishanath municipality",
+                            "katahariya municipality",
+                            "madhav narayan municipality",
+                            "maulapur municipality",
+                            "paroha municipality",
+                            "phatuwa bijayapur municipality",
+                            "rajdevi municipality",
+                            "rajpur municipality",
+                            "durga bhagwati rural municipality",
+                            "yemunamai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sarlahi",
+                        "total_municipals": 20,
+                        "total_wards": 200,
+                        "municipals": [
+                            "bagmati municipality",
+                            "balara municipality",
+                            "barahathawa municipality",
+                            "godaita municipality",
+                            "hariwan municipality",
+                            "haripur municipality",
+                            "haripurwa municipality",
+                            "ishworpur municipality",
+                            "kabilasi municipality",
+                            "lalbandi municipality",
+                            "malangawa municipality",
+                            "basbariya rural municipality",
+                            "bishnu rural municipality",
+                            "bramhapuri rural municipality",
+                            "chakraghatta rural municipality",
+                            "chandranagar rural municipality",
+                            "dhankaul rural municipality",
+                            "kaudena rural municipality",
+                            "parsa rural municipality",
+                            "ramnagar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "siraha",
+                        "total_municipals": 17,
+                        "total_wards": 164,
+                        "municipals": [
+                            "lahan municipality",
+                            "dhangadhimai municipality",
+                            "siraha municipality",
+                            "golbazar municipality",
+                            "mirchaiya municipality",
+                            "kalyanpur municipality",
+                            "karjanha municipality",
+                            "sukhipur municipality",
+                            "bhagawanpur rural municipality",
+                            "aurahi rural municipality",
+                            "bishnupur rural municipality",
+                            "bariyarpatti rural municipality",
+                            "laxmipur patari rural municipality",
+                            "naraha rural municipality",
+                            "sakhuwanankarkatti rural municipality",
+                            "arnama rural municipality",
+                            "nawarajpur rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhanusha",
+                        "total_municipals": 18,
+                        "total_wards": 169,
+                        "municipals": [
+                            "janakpurdham sub-metropolitan city",
+                            "chhireshwornath municipality",
+                            "ganeshman charnath municipality",
+                            "dhanusadham municipality",
+                            "nagarain municipality",
+                            "bideha municipality",
+                            "mithila municipality",
+                            "sahidnagar municipality",
+                            "sabaila municipality",
+                            "kamala municipality",
+                            "mithila bihari municipality",
+                            "hansapur municipality",
+                            "janaknandani rural municipality",
+                            "bateshwor rural municipality",
+                            "mukhiyapatti musarmiya rural municipality",
+                            "lakshminiya rural municipality",
+                            "aaurahi rural municipality",
+                            "dhanauji rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "saptari",
+                        "total_municipals": 18,
+                        "total_wards": 164,
+                        "municipals": [
+                            "bode barsain municipality",
+                            "dakneshwori municipality",
+                            "hanumannagar kankalini municipality",
+                            "kanchanrup municipality",
+                            "khadak municipality",
+                            "shambhunath municipality",
+                            "saptakoshi rural municipality",
+                            "surunga municipality",
+                            "rajbiraj municipality",
+                            "agnisair krishna savaran rural municipality",
+                            "balan bihul rural municipality",
+                            "rajgadh rural municipality",
+                            "bishnupur rural municipality",
+                            "chhinnamasta rural municipality",
+                            "mahadeva rural municipality",
+                            "rupani rural municipality",
+                            "tilathi koiladi rural municipality",
+                            "tirahut rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mahottari",
+                        "total_municipals": 15,
+                        "total_wards": 138,
+                        "municipals": [
+                            "aurahi municipality",
+                            "balwa municipality",
+                            "bardibas municipality",
+                            "bhangaha municipality",
+                            "gaushala municipality",
+                            "jaleswor municipality",
+                            "loharpatti municipality",
+                            "manra siswa municipality",
+                            "matihani municipality",
+                            "ramgopalpur municipality",
+                            "ekdanra rural municipality",
+                            "mahottari rural municipality",
+                            "pipra rural municipality",
+                            "samsi rural municipality",
+                            "sonama rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "bagmati",
+                "total_districts": 13,
+                "districts": [
+                    {
+                        "district": "bhaktapur",
+                        "total_municipals": 4,
+                        "total_wards": 38,
+                        "municipals": [
+                            "bhaktapur municipality",
+                            "changunarayan municipality",
+                            "suryabinayak municipality",
+                            "madhyapur thimi municipality"
+                        ]
+                    },
+                    {
+                        "district": "chitwan",
+                        "total_municipals": 7,
+                        "total_wards": 98,
+                        "municipals": [
+                            "bharatpur metropolitan city",
+                            "kalika municipality",
+                            "khairahani municipality",
+                            "madi municipality",
+                            "ratnanagar municipality",
+                            "rapti municipality",
+                            "ichchhyakamana rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dhading",
+                        "total_municipals": 13,
+                        "total_wards": 104,
+                        "municipals": [
+                            "dhunibesi municipality",
+                            "nilakantha municipality",
+                            "khaniyabash rural municipality",
+                            "gajuri rural municipality",
+                            "galchi rural municipality",
+                            "gangajamuna rural municipality",
+                            "jwalamukhi rural municipality",
+                            "thakre rural municipality",
+                            "netrawati dabjong rural municipality",
+                            "benighat rorang rural municipality",
+                            "rubi valley rural municipality",
+                            "siddhalek rural municipality",
+                            "tripura sundari rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dolakha",
+                        "total_municipals": 9,
+                        "total_wards": 74,
+                        "municipals": [
+                            "bhimeshwor municipality",
+                            "jiri municipality",
+                            "kalinchok rural municipality",
+                            "melung rural municipality",
+                            "bigu rural municipality",
+                            "gaurishankar rural municipality",
+                            "baiteshwor rural municipality",
+                            "sailung rural municipality",
+                            "tamakoshi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kathmandu",
+                        "total_municipals": 11,
+                        "total_wards": 138,
+                        "municipals": [
+                            "kathmandu metropolitan city",
+                            "gokarneshwor municipality",
+                            "kirtipur municipality",
+                            "kageshwori manahora municipality",
+                            "chandragiri municipality",
+                            "tokha municipality",
+                            "tarakeshwor municipality",
+                            "dakshinkali municipality",
+                            "nagarjun municipality",
+                            "budhanilakantha municipality",
+                            "shankharapur municipality"
+                        ]
+                    },
+                    {
+                        "district": "kavrepalanchok",
+                        "total_municipals": 13,
+                        "total_wards": 135,
+                        "municipals": [
+                            "dhulikhel municipality",
+                            "namobuddha municipality",
+                            "panauti municipality",
+                            "panchkhal municipality",
+                            "banepa municipality",
+                            "mandandeupur municipality",
+                            "khanikhola rural municipality",
+                            "chaurideurali rural municipality",
+                            "temal rural municipality",
+                            "bethanchowk rural municipality",
+                            "bhumlu rural municipality",
+                            "mahabharat rural municipality",
+                            "roshi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "lalitpur",
+                        "total_municipals": 6,
+                        "total_wards": 71,
+                        "municipals": [
+                            "lalitpur metropolitan city",
+                            "mahalaxmi municipality",
+                            "godawari municipality",
+                            "konjyosom rural municipality",
+                            "bagmati rural municipality",
+                            "mahankal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "makwanpur",
+                        "total_municipals": 10,
+                        "total_wards": 102,
+                        "municipals": [
+                            "hetauda sub-metropolitan city",
+                            "thaha municipality",
+                            "bhimphedi rural municipality",
+                            "makawanpurgadhi rural municipality",
+                            "manahari rural municipality",
+                            "raksirang rural municipality",
+                            "bakaiya rural municipality",
+                            "bagmati rural municipality",
+                            "kailash rural municipality",
+                            "indrasarowar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "nuwakot",
+                        "total_municipals": 12,
+                        "total_wards": 88,
+                        "municipals": [
+                            "bidur municipality",
+                            "belkotgadhi municipality",
+                            "kakani rural municipality",
+                            "panchakanya rural municipality",
+                            "likhu rural municipality",
+                            "dupcheshwar rural municipality",
+                            "shivapuri rural municipality",
+                            "tadi rural municipality",
+                            "suryagadhi rural municipality",
+                            "tarkeshwar rural municipality",
+                            "kispang rural municipality",
+                            "myagang rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "ramechhap",
+                        "total_municipals": 8,
+                        "total_wards": 64,
+                        "municipals": [
+                            "manthali municipality",
+                            "ramechhap municipality",
+                            "umakunda rural municipality",
+                            "khandadevi rural municipality",
+                            "doramba sailung rural municipality",
+                            "gokulganga rural municipality",
+                            "likhu tamakoshi rural municipality",
+                            "sunapati rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rasuwa",
+                        "total_municipals": 5,
+                        "total_wards": 27,
+                        "municipals": [
+                            "kalika rural municipality",
+                            "gosaikunda rural municipality",
+                            "naukunda rural municipality",
+                            "amachodingmo rural municipality",
+                            "uttargaya rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sindhuli",
+                        "total_municipals": 9,
+                        "total_wards": 79,
+                        "municipals": [
+                            "kamalamai municipality",
+                            "dudhouli municipality",
+                            "sunkoshi rural municipality",
+                            "hariharpurgadhi rural municipality",
+                            "tinpatan rural municipality",
+                            "marin rural municipality",
+                            "golanjor rural municipality",
+                            "phikkal rural municipality",
+                            "ghanglekh rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "sindhupalchok",
+                        "total_municipals": 12,
+                        "total_wards": 103,
+                        "municipals": [
+                            "chautara sangachokgadhi municipality",
+                            "barhabise municipality",
+                            "melamchi municipality",
+                            "balefi rural municipality",
+                            "sunkoshi rural municipality",
+                            "indrawati rural municipality",
+                            "jugal rural municipality",
+                            "panchpokhari thangpal rural municipality",
+                            "bhotekoshi rural municipality",
+                            "lisangkhu pakhar rural municipality",
+                            "helambu rural municipality",
+                            "tripurasundari rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "gandaki",
+                "total_districts": 11,
+                "districts": [
+                    {
+                        "district": "baglung",
+                        "total_municipals": 10,
+                        "total_wards": 85,
+                        "municipals": [
+                            "baglung municipality",
+                            "dhorpatan municipality",
+                            "galkot municipality",
+                            "jaimuni municipality",
+                            "bareng rural municipality",
+                            "kanthekhola rural municipality",
+                            "taman khola rural municipality",
+                            "tara khola rural municipality",
+                            "nisikhola rural municipality",
+                            "badigad rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "gorkha",
+                        "total_municipals": 11,
+                        "total_wards": 94,
+                        "municipals": [
+                            "gorkha municipality",
+                            "palungtar municipality",
+                            "barpak sulikot rural municipality",
+                            "siranchok rural municipality",
+                            "ajirkot rural municipality",
+                            "chum nubri rural municipality",
+                            "dharche rural municipality",
+                            "bhimsenthapa rural municipality",
+                            "sahid lakhan rural municipality",
+                            "aarughat rural municipality",
+                            "gandaki rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kaski",
+                        "total_municipals": 5,
+                        "total_wards": 72,
+                        "municipals": [
+                            "pokhara metropolitan city",
+                            "annapurna rural municipality",
+                            "machhapuchchhre rural municipality",
+                            "madi rural municipality",
+                            "rupa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "lamjung",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "besishahar municipality",
+                            "madhyanepal municipality",
+                            "rainas municipality",
+                            "sundarbazar municipality",
+                            "dordi rural municipality",
+                            "dudhpokhari rural municipality",
+                            "kwholasothar rural municipality",
+                            "marsyangdi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "manang",
+                        "total_municipals": 4,
+                        "total_wards": 28,
+                        "municipals": [
+                            "chame rural municipality",
+                            "narshon rural municipality",
+                            "narpa bhumi rural municipality",
+                            "manang ingshyang rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mustang",
+                        "total_municipals": 5,
+                        "total_wards": 25,
+                        "municipals": [
+                            "gharapjhong rural municipality",
+                            "thasang rural municipality",
+                            "waragung muktikhsetra rural municipality",
+                            "lomanthang rural municipality",
+                            "lo-ghekar damodarkunda rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "myagdi",
+                        "total_municipals": 6,
+                        "total_wards": 45,
+                        "municipals": [
+                            "beni municipality",
+                            "annapurna rural municipality",
+                            "dhaulagiri rural municipality",
+                            "mangala rural municipality",
+                            "malika rural municipality",
+                            "raghuganga rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "nawalpur",
+                        "total_municipals": 8,
+                        "total_wards": 92,
+                        "municipals": [
+                            "kawasoti municipality",
+                            "gaidakot municipality",
+                            "devchuli municipality",
+                            "madhyabindu municipality",
+                            "baudeekali rural municipality",
+                            "bulingtar rural municipality",
+                            "binayee tribeni rural municipality",
+                            "hupsekot rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "parbat",
+                        "total_municipals": 7,
+                        "total_wards": 61,
+                        "municipals": [
+                            "kushma municipality",
+                            "phalebas municipality",
+                            "jaljala rural municipality",
+                            "painyu rural municipality",
+                            "mahashila rural municipality",
+                            "modi rural municipality",
+                            "bihadi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "syangja",
+                        "total_municipals": 11,
+                        "total_wards": 97,
+                        "municipals": [
+                            "galyang municipality",
+                            "chapakot municipality",
+                            "putalibazar municipality",
+                            "bhirkot municipality",
+                            "waling municipality",
+                            "arjunchaupari rural municipality",
+                            "aandhikhola rural municipality",
+                            "kaligandagi rural municipality",
+                            "phedikhola rural municipality",
+                            "harinas rural municipality",
+                            "biruwa rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "tanahun",
+                        "total_municipals": 10,
+                        "total_wards": 85,
+                        "municipals": [
+                            "bhanu municipality",
+                            "bhimad municipality",
+                            "byas municipality",
+                            "shuklagandaki municipality",
+                            "anbukhaireni rural municipality",
+                            "devghat rural municipality",
+                            "bandipur rural municipality",
+                            "rhishing rural municipality",
+                            "ghiring rural municipality",
+                            "myagde rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "lumbini",
+                "total_districts": 12,
+                "districts": [
+                    {
+                        "district": "kapilvastu",
+                        "total_municipals": 10,
+                        "total_wards": 96,
+                        "municipals": [
+                            "kapilbastu municipality",
+                            "banganga municipality",
+                            "buddhabhumi municipality",
+                            "shivaraj municipality",
+                            "krishnanagar municipality",
+                            "maharajgunj municipality",
+                            "mayadevi rural municipality",
+                            "yashodhara rural municipality",
+                            "suddhodhan rural municipality",
+                            "bijayanagar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "parasi",
+                        "total_municipals": 7,
+                        "total_wards": 74,
+                        "municipals": [
+                            "bardaghat municipality",
+                            "ramgram municipality",
+                            "sunwal municipality",
+                            "susta rural municipality",
+                            "palhi nandan rural municipality",
+                            "pratappur rural municipality",
+                            "sarawal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rupandehi",
+                        "total_municipals": 16,
+                        "total_wards": 155,
+                        "municipals": [
+                            "butwal sub-metropolitan city",
+                            "devdaha municipality",
+                            "lumbini sanskritik municipality",
+                            "sainamaina municipality",
+                            "siddharthanagar municipality",
+                            "tillotama municipality",
+                            "gaidahawa rural municipality",
+                            "kanchan rural municipality",
+                            "kotahimai rural municipality",
+                            "marchawari rural municipality",
+                            "mayadevi rural municipality",
+                            "omsatiya rural municipality",
+                            "rohini rural municipality",
+                            "sammarimai rural municipality",
+                            "siyari rural municipality",
+                            "sudhdhodhan rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "arghakhanchi",
+                        "total_municipals": 6,
+                        "total_wards": 61,
+                        "municipals": [
+                            "sandhikharka municipality",
+                            "sitganga municipality",
+                            "bhumekasthan municipality",
+                            "chhatradev rural municipality",
+                            "panini rural municipality",
+                            "malarani rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "gulmi",
+                        "total_municipals": 12,
+                        "total_wards": 93,
+                        "municipals": [
+                            "resunga municipality",
+                            "musikot municipality",
+                            "ruru rural municipality",
+                            "chatrakot rural municipality",
+                            "gulmidarbar rural municipality",
+                            "chandrakot rural municipality",
+                            "satyawati rural municipality",
+                            "dhurkot rural municipality",
+                            "kaligandaki rural municipality",
+                            "isma rural municipality",
+                            "malika rural municipality",
+                            "madane rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "palpa",
+                        "total_municipals": 10,
+                        "total_wards": 81,
+                        "municipals": [
+                            "tansen municipality",
+                            "rampur municipality",
+                            "rainadevi chhahara rural municipality",
+                            "ribdikot rural municipality",
+                            "bagnaskali rural municipality",
+                            "rambha rural municipality",
+                            "purbakhola rural municipality",
+                            "nisdi rural municipality",
+                            "mathagadhi rural municipality",
+                            "tinau rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "dang",
+                        "total_municipals": 10,
+                        "total_wards": 100,
+                        "municipals": [
+                            "ghorahi sub-metropolitan city",
+                            "tulsipur sub-metropolitan city",
+                            "lamahi municipality",
+                            "gadhawa rural municipality",
+                            "rajpur rural municipality",
+                            "shantinagar rural municipality",
+                            "rapti rural municipality",
+                            "banglachuli rural municipality",
+                            "dangisharan rural municipality",
+                            "babai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "pyuthan",
+                        "total_municipals": 9,
+                        "total_wards": 64,
+                        "municipals": [
+                            "sworgadwary municipality",
+                            "pyuthan municipality",
+                            "mandavi rural municipality",
+                            "sarumarani rural municipality",
+                            "ayirabati rural municipality",
+                            "mallarani rural municipality",
+                            "jhimruk rural municipality",
+                            "naubahini rural municipality",
+                            "gaumukhi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "rolpa",
+                        "total_municipals": 10,
+                        "total_wards": 72,
+                        "municipals": [
+                            "rolpa municipality",
+                            "runtigadi rural municipality",
+                            "tribeni rural municipality",
+                            "sunil smriti rural municipality",
+                            "lungri rural municipality",
+                            "sunchhahari rural municipality",
+                            "thawang rural municipality",
+                            "madi rural municipality",
+                            "gangadev rural municipality",
+                            "pariwartan rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "eastern rukum",
+                        "total_municipals": 3,
+                        "total_wards": 31,
+                        "municipals": [
+                            "putha uttarganga rural municipality",
+                            "bhume rural municipality",
+                            "sisne rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "banke",
+                        "total_municipals": 8,
+                        "total_wards": 81,
+                        "municipals": [
+                            "nepalgunj sub-metropolitan city",
+                            "kohalpur municipality",
+                            "rapti sonari rural municipality",
+                            "narainapur rural municipality",
+                            "duduwa rural municipality",
+                            "janki rural municipality",
+                            "khajura rural municipality",
+                            "baijanath rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bardiya",
+                        "total_municipals": 8,
+                        "total_wards": 75,
+                        "municipals": [
+                            "gulariya municipality",
+                            "rajapur municipality",
+                            "madhuwan municipality",
+                            "thakurbaba municipality",
+                            "bansagadhi municipality",
+                            "barbardiya municipality",
+                            "badhaiyatal rural municipality",
+                            "geruwa rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "karnali",
+                "total_districts": 10,
+                "districts": [
+                    {
+                        "district": "western rukum",
+                        "total_municipals": 6,
+                        "total_wards": 73,
+                        "municipals": [
+                            "aathbiskot municipality",
+                            "musikot municipality",
+                            "chaurjahari municipality",
+                            "sani bheri rural municipality",
+                            "tribeni rural municipality",
+                            "banfikot rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "salyan",
+                        "total_municipals": 10,
+                        "total_wards": 83,
+                        "municipals": [
+                            "kumakh rural municipality",
+                            "kalimati rural municipality",
+                            "chhatreshwori rural municipality",
+                            "darma rural municipality",
+                            "kapurkot rural municipality",
+                            "tribeni rural municipality",
+                            "siddha kumakh rural municipality",
+                            "bagchaur municipality",
+                            "sharada municipality",
+                            "bangad kupinde municipality"
+                        ]
+                    },
+                    {
+                        "district": "dolpa",
+                        "total_municipals": 8,
+                        "total_wards": 65,
+                        "municipals": [
+                            "mudkechula rural municipality",
+                            "kaike rural municipality",
+                            "shey phoksundo rural municipality",
+                            "jagadulla rural municipality",
+                            "dolpo buddha rural municipality",
+                            "chharka tangsong rural municipality",
+                            "thuli bheri municipality",
+                            "tripurasundari municipality"
+                        ]
+                    },
+                    {
+                        "district": "humla",
+                        "total_municipals": 7,
+                        "total_wards": 44,
+                        "municipals": [
+                            "simkot rural municipality",
+                            "sarkegad rural municipality",
+                            "adanchuli rural municipality",
+                            "kharpunath rural municipality",
+                            "tanjakot rural municipality",
+                            "chankheli rural municipality",
+                            "namkha rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "jumla",
+                        "total_municipals": 8,
+                        "total_wards": 60,
+                        "municipals": [
+                            "tatopani rural municipality",
+                            "patrasi rural municipality",
+                            "tila rural municipality",
+                            "kanakasundari rural municipality",
+                            "sinja rural municipality",
+                            "hima rural municipality",
+                            "guthichaur rural municipality",
+                            "chandannath municipality"
+                        ]
+                    },
+                    {
+                        "district": "kalikot",
+                        "total_municipals": 9,
+                        "total_wards": 82,
+                        "municipals": [
+                            "khandachakra municipality",
+                            "raskot municipality",
+                            "tilagufa municipality",
+                            "naraharinath rural municipality",
+                            "palata rural municipality",
+                            "subha kalika rural municipality",
+                            "sanni tribeni rural municipality",
+                            "pachaljharana rural municipality",
+                            "mahawai rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "mugu",
+                        "total_municipals": 4,
+                        "total_wards": 45,
+                        "municipals": [
+                            "khatyad rural municipality",
+                            "soru rural municipality",
+                            "mugum karmarong rural municipality",
+                            "chhayanath rara municipality"
+                        ]
+                    },
+                    {
+                        "district": "surkhet",
+                        "total_municipals": 9,
+                        "total_wards": 99,
+                        "municipals": [
+                            "simta rural municipality",
+                            "barahtal rural municipality",
+                            "chaukune rural municipality",
+                            "chingad rural municipality",
+                            "gurbhakot municipality",
+                            "birendranagar municipality",
+                            "bheriganga municipality",
+                            "panchpuri municipality",
+                            "lekbeshi municipality"
+                        ]
+                    },
+                    {
+                        "district": "dailekh",
+                        "total_municipals": 11,
+                        "total_wards": 90,
+                        "municipals": [
+                            "dullu municipality",
+                            "gurans rural municipality",
+                            "bhairabi rural municipality",
+                            "naumule rural municipality",
+                            "mahabu rural municipality",
+                            "thantikandh rural municipality",
+                            "bhagawatimai rural municipality",
+                            "dungeshwor rural municipality",
+                            "aathabis municipality",
+                            "narayan municipality",
+                            "chamunda bindrasaini municipality"
+                        ]
+                    },
+                    {
+                        "district": "jajarkot",
+                        "total_municipals": 7,
+                        "total_wards": 77,
+                        "municipals": [
+                            "chhedagad municipality",
+                            "bheri municipality",
+                            "nalagad municipality",
+                            "junichande rural municipality",
+                            "kuse rural municipality",
+                            "barekot rural municipality",
+                            "shiwalaya rural municipality"
+                        ]
+                    }
+                ]
+            },
+            {
+                "province": "sudurpaschim",
+                "total_districts": 9,
+                "districts": [
+                    {
+                        "district": "darchula",
+                        "total_municipals": 9,
+                        "total_wards": 61,
+                        "municipals": [
+                            "mahakali municipality",
+                            "shailyashikhar municipality",
+                            "naugad rural municipality",
+                            "malikaarjun rural municipality",
+                            "marma rural municipality",
+                            "lekam rural municipality",
+                            "dunhu rural municipality",
+                            "byas rural municipality",
+                            "apihimal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bajhang",
+                        "total_municipals": 12,
+                        "total_wards": 94,
+                        "municipals": [
+                            "jayaprithivi municipality",
+                            "bungal municipality",
+                            "kedarseu rural municipality",
+                            "thalara rural municipality",
+                            "bithadchir rural municipality",
+                            "chabispathivera rural municipality",
+                            "khaptadchhanna rural municipality",
+                            "masta rural municipality",
+                            "durgathali rural municipality",
+                            "talkot rural municipality",
+                            "surma rural municipality",
+                            "saipaal rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "bajura",
+                        "total_municipals": 9,
+                        "total_wards": 69,
+                        "municipals": [
+                            "badimalika municipality",
+                            "tribeni municipality",
+                            "budhiganga municipality",
+                            "budhinanda municipality",
+                            "khaptad chhededaha rural municipality",
+                            "swami kartik khaapar rural municipality",
+                            "jagannath rural municipality",
+                            "himali rural municipality",
+                            "gaumul rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "baitadi",
+                        "total_municipals": 10,
+                        "total_wards": 84,
+                        "municipals": [
+                            "dasharathchanda municipality",
+                            "patan municipality",
+                            "melauli municipality",
+                            "purchaudi municipality",
+                            "dogadakedar rural municipality",
+                            "dilasaini rural municipality",
+                            "sigas rural municipality",
+                            "pancheshwar rural municipality",
+                            "surnaya rural municipality",
+                            "shivanath rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "doti",
+                        "total_municipals": 9,
+                        "total_wards": 65,
+                        "municipals": [
+                            "dipayal silgadi municipality",
+                            "shikhar municipality",
+                            "adharsha rural municipality",
+                            "purbichauki rural municipality",
+                            "k i singh rural municipality",
+                            "jorayal rural municipality",
+                            "sayal rural municipality",
+                            "bogtan foodsil rural municipality",
+                            "badikedar rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "achham",
+                        "total_municipals": 10,
+                        "total_wards": 91,
+                        "municipals": [
+                            "ramaroshan rural municipality",
+                            "chaurpati rural municipality",
+                            "turmakhad rural municipality",
+                            "mellekh rural municipality",
+                            "dhakari rural municipality",
+                            "bannigadhi jayagadh rural municipality",
+                            "mangalsen municipality",
+                            "kamalbazar municipality",
+                            "sanphebagar municipality",
+                            "panchadewal binayak municipality"
+                        ]
+                    },
+                    {
+                        "district": "dadeldhura",
+                        "total_municipals": 7,
+                        "total_wards": 52,
+                        "municipals": [
+                            "nawadurga rural municipality",
+                            "alital rural municipality",
+                            "ganayapdhura rural municipality",
+                            "bhageshwar rural municipality",
+                            "ajaymeru rural municipality",
+                            "amargadhi municipality",
+                            "parashuram municipality"
+                        ]
+                    },
+                    {
+                        "district": "kanchanpur",
+                        "total_municipals": 9,
+                        "total_wards": 92,
+                        "municipals": [
+                            "bhimdatta municipality",
+                            "punarbas municipality",
+                            "bedkot municipality",
+                            "mahakali municipality",
+                            "shuklaphanta municipality",
+                            "belauri municipality",
+                            "krishnapur municipality",
+                            "laljhadi rural municipality",
+                            "beldandi rural municipality"
+                        ]
+                    },
+                    {
+                        "district": "kailali",
+                        "total_municipals": 13,
+                        "total_wards": 126,
+                        "municipals": [
+                            "janaki rural municipality",
+                            "kailari rural municipality",
+                            "joshipur rural municipality",
+                            "bardagoriya rural municipality",
+                            "mohanyal rural municipality",
+                            "chure rural municipality",
+                            "tikapur municipality",
+                            "ghodaghodi municipality",
+                            "lamkichuha municipality",
+                            "bhajani municipality",
+                            "godawari municipality",
+                            "gauriganga municipality",
+                            "dhangadhi sub-metropolitan city"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "/api/search?q=bharatpur": {
+        "query": "bharatpur",
+        "total": 1,
+        "results": [
+            {
+                "name": "bharatpur metropolitan city",
+                "type": "municipality",
+                "district": "chitwan",
+                "province": "bagmati"
+            }
+        ]
+    },
+    "/api/search?q=kathmandu": {
+        "query": "kathmandu",
+        "total": 2,
+        "results": [
+            {
+                "name": "kathmandu",
+                "type": "district",
+                "district": "kathmandu",
+                "province": "bagmati"
+            },
+            {
+                "name": "kathmandu metropolitan city",
+                "type": "municipality",
+                "district": "kathmandu",
+                "province": "bagmati"
+            }
+        ]
+    },
+    "/api/search?q=rural": {
+        "query": "rural",
+        "total": 20,
+        "results": [
+            {
+                "name": "ramaroshan rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "chaurpati rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "turmakhad rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "mellekh rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "dhakari rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "bannigadhi jayagadh rural municipality",
+                "type": "municipality",
+                "district": "achham",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "chhatradev rural municipality",
+                "type": "municipality",
+                "district": "arghakhanchi",
+                "province": "lumbini"
+            },
+            {
+                "name": "panini rural municipality",
+                "type": "municipality",
+                "district": "arghakhanchi",
+                "province": "lumbini"
+            },
+            {
+                "name": "malarani rural municipality",
+                "type": "municipality",
+                "district": "arghakhanchi",
+                "province": "lumbini"
+            },
+            {
+                "name": "bareng rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "kanthekhola rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "taman khola rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "tara khola rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "nisikhola rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "badigad rural municipality",
+                "type": "municipality",
+                "district": "baglung",
+                "province": "gandaki"
+            },
+            {
+                "name": "dogadakedar rural municipality",
+                "type": "municipality",
+                "district": "baitadi",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "dilasaini rural municipality",
+                "type": "municipality",
+                "district": "baitadi",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "sigas rural municipality",
+                "type": "municipality",
+                "district": "baitadi",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "pancheshwar rural municipality",
+                "type": "municipality",
+                "district": "baitadi",
+                "province": "sudurpaschim"
+            },
+            {
+                "name": "surnaya rural municipality",
+                "type": "municipality",
+                "district": "baitadi",
+                "province": "sudurpaschim"
+            }
+        ]
+    },
+    "/api/districts/bagmati": {
+        "districts": [
+            "bhaktapur",
+            "chitwan",
+            "dhading",
+            "dolakha",
+            "kathmandu",
+            "kavrepalanchok",
+            "lalitpur",
+            "makwanpur",
+            "nuwakot",
+            "ramechhap",
+            "rasuwa",
+            "sindhuli",
+            "sindhupalchok"
+        ]
+    },
+    "/api/districts/koshi": {
+        "districts": [
+            "bhojpur",
+            "dhankuta",
+            "ilam",
+            "jhapa",
+            "khotang",
+            "morang",
+            "okhaldhunga",
+            "panchthar",
+            "sankhuwasabha",
+            "solukhumbu",
+            "sunsari",
+            "taplejung",
+            "terhathum",
+            "udayapur"
+        ]
+    },
+    "/api/districts/pradesh-1": {
+        "districts": [
+            "bhojpur",
+            "dhankuta",
+            "ilam",
+            "jhapa",
+            "khotang",
+            "morang",
+            "okhaldhunga",
+            "panchthar",
+            "sankhuwasabha",
+            "solukhumbu",
+            "sunsari",
+            "taplejung",
+            "terhathum",
+            "udayapur"
+        ]
+    },
+    "/api/districts/BAGMATI": {
+        "districts": [
+            "bhaktapur",
+            "chitwan",
+            "dhading",
+            "dolakha",
+            "kathmandu",
+            "kavrepalanchok",
+            "lalitpur",
+            "makwanpur",
+            "nuwakot",
+            "ramechhap",
+            "rasuwa",
+            "sindhuli",
+            "sindhupalchok"
+        ]
+    },
+    "/api/districts/sudurpaschim?case=title": {
+        "districts": [
+            "Darchula",
+            "Bajhang",
+            "Bajura",
+            "Baitadi",
+            "Doti",
+            "Achham",
+            "Dadeldhura",
+            "Kanchanpur",
+            "Kailali"
+        ]
+    },
+    "/api/municipals/eastern-rukum": {
+        "municipals": [
+            "putha uttarganga rural municipality",
+            "bhume rural municipality",
+            "sisne rural municipality"
+        ]
+    },
+    "/api/municipals/eastern%20rukum": {
+        "municipals": [
+            "putha uttarganga rural municipality",
+            "bhume rural municipality",
+            "sisne rural municipality"
+        ]
+    },
+    "/api/municipals/chitwan?case=title": {
+        "municipals": [
+            "Bharatpur Metropolitan City",
+            "Kalika Municipality",
+            "Khairahani Municipality",
+            "Madi Municipality",
+            "Ratnanagar Municipality",
+            "Rapti Municipality",
+            "Ichchhyakamana Rural Municipality"
+        ]
+    },
+    "/api/municipals/tanahu": {
+        "municipals": [
+            "bhanu municipality",
+            "bhimad municipality",
+            "byas municipality",
+            "shuklagandaki municipality",
+            "anbukhaireni rural municipality",
+            "devghat rural municipality",
+            "bandipur rural municipality",
+            "rhishing rural municipality",
+            "ghiring rural municipality",
+            "myagde rural municipality"
+        ]
+    },
+    "/api/municipals/illam": {
+        "municipals": [
+            "suryodaya municipality",
+            "illam municipality",
+            "deumai municipality",
+            "maijogmai rural municipality",
+            "fakphokthum rural municipality",
+            "mai municipality",
+            "chulachuli rural municipality",
+            "rong rural municipality",
+            "mangsebung rural municipality",
+            "sandakpur rural municipality"
+        ]
+    },
+    "/api/municipals/tehrathum": {
+        "municipals": [
+            "myanglung municipality",
+            "laligurans municipality",
+            "aathrai rural municipality",
+            "phedap rural municipality",
+            "chhathar rural municipality",
+            "menchayam rural municipality"
+        ]
+    },
+    "/api/municipals/bhojpur": {
+        "municipals": [
+            "shadananda municipality",
+            "bhojpur municipality",
+            "hatuwagadhi rural municipality",
+            "ramprasad rai rural municipality",
+            "aamchowk rural municipality",
+            "temkemaiyung rural municipality",
+            "arun rural municipality",
+            "pauwadungma rural municipality",
+            "salpasilichho rural municipality"
+        ]
+    },
+    "/api/municipals/dhankuta": {
+        "municipals": [
+            "dhankuta municipality",
+            "pakhribas municipality",
+            "mahalaxmi municipality",
+            "sangurigadhi rural municipality",
+            "chaubise rural municipality",
+            "shahidbhumi rural municipality",
+            "chhathar jorpati rural municipality"
+        ]
+    },
+    "/api/municipals/ilam": {
+        "municipals": [
+            "suryodaya municipality",
+            "illam municipality",
+            "deumai municipality",
+            "maijogmai rural municipality",
+            "fakphokthum rural municipality",
+            "mai municipality",
+            "chulachuli rural municipality",
+            "rong rural municipality",
+            "mangsebung rural municipality",
+            "sandakpur rural municipality"
+        ]
+    },
+    "/api/municipals/jhapa": {
+        "municipals": [
+            "mechinagar municipality",
+            "birtamod municipality",
+            "damak municipality",
+            "bhadrapur municipality",
+            "shivasataxi municipality",
+            "arjundhara municipality",
+            "gauradhaha municipality",
+            "kankai municipality",
+            "kamal rural municipality",
+            "buddhashanti rural municipality",
+            "kachankawal rural municipality",
+            "jhapa rural municipality",
+            "barhadashi rural municipality",
+            "gauriganj rural municipality",
+            "haldibari rural municipality"
+        ]
+    },
+    "/api/municipals/khotang": {
+        "municipals": [
+            "diktel rupakot majhuwagadhi municipality",
+            "halesi tuwachung municipality",
+            "khotehang rural municipality",
+            "diprung chuichumma rural municipality",
+            "ainselukhark rural municipality",
+            "jantedhunga rural municipality",
+            "kepilasagadhi rural municipality",
+            "barahapokhari rural municipality",
+            "rawa besi rural municipality",
+            "sakela rural municipality"
+        ]
+    },
+    "/api/municipals/morang": {
+        "municipals": [
+            "sundarharaicha municipality",
+            "belbari municipality",
+            "patahrishanishchare municipality",
+            "ratuwamai municipality",
+            "uralabari municipality",
+            "rangeli municipality",
+            "sunwarshi municipality",
+            "letang municipality",
+            "biratnagar metropolitan city",
+            "jahada rural municipality",
+            "budhiganga rural municipality",
+            "katahari rural municipality",
+            "dhanpalthan rural municipality",
+            "kanepokhari rural municipality",
+            "gramthan rural municipality",
+            "kerabari rural municipality",
+            "miklajung rural municipality"
+        ]
+    },
+    "/api/municipals/okhaldhunga": {
+        "municipals": [
+            "siddhicharan municipality",
+            "khijidemba rural municipality",
+            "chisankhugadhi rural municipality",
+            "molung rural municipality",
+            "sunkoshi rural municipality",
+            "champadevi rural municipality",
+            "manebhanjyang rural municipality",
+            "likhu rural municipality"
+        ]
+    },
+    "/api/municipals/panchthar": {
+        "municipals": [
+            "phidim municipality",
+            "miklajung rural municipality",
+            "falgunanda rural municipality",
+            "hilihang rural municipality",
+            "falelung rural municipality",
+            "yangwarak rural municipality",
+            "kummayak rural municipality",
+            "tumbewa rural municipality"
+        ]
+    },
+    "/api/municipals/sankhuwasabha": {
+        "municipals": [
+            "khandbari municipality",
+            "chainpur municipality",
+            "dharmadevi municipality",
+            "panchakhapan municipality",
+            "madi municipality",
+            "makalu rural municipality",
+            "silichong rural municipality",
+            "sabhapokhari rural municipality",
+            "chichila rural municipality",
+            "bhotkhola rural municipality"
+        ]
+    },
+    "/api/municipals/solukhumbu": {
+        "municipals": [
+            "solududhakunda municipality",
+            "maapya dudhkoshi rural municipality",
+            "nechasalyan rural municipality",
+            "thulung dudhkoshi rural municipality",
+            "mahakulung rural municipality",
+            "sotang rural municipality",
+            "khumbupasanglahmu rural municipality",
+            "likhupike rural municipality"
+        ]
+    },
+    "/api/municipals/sunsari": {
+        "municipals": [
+            "barahchhetra municipality",
+            "inaruwa municipality",
+            "duhabi municipality",
+            "ramdhuni municipality",
+            "itahari sub-metropolitan city",
+            "dharan sub-metropolitan city",
+            "koshi rural municipality",
+            "harinagar rural municipality",
+            "bhokraha narsing rural municipality",
+            "dewanganj rural municipality",
+            "gadhi rural municipality",
+            "barju rural municipality"
+        ]
+    },
+    "/api/municipals/taplejung": {
+        "municipals": [
+            "phungling municipality",
+            "sirijangha rural municipality",
+            "aathrai tribeni rural municipality",
+            "pathivara yangwarak rural municipality",
+            "meringden rural municipality",
+            "sidingba rural municipality",
+            "phaktanglung rural municipality",
+            "maiwakhola rural municipality",
+            "mikwakhola rural municipality"
+        ]
+    },
+    "/api/municipals/terhathum": {
+        "municipals": [
+            "myanglung municipality",
+            "laligurans municipality",
+            "aathrai rural municipality",
+            "phedap rural municipality",
+            "chhathar rural municipality",
+            "menchayam rural municipality"
+        ]
+    },
+    "/api/municipals/udayapur": {
+        "municipals": [
+            "triyuga municipality",
+            "katari municipality",
+            "chaudandigadhi municipality",
+            "belaka municipality",
+            "udayapurgadhi rural municipality",
+            "rautamai rural municipality",
+            "tapli rural municipality",
+            "limchungbung rural municipality"
+        ]
+    },
+    "/api/municipals/bara": {
+        "municipals": [
+            "kalaiya sub-metropolitan city",
+            "jitpur simara sub-metropolitan city",
+            "kolhabi municipality",
+            "nijgadh municipality",
+            "mahagadhimai municipality",
+            "simraungadh municipality",
+            "pacharauta municipality",
+            "pheta rural municipality",
+            "bishrampur rural municipality",
+            "prasauni rural municipality",
+            "adarshkotwal rural municipality",
+            "karaiyamai rural municipality",
+            "devtal rural municipality",
+            "parwanipur rural municipality",
+            "baragadhi rural municipality",
+            "suwarna rural municipality"
+        ]
+    },
+    "/api/municipals/dhanusha": {
+        "municipals": [
+            "janakpurdham sub-metropolitan city",
+            "chhireshwornath municipality",
+            "ganeshman charnath municipality",
+            "dhanusadham municipality",
+            "nagarain municipality",
+            "bideha municipality",
+            "mithila municipality",
+            "sahidnagar municipality",
+            "sabaila municipality",
+            "kamala municipality",
+            "mithila bihari municipality",
+            "hansapur municipality",
+            "janaknandani rural municipality",
+            "bateshwor rural municipality",
+            "mukhiyapatti musarmiya rural municipality",
+            "lakshminiya rural municipality",
+            "aaurahi rural municipality",
+            "dhanauji rural municipality"
+        ]
+    },
+    "/api/municipals/mahottari": {
+        "municipals": [
+            "aurahi municipality",
+            "balwa municipality",
+            "bardibas municipality",
+            "bhangaha municipality",
+            "gaushala municipality",
+            "jaleswor municipality",
+            "loharpatti municipality",
+            "manra siswa municipality",
+            "matihani municipality",
+            "ramgopalpur municipality",
+            "ekdanra rural municipality",
+            "mahottari rural municipality",
+            "pipra rural municipality",
+            "samsi rural municipality",
+            "sonama rural municipality"
+        ]
+    },
+    "/api/municipals/parsa": {
+        "municipals": [
+            "birgunj metropolitan city",
+            "bahudaramai municipality",
+            "parsagadhi municipality",
+            "pokhariya municipality",
+            "bindabasini rural municipality",
+            "dhobini rural municipality",
+            "chhipaharmai rural municipality",
+            "jagarnathpur rural municipality",
+            "jirabhawani rural municipality",
+            "kalikamai rural municipality",
+            "pakahamainpur rural municipality",
+            "paterwasugauli rural municipality",
+            "sakhuwaprasauni rural municipality",
+            "thori rural municipality"
+        ]
+    },
+    "/api/municipals/rautahat": {
+        "municipals": [
+            "baudhimai municipality",
+            "brindaban municipality",
+            "chandrapur municipality",
+            "dewahhi gonahi municipality",
+            "gadhimai municipality",
+            "garuda municipality",
+            "gaur municipality",
+            "gujara municipality",
+            "ishanath municipality",
+            "katahariya municipality",
+            "madhav narayan municipality",
+            "maulapur municipality",
+            "paroha municipality",
+            "phatuwa bijayapur municipality",
+            "rajdevi municipality",
+            "rajpur municipality",
+            "durga bhagwati rural municipality",
+            "yemunamai rural municipality"
+        ]
+    },
+    "/api/municipals/saptari": {
+        "municipals": [
+            "bode barsain municipality",
+            "dakneshwori municipality",
+            "hanumannagar kankalini municipality",
+            "kanchanrup municipality",
+            "khadak municipality",
+            "shambhunath municipality",
+            "saptakoshi rural municipality",
+            "surunga municipality",
+            "rajbiraj municipality",
+            "agnisair krishna savaran rural municipality",
+            "balan bihul rural municipality",
+            "rajgadh rural municipality",
+            "bishnupur rural municipality",
+            "chhinnamasta rural municipality",
+            "mahadeva rural municipality",
+            "rupani rural municipality",
+            "tilathi koiladi rural municipality",
+            "tirahut rural municipality"
+        ]
+    },
+    "/api/municipals/sarlahi": {
+        "municipals": [
+            "bagmati municipality",
+            "balara municipality",
+            "barahathawa municipality",
+            "godaita municipality",
+            "hariwan municipality",
+            "haripur municipality",
+            "haripurwa municipality",
+            "ishworpur municipality",
+            "kabilasi municipality",
+            "lalbandi municipality",
+            "malangawa municipality",
+            "basbariya rural municipality",
+            "bishnu rural municipality",
+            "bramhapuri rural municipality",
+            "chakraghatta rural municipality",
+            "chandranagar rural municipality",
+            "dhankaul rural municipality",
+            "kaudena rural municipality",
+            "parsa rural municipality",
+            "ramnagar rural municipality"
+        ]
+    },
+    "/api/municipals/siraha": {
+        "municipals": [
+            "lahan municipality",
+            "dhangadhimai municipality",
+            "siraha municipality",
+            "golbazar municipality",
+            "mirchaiya municipality",
+            "kalyanpur municipality",
+            "karjanha municipality",
+            "sukhipur municipality",
+            "bhagawanpur rural municipality",
+            "aurahi rural municipality",
+            "bishnupur rural municipality",
+            "bariyarpatti rural municipality",
+            "laxmipur patari rural municipality",
+            "naraha rural municipality",
+            "sakhuwanankarkatti rural municipality",
+            "arnama rural municipality",
+            "nawarajpur rural municipality"
+        ]
+    },
+    "/api/municipals/bhaktapur": {
+        "municipals": [
+            "bhaktapur municipality",
+            "changunarayan municipality",
+            "suryabinayak municipality",
+            "madhyapur thimi municipality"
+        ]
+    },
+    "/api/municipals/chitwan": {
+        "municipals": [
+            "bharatpur metropolitan city",
+            "kalika municipality",
+            "khairahani municipality",
+            "madi municipality",
+            "ratnanagar municipality",
+            "rapti municipality",
+            "ichchhyakamana rural municipality"
+        ]
+    },
+    "/api/municipals/dhading": {
+        "municipals": [
+            "dhunibesi municipality",
+            "nilakantha municipality",
+            "khaniyabash rural municipality",
+            "gajuri rural municipality",
+            "galchi rural municipality",
+            "gangajamuna rural municipality",
+            "jwalamukhi rural municipality",
+            "thakre rural municipality",
+            "netrawati dabjong rural municipality",
+            "benighat rorang rural municipality",
+            "rubi valley rural municipality",
+            "siddhalek rural municipality",
+            "tripura sundari rural municipality"
+        ]
+    },
+    "/api/municipals/dolakha": {
+        "municipals": [
+            "bhimeshwor municipality",
+            "jiri municipality",
+            "kalinchok rural municipality",
+            "melung rural municipality",
+            "bigu rural municipality",
+            "gaurishankar rural municipality",
+            "baiteshwor rural municipality",
+            "sailung rural municipality",
+            "tamakoshi rural municipality"
+        ]
+    },
+    "/api/municipals/kathmandu": {
+        "municipals": [
+            "kathmandu metropolitan city",
+            "gokarneshwor municipality",
+            "kirtipur municipality",
+            "kageshwori manahora municipality",
+            "chandragiri municipality",
+            "tokha municipality",
+            "tarakeshwor municipality",
+            "dakshinkali municipality",
+            "nagarjun municipality",
+            "budhanilakantha municipality",
+            "shankharapur municipality"
+        ]
+    },
+    "/api/municipals/kavrepalanchok": {
+        "municipals": [
+            "dhulikhel municipality",
+            "namobuddha municipality",
+            "panauti municipality",
+            "panchkhal municipality",
+            "banepa municipality",
+            "mandandeupur municipality",
+            "khanikhola rural municipality",
+            "chaurideurali rural municipality",
+            "temal rural municipality",
+            "bethanchowk rural municipality",
+            "bhumlu rural municipality",
+            "mahabharat rural municipality",
+            "roshi rural municipality"
+        ]
+    },
+    "/api/municipals/lalitpur": {
+        "municipals": [
+            "lalitpur metropolitan city",
+            "mahalaxmi municipality",
+            "godawari municipality",
+            "konjyosom rural municipality",
+            "bagmati rural municipality",
+            "mahankal rural municipality"
+        ]
+    },
+    "/api/municipals/makwanpur": {
+        "municipals": [
+            "hetauda sub-metropolitan city",
+            "thaha municipality",
+            "bhimphedi rural municipality",
+            "makawanpurgadhi rural municipality",
+            "manahari rural municipality",
+            "raksirang rural municipality",
+            "bakaiya rural municipality",
+            "bagmati rural municipality",
+            "kailash rural municipality",
+            "indrasarowar rural municipality"
+        ]
+    },
+    "/api/municipals/nuwakot": {
+        "municipals": [
+            "bidur municipality",
+            "belkotgadhi municipality",
+            "kakani rural municipality",
+            "panchakanya rural municipality",
+            "likhu rural municipality",
+            "dupcheshwar rural municipality",
+            "shivapuri rural municipality",
+            "tadi rural municipality",
+            "suryagadhi rural municipality",
+            "tarkeshwar rural municipality",
+            "kispang rural municipality",
+            "myagang rural municipality"
+        ]
+    },
+    "/api/municipals/ramechhap": {
+        "municipals": [
+            "manthali municipality",
+            "ramechhap municipality",
+            "umakunda rural municipality",
+            "khandadevi rural municipality",
+            "doramba sailung rural municipality",
+            "gokulganga rural municipality",
+            "likhu tamakoshi rural municipality",
+            "sunapati rural municipality"
+        ]
+    },
+    "/api/municipals/rasuwa": {
+        "municipals": [
+            "kalika rural municipality",
+            "gosaikunda rural municipality",
+            "naukunda rural municipality",
+            "amachodingmo rural municipality",
+            "uttargaya rural municipality"
+        ]
+    },
+    "/api/municipals/sindhuli": {
+        "municipals": [
+            "kamalamai municipality",
+            "dudhouli municipality",
+            "sunkoshi rural municipality",
+            "hariharpurgadhi rural municipality",
+            "tinpatan rural municipality",
+            "marin rural municipality",
+            "golanjor rural municipality",
+            "phikkal rural municipality",
+            "ghanglekh rural municipality"
+        ]
+    },
+    "/api/municipals/sindhupalchok": {
+        "municipals": [
+            "chautara sangachokgadhi municipality",
+            "barhabise municipality",
+            "melamchi municipality",
+            "balefi rural municipality",
+            "sunkoshi rural municipality",
+            "indrawati rural municipality",
+            "jugal rural municipality",
+            "panchpokhari thangpal rural municipality",
+            "bhotekoshi rural municipality",
+            "lisangkhu pakhar rural municipality",
+            "helambu rural municipality",
+            "tripurasundari rural municipality"
+        ]
+    },
+    "/api/municipals/baglung": {
+        "municipals": [
+            "baglung municipality",
+            "dhorpatan municipality",
+            "galkot municipality",
+            "jaimuni municipality",
+            "bareng rural municipality",
+            "kanthekhola rural municipality",
+            "taman khola rural municipality",
+            "tara khola rural municipality",
+            "nisikhola rural municipality",
+            "badigad rural municipality"
+        ]
+    },
+    "/api/municipals/gorkha": {
+        "municipals": [
+            "gorkha municipality",
+            "palungtar municipality",
+            "barpak sulikot rural municipality",
+            "siranchok rural municipality",
+            "ajirkot rural municipality",
+            "chum nubri rural municipality",
+            "dharche rural municipality",
+            "bhimsenthapa rural municipality",
+            "sahid lakhan rural municipality",
+            "aarughat rural municipality",
+            "gandaki rural municipality"
+        ]
+    },
+    "/api/municipals/kaski": {
+        "municipals": [
+            "pokhara metropolitan city",
+            "annapurna rural municipality",
+            "machhapuchchhre rural municipality",
+            "madi rural municipality",
+            "rupa rural municipality"
+        ]
+    },
+    "/api/municipals/lamjung": {
+        "municipals": [
+            "besishahar municipality",
+            "madhyanepal municipality",
+            "rainas municipality",
+            "sundarbazar municipality",
+            "dordi rural municipality",
+            "dudhpokhari rural municipality",
+            "kwholasothar rural municipality",
+            "marsyangdi rural municipality"
+        ]
+    },
+    "/api/municipals/manang": {
+        "municipals": [
+            "chame rural municipality",
+            "narshon rural municipality",
+            "narpa bhumi rural municipality",
+            "manang ingshyang rural municipality"
+        ]
+    },
+    "/api/municipals/mustang": {
+        "municipals": [
+            "gharapjhong rural municipality",
+            "thasang rural municipality",
+            "waragung muktikhsetra rural municipality",
+            "lomanthang rural municipality",
+            "lo-ghekar damodarkunda rural municipality"
+        ]
+    },
+    "/api/municipals/myagdi": {
+        "municipals": [
+            "beni municipality",
+            "annapurna rural municipality",
+            "dhaulagiri rural municipality",
+            "mangala rural municipality",
+            "malika rural municipality",
+            "raghuganga rural municipality"
+        ]
+    },
+    "/api/municipals/nawalpur": {
+        "municipals": [
+            "kawasoti municipality",
+            "gaidakot municipality",
+            "devchuli municipality",
+            "madhyabindu municipality",
+            "baudeekali rural municipality",
+            "bulingtar rural municipality",
+            "binayee tribeni rural municipality",
+            "hupsekot rural municipality"
+        ]
+    },
+    "/api/municipals/parbat": {
+        "municipals": [
+            "kushma municipality",
+            "phalebas municipality",
+            "jaljala rural municipality",
+            "painyu rural municipality",
+            "mahashila rural municipality",
+            "modi rural municipality",
+            "bihadi rural municipality"
+        ]
+    },
+    "/api/municipals/syangja": {
+        "municipals": [
+            "galyang municipality",
+            "chapakot municipality",
+            "putalibazar municipality",
+            "bhirkot municipality",
+            "waling municipality",
+            "arjunchaupari rural municipality",
+            "aandhikhola rural municipality",
+            "kaligandagi rural municipality",
+            "phedikhola rural municipality",
+            "harinas rural municipality",
+            "biruwa rural municipality"
+        ]
+    },
+    "/api/municipals/tanahun": {
+        "municipals": [
+            "bhanu municipality",
+            "bhimad municipality",
+            "byas municipality",
+            "shuklagandaki municipality",
+            "anbukhaireni rural municipality",
+            "devghat rural municipality",
+            "bandipur rural municipality",
+            "rhishing rural municipality",
+            "ghiring rural municipality",
+            "myagde rural municipality"
+        ]
+    },
+    "/api/municipals/arghakhanchi": {
+        "municipals": [
+            "sandhikharka municipality",
+            "sitganga municipality",
+            "bhumekasthan municipality",
+            "chhatradev rural municipality",
+            "panini rural municipality",
+            "malarani rural municipality"
+        ]
+    },
+    "/api/municipals/banke": {
+        "municipals": [
+            "nepalgunj sub-metropolitan city",
+            "kohalpur municipality",
+            "rapti sonari rural municipality",
+            "narainapur rural municipality",
+            "duduwa rural municipality",
+            "janki rural municipality",
+            "khajura rural municipality",
+            "baijanath rural municipality"
+        ]
+    },
+    "/api/municipals/bardiya": {
+        "municipals": [
+            "gulariya municipality",
+            "rajapur municipality",
+            "madhuwan municipality",
+            "thakurbaba municipality",
+            "bansagadhi municipality",
+            "barbardiya municipality",
+            "badhaiyatal rural municipality",
+            "geruwa rural municipality"
+        ]
+    },
+    "/api/municipals/dang": {
+        "municipals": [
+            "ghorahi sub-metropolitan city",
+            "tulsipur sub-metropolitan city",
+            "lamahi municipality",
+            "gadhawa rural municipality",
+            "rajpur rural municipality",
+            "shantinagar rural municipality",
+            "rapti rural municipality",
+            "banglachuli rural municipality",
+            "dangisharan rural municipality",
+            "babai rural municipality"
+        ]
+    },
+    "/api/municipals/gulmi": {
+        "municipals": [
+            "resunga municipality",
+            "musikot municipality",
+            "ruru rural municipality",
+            "chatrakot rural municipality",
+            "gulmidarbar rural municipality",
+            "chandrakot rural municipality",
+            "satyawati rural municipality",
+            "dhurkot rural municipality",
+            "kaligandaki rural municipality",
+            "isma rural municipality",
+            "malika rural municipality",
+            "madane rural municipality"
+        ]
+    },
+    "/api/municipals/kapilvastu": {
+        "municipals": [
+            "kapilbastu municipality",
+            "banganga municipality",
+            "buddhabhumi municipality",
+            "shivaraj municipality",
+            "krishnanagar municipality",
+            "maharajgunj municipality",
+            "mayadevi rural municipality",
+            "yashodhara rural municipality",
+            "suddhodhan rural municipality",
+            "bijayanagar rural municipality"
+        ]
+    },
+    "/api/municipals/parasi": {
+        "municipals": [
+            "bardaghat municipality",
+            "ramgram municipality",
+            "sunwal municipality",
+            "susta rural municipality",
+            "palhi nandan rural municipality",
+            "pratappur rural municipality",
+            "sarawal rural municipality"
+        ]
+    },
+    "/api/municipals/palpa": {
+        "municipals": [
+            "tansen municipality",
+            "rampur municipality",
+            "rainadevi chhahara rural municipality",
+            "ribdikot rural municipality",
+            "bagnaskali rural municipality",
+            "rambha rural municipality",
+            "purbakhola rural municipality",
+            "nisdi rural municipality",
+            "mathagadhi rural municipality",
+            "tinau rural municipality"
+        ]
+    },
+    "/api/municipals/pyuthan": {
+        "municipals": [
+            "sworgadwary municipality",
+            "pyuthan municipality",
+            "mandavi rural municipality",
+            "sarumarani rural municipality",
+            "ayirabati rural municipality",
+            "mallarani rural municipality",
+            "jhimruk rural municipality",
+            "naubahini rural municipality",
+            "gaumukhi rural municipality"
+        ]
+    },
+    "/api/municipals/rolpa": {
+        "municipals": [
+            "rolpa municipality",
+            "runtigadi rural municipality",
+            "tribeni rural municipality",
+            "sunil smriti rural municipality",
+            "lungri rural municipality",
+            "sunchhahari rural municipality",
+            "thawang rural municipality",
+            "madi rural municipality",
+            "gangadev rural municipality",
+            "pariwartan rural municipality"
+        ]
+    },
+    "/api/municipals/rupandehi": {
+        "municipals": [
+            "butwal sub-metropolitan city",
+            "devdaha municipality",
+            "lumbini sanskritik municipality",
+            "sainamaina municipality",
+            "siddharthanagar municipality",
+            "tillotama municipality",
+            "gaidahawa rural municipality",
+            "kanchan rural municipality",
+            "kotahimai rural municipality",
+            "marchawari rural municipality",
+            "mayadevi rural municipality",
+            "omsatiya rural municipality",
+            "rohini rural municipality",
+            "sammarimai rural municipality",
+            "siyari rural municipality",
+            "sudhdhodhan rural municipality"
+        ]
+    },
+    "/api/municipals/dailekh": {
+        "municipals": [
+            "dullu municipality",
+            "gurans rural municipality",
+            "bhairabi rural municipality",
+            "naumule rural municipality",
+            "mahabu rural municipality",
+            "thantikandh rural municipality",
+            "bhagawatimai rural municipality",
+            "dungeshwor rural municipality",
+            "aathabis municipality",
+            "narayan municipality",
+            "chamunda bindrasaini municipality"
+        ]
+    },
+    "/api/municipals/dolpa": {
+        "municipals": [
+            "mudkechula rural municipality",
+            "kaike rural municipality",
+            "shey phoksundo rural municipality",
+            "jagadulla rural municipality",
+            "dolpo buddha rural municipality",
+            "chharka tangsong rural municipality",
+            "thuli bheri municipality",
+            "tripurasundari municipality"
+        ]
+    },
+    "/api/municipals/humla": {
+        "municipals": [
+            "simkot rural municipality",
+            "sarkegad rural municipality",
+            "adanchuli rural municipality",
+            "kharpunath rural municipality",
+            "tanjakot rural municipality",
+            "chankheli rural municipality",
+            "namkha rural municipality"
+        ]
+    },
+    "/api/municipals/jajarkot": {
+        "municipals": [
+            "chhedagad municipality",
+            "bheri municipality",
+            "nalagad municipality",
+            "junichande rural municipality",
+            "kuse rural municipality",
+            "barekot rural municipality",
+            "shiwalaya rural municipality"
+        ]
+    },
+    "/api/municipals/jumla": {
+        "municipals": [
+            "tatopani rural municipality",
+            "patrasi rural municipality",
+            "tila rural municipality",
+            "kanakasundari rural municipality",
+            "sinja rural municipality",
+            "hima rural municipality",
+            "guthichaur rural municipality",
+            "chandannath municipality"
+        ]
+    },
+    "/api/municipals/kalikot": {
+        "municipals": [
+            "khandachakra municipality",
+            "raskot municipality",
+            "tilagufa municipality",
+            "naraharinath rural municipality",
+            "palata rural municipality",
+            "subha kalika rural municipality",
+            "sanni tribeni rural municipality",
+            "pachaljharana rural municipality",
+            "mahawai rural municipality"
+        ]
+    },
+    "/api/municipals/mugu": {
+        "municipals": [
+            "khatyad rural municipality",
+            "soru rural municipality",
+            "mugum karmarong rural municipality",
+            "chhayanath rara municipality"
+        ]
+    },
+    "/api/municipals/salyan": {
+        "municipals": [
+            "kumakh rural municipality",
+            "kalimati rural municipality",
+            "chhatreshwori rural municipality",
+            "darma rural municipality",
+            "kapurkot rural municipality",
+            "tribeni rural municipality",
+            "siddha kumakh rural municipality",
+            "bagchaur municipality",
+            "sharada municipality",
+            "bangad kupinde municipality"
+        ]
+    },
+    "/api/municipals/surkhet": {
+        "municipals": [
+            "simta rural municipality",
+            "barahtal rural municipality",
+            "chaukune rural municipality",
+            "chingad rural municipality",
+            "gurbhakot municipality",
+            "birendranagar municipality",
+            "bheriganga municipality",
+            "panchpuri municipality",
+            "lekbeshi municipality"
+        ]
+    },
+    "/api/municipals/western-rukum": {
+        "municipals": [
+            "aathbiskot municipality",
+            "musikot municipality",
+            "chaurjahari municipality",
+            "sani bheri rural municipality",
+            "tribeni rural municipality",
+            "banfikot rural municipality"
+        ]
+    },
+    "/api/municipals/achham": {
+        "municipals": [
+            "ramaroshan rural municipality",
+            "chaurpati rural municipality",
+            "turmakhad rural municipality",
+            "mellekh rural municipality",
+            "dhakari rural municipality",
+            "bannigadhi jayagadh rural municipality",
+            "mangalsen municipality",
+            "kamalbazar municipality",
+            "sanphebagar municipality",
+            "panchadewal binayak municipality"
+        ]
+    },
+    "/api/municipals/baitadi": {
+        "municipals": [
+            "dasharathchanda municipality",
+            "patan municipality",
+            "melauli municipality",
+            "purchaudi municipality",
+            "dogadakedar rural municipality",
+            "dilasaini rural municipality",
+            "sigas rural municipality",
+            "pancheshwar rural municipality",
+            "surnaya rural municipality",
+            "shivanath rural municipality"
+        ]
+    },
+    "/api/municipals/bajhang": {
+        "municipals": [
+            "jayaprithivi municipality",
+            "bungal municipality",
+            "kedarseu rural municipality",
+            "thalara rural municipality",
+            "bithadchir rural municipality",
+            "chabispathivera rural municipality",
+            "khaptadchhanna rural municipality",
+            "masta rural municipality",
+            "durgathali rural municipality",
+            "talkot rural municipality",
+            "surma rural municipality",
+            "saipaal rural municipality"
+        ]
+    },
+    "/api/municipals/bajura": {
+        "municipals": [
+            "badimalika municipality",
+            "tribeni municipality",
+            "budhiganga municipality",
+            "budhinanda municipality",
+            "khaptad chhededaha rural municipality",
+            "swami kartik khaapar rural municipality",
+            "jagannath rural municipality",
+            "himali rural municipality",
+            "gaumul rural municipality"
+        ]
+    },
+    "/api/municipals/dadeldhura": {
+        "municipals": [
+            "nawadurga rural municipality",
+            "alital rural municipality",
+            "ganayapdhura rural municipality",
+            "bhageshwar rural municipality",
+            "ajaymeru rural municipality",
+            "amargadhi municipality",
+            "parashuram municipality"
+        ]
+    },
+    "/api/municipals/darchula": {
+        "municipals": [
+            "mahakali municipality",
+            "shailyashikhar municipality",
+            "naugad rural municipality",
+            "malikaarjun rural municipality",
+            "marma rural municipality",
+            "lekam rural municipality",
+            "dunhu rural municipality",
+            "byas rural municipality",
+            "apihimal rural municipality"
+        ]
+    },
+    "/api/municipals/doti": {
+        "municipals": [
+            "dipayal silgadi municipality",
+            "shikhar municipality",
+            "adharsha rural municipality",
+            "purbichauki rural municipality",
+            "k i singh rural municipality",
+            "jorayal rural municipality",
+            "sayal rural municipality",
+            "bogtan foodsil rural municipality",
+            "badikedar rural municipality"
+        ]
+    },
+    "/api/municipals/kailali": {
+        "municipals": [
+            "janaki rural municipality",
+            "kailari rural municipality",
+            "joshipur rural municipality",
+            "bardagoriya rural municipality",
+            "mohanyal rural municipality",
+            "chure rural municipality",
+            "tikapur municipality",
+            "ghodaghodi municipality",
+            "lamkichuha municipality",
+            "bhajani municipality",
+            "godawari municipality",
+            "gauriganga municipality",
+            "dhangadhi sub-metropolitan city"
+        ]
+    },
+    "/api/municipals/kanchanpur": {
+        "municipals": [
+            "bhimdatta municipality",
+            "punarbas municipality",
+            "bedkot municipality",
+            "mahakali municipality",
+            "shuklaphanta municipality",
+            "belauri municipality",
+            "krishnapur municipality",
+            "laljhadi rural municipality",
+            "beldandi rural municipality"
+        ]
+    }
+}

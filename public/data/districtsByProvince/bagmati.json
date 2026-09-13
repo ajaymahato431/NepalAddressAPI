@@ -1,17 +1,17 @@
 {
     "districts": [
-        "sindhuli",
-        "ramechhap",
-        "dolakha",
         "bhaktapur",
+        "chitwan",
         "dhading",
+        "dolakha",
         "kathmandu",
         "kavrepalanchok",
         "lalitpur",
+        "makwanpur",
         "nuwakot",
+        "ramechhap",
         "rasuwa",
-        "sindhupalchok",
-        "chitwan",
-        "makwanpur"
+        "sindhuli",
+        "sindhupalchok"
     ]
 }

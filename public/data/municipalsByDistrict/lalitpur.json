@@ -1,10 +1,10 @@
 {
     "municipals": [
-        "bagmati rural municipality",
-        "mahankal rural municipality",
-        "konjyosom rural municipality",
         "lalitpur metropolitan city",
         "mahalaxmi municipality",
-        "godawari municipality"
+        "godawari municipality",
+        "konjyosom rural municipality",
+        "bagmati rural municipality",
+        "mahankal rural municipality"
     ]
 }

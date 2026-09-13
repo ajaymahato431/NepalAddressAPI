@@ -18,6 +18,8 @@
 - **Zero-Database Requirement**: Runs directly out-of-the-box with static JSON datasets & file caching.
 - **100% Data Accuracy**: Every single one of the 77 districts has verified local-level municipal data with zero missing entries or broken links.
 - **Official & Dual Koshi / Pradesh-1 Support**: Seamlessly supports official constitutional names (`koshi`) and legacy aliases (`pradesh-1`, `province-1`).
+- **Ward Data**: Every one of the 753 local levels carries its ward count — **6,743 wards** nationwide — with `/api/wards/{district}/{municipality}` enumerating them individually.
+- **Full Nepali (Devanagari) Support**: Every province, district and municipality carries its Nepali name. Use `?lang=np` for Devanagari, `?lang=both` for both languages side by side. Nepali names are searchable too.
 - **Flexible Casing**: Returns lowercase by default or formatted **Title Case** (`?case=title`).
 - **Fuzzy Search Endpoint**: Autocomplete `/api/search?q={term}` returns matching locations with parent district and province hierarchy.
 - **Full Hierarchy / All Data Endpoint**: Download the entire nested tree (`/api/hierarchy` or `/api/all`) for client-side offline storage or cascading dropdowns.
@@ -294,6 +296,210 @@ Get high-level counts and breakdown per province.
 
 ---
 
+### 8. Get Wards for a Municipality
+
+- **Endpoint:** `/api/wards/{district}/{municipality}`
+
+Wards in Nepal are identified by number, not name — no open dataset provides ward
+names — so this endpoint enumerates them `1..N` alongside their Devanagari numerals.
+
+```bash
+curl -X GET "https://nepaladdress.notedinsights.com/api/wards/chitwan/bharatpur"
+```
+
+**Response Example (200 OK)** — `wards` array truncated for brevity:
+
+```json
+{
+  "municipality": {
+    "id": 278,
+    "slug": "bharatpur",
+    "name": "Bharatpur",
+    "name_np": "भरतपुर",
+    "category": "Metropolitan City",
+    "category_np": "महानगरपालिका",
+    "area_sq_km": "432.95",
+    "area_sq_km_np": "४३२.९५",
+    "website": "http://www.bharatpurmun.gov.np/",
+    "district_slug": "chitwan",
+    "wards": 29,
+    "wards_np": "२९"
+  },
+  "district": { "name": "Chitwan", "name_np": "चितवन" },
+  "total_wards": 29,
+  "wards": [
+    { "ward": 1, "ward_np": "१" },
+    { "ward": 2, "ward_np": "२" },
+    { "ward": 3, "ward_np": "३" }
+  ]
+}
+```
+
+The municipality may be addressed by its short slug (`bharatpur`) or by its full
+legacy name (`bharatpur-metropolitan-city`).
+
+---
+
+### 9. Get a Single Municipality
+
+- **Endpoint:** `/api/municipality/{district}/{municipality}`
+
+```bash
+curl -X GET "https://nepaladdress.notedinsights.com/api/municipality/chitwan/bharatpur"
+```
+
+**Response Example (200 OK):**
+
+```json
+{
+  "municipality": {
+    "id": 278,
+    "slug": "bharatpur",
+    "name": "Bharatpur",
+    "name_np": "भरतपुर",
+    "category": "Metropolitan City",
+    "category_np": "महानगरपालिका",
+    "area_sq_km": "432.95",
+    "website": "http://www.bharatpurmun.gov.np/",
+    "district_slug": "chitwan",
+    "wards": 29,
+    "wards_np": "२९"
+  },
+  "district": { "name": "Chitwan", "name_np": "चितवन" },
+  "province": { "name": "Bagmati", "name_np": "बाग्मती प्रदेश" }
+}
+```
+
+---
+
+### 10. Get Local-Level Categories
+
+- **Endpoint:** `/api/categories`
+
+```bash
+curl -X GET "https://nepaladdress.notedinsights.com/api/categories"
+```
+
+**Response Example (200 OK):**
+
+```json
+{
+  "categories": [
+    { "id": 1, "name": "Metropolitan City",     "name_np": "महानगरपालिका",    "short_code": "MC" },
+    { "id": 2, "name": "Sub-Metropolitan City", "name_np": "उपमहानगरपालिका", "short_code": "SMC" },
+    { "id": 3, "name": "Municipality",          "name_np": "नगरपालिका",       "short_code": "M" },
+    { "id": 4, "name": "Rural Municipality",    "name_np": "गाउँपालिका",      "short_code": "RM" }
+  ]
+}
+```
+
+---
+
+## 🔤 Query Parameters
+
+Every endpoint accepts these.
+
+| Parameter | Values | Default | Notes |
+|---|---|---|---|
+| `lang` | `en`, `np`, `both` | `en` in flat mode, `both` when `detailed=true` | `np` returns Devanagari |
+| `detailed` | `true`, `false` | `false` | Objects with ids, ward counts, area and website |
+| `case` | `lower`, `title` | `lower` in flat mode, `title` when `detailed=true` | English only — Devanagari has no letter case |
+
+An invalid `lang` or `case` returns **422** listing the accepted values.
+
+### Nepali names
+
+```bash
+curl "https://nepaladdress.notedinsights.com/api/districts?lang=np"
+```
+
+```json
+{ "districts": ["अछाम", "अर्घाखाँची", "बागलुङ"] }
+```
+
+```bash
+curl "https://nepaladdress.notedinsights.com/api/districts?lang=both"
+```
+
+```json
+{ "districts": [ { "name": "achham", "name_np": "अछाम" } ] }
+```
+
+Nepali text is searchable, and the two Devanagari nasalisation marks —
+chandrabindu and anusvara — are treated as equivalent when matching, so both
+common spellings of a name resolve to the same place.
+
+### Detailed mode
+
+```bash
+curl "https://nepaladdress.notedinsights.com/api/districts?detailed=true"
+```
+
+```json
+{
+  "districts": [
+    {
+      "id": 74,
+      "slug": "achham",
+      "name": "Achham",
+      "name_np": "अछाम",
+      "headquarter": "Mangalsen",
+      "headquarter_np": "मंगलसेन",
+      "area_sq_km": "1692",
+      "area_sq_km_np": "१६९२",
+      "website": "https://dccacham.gov.np/",
+      "province_slug": "sudurpaschim",
+      "total_municipalities": 10,
+      "total_wards": 91
+    }
+  ]
+}
+```
+
+---
+
+## 🔒 Backward Compatibility
+
+Existing endpoints return exactly what they always have. Nepali names and ward
+data are opt-in through `lang` and `detailed`.
+
+This is enforced, not merely intended: `tests/Feature/LegacyContractTest.php`
+replays a recorded snapshot of all 97 legacy responses on every test run, and
+`tests/Feature/AddressApiTest.php` is unchanged from before this feature.
+
+Two deliberate exceptions:
+
+- `/api/stats`, `/api/hierarchy` and `/api/all` gained ward counts — new keys only,
+  no existing value changed.
+- `/api/hierarchy` now reports the Lumbini district as `parasi` rather than
+  `nawalparasi`. The old data contradicted itself — `/api/districts` already said
+  `parasi` — and `nawalparasi` remains an accepted lookup alias.
+
+Array **ordering** is not part of the contract. `/api/districts` is alphabetical as
+before, but per-district municipality ordering now follows the canonical dataset.
+
+---
+
+## 📊 Data & Attribution
+
+Administrative data is derived from
+[sagautam5/local-states-nepal](https://github.com/sagautam5/local-states-nepal)
+(MIT, Copyright © 2020 Sagar Gautam): 7 provinces, 77 districts, 753 local levels
+and 6,743 wards, each with English and Nepali names.
+
+Upstream data is vendored unmodified under `database/data/upstream/`. Rebuild the
+canonical dataset with:
+
+```bash
+php artisan nepal:build-dataset
+```
+
+Where this project and upstream romanised a place differently, this project's
+existing spelling is preserved so published API responses stay stable. See
+`public/data/ATTRIBUTION.md`.
+
+---
+
 ## 💻 Integration Examples
 
 ### PHP (Laravel `Http` Client)
@@ -406,16 +612,16 @@ composer test
 
 ## 🗺️ Nepal Administrative Reference
 
-| Province | Canonical Slug | Supported Aliases | Districts Count | Local Levels |
-|---|---|---|---|---|
-| **Koshi** | `koshi` | `pradesh-1`, `province-1` | 14 | 137 |
-| **Madhesh** | `madhesh` | `pradesh-2`, `province-2` | 8 | 136 |
-| **Bagmati** | `bagmati` | `pradesh-3`, `province-3` | 13 | 119 |
-| **Gandaki** | `gandaki` | `pradesh-4`, `province-4` | 11 | 85 |
-| **Lumbini** | `lumbini` | `pradesh-5`, `province-5` | 12 | 109 |
-| **Karnali** | `karnali` | `pradesh-6`, `province-6` | 10 | 79 |
-| **Sudurpaschim** | `sudurpaschim` | `pradesh-7`, `province-7`, `sudurpashchim` | 9 | 88 |
-| **Total** | | | **77** | **753** |
+| Province | Nepali | Canonical Slug | Supported Aliases | Districts | Local Levels | Wards |
+|---|---|---|---|---|---|---|
+| **Koshi** | काेशी प्रदेश | `koshi` | `pradesh-1`, `province-1` | 14 | 137 | 1,157 |
+| **Madhesh** | मधेश प्रदेश | `madhesh` | `pradesh-2`, `province-2` | 8 | 136 | 1,271 |
+| **Bagmati** | बाग्मती प्रदेश | `bagmati` | `pradesh-3`, `province-3` | 13 | 119 | 1,121 |
+| **Gandaki** | गण्डकी प्रदेश | `gandaki` | `pradesh-4`, `province-4` | 11 | 85 | 759 |
+| **Lumbini** | लुम्बिनी प्रदेश | `lumbini` | `pradesh-5`, `province-5` | 12 | 109 | 983 |
+| **Karnali** | कर्णाली प्रदेश | `karnali` | `pradesh-6`, `province-6` | 10 | 79 | 718 |
+| **Sudurpaschim** | सुदूरपश्चिम प्रदेश | `sudurpaschim` | `pradesh-7`, `province-7`, `sudurpashchim` | 9 | 88 | 734 |
+| **Total** | | | | **77** | **753** | **6,743** |
 
 ---
 

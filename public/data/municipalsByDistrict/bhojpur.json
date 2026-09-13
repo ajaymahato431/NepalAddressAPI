@@ -1,13 +1,13 @@
 {
     "municipals": [
-        "arun rural municipality",
-        "aamchowk rural municipality",
-        "hatuwagadhi rural municipality",
-        "pauwadungma rural municipality",
-        "temkemaiyung rural municipality",
-        "salpasilichho rural municipality",
-        "ramprasad rai rural municipality",
         "shadananda municipality",
-        "bhojpur municipality"
+        "bhojpur municipality",
+        "hatuwagadhi rural municipality",
+        "ramprasad rai rural municipality",
+        "aamchowk rural municipality",
+        "temkemaiyung rural municipality",
+        "arun rural municipality",
+        "pauwadungma rural municipality",
+        "salpasilichho rural municipality"
     ]
 }
